@@ -1,0 +1,23 @@
+*{
+
+    margin:10px 100px 0 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+header{
+    display:flex;
+    justify-content: flex-start;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+p{
+    text-align: center;
+    margin-top:20px;
+}
+table,th,tr,td{
+    margin-top:25px;
+    border-collapse:collapse ;
+    border:1px solid;
+}

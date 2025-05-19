@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GVMC Citizen Services</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f9;
+    }
+
+    header, .note {
+      padding: 20px;
+      background: white;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .note {
+      color: red;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      flex: 1 1 calc(25% - 20px);
+      background: #eee;
+      border-radius: 5px;
+      min-width: 220px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-header {
+      padding: 10px;
+      font-weight: bold;
+      color: white;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .card-content {
+      background: #fff;
+      padding: 10px;
+    }
+
+    .card-content a {
+      display: block;
+      padding: 5px 0;
+      color: #0077cc;
+      text-decoration: none;
+      border-bottom: 1px dashed #ccc;
+    }
+
+    .card-content a:hover {
+      color: #004080;
+    }
+
+    /* Unique header colors */
+    .property { background-color: #0074cc; }
+    .water { background-color: #339933; }
+    .vacant { background-color: #800080; }
+    .shop { background-color: #f4a100; }
+    .trade { background-color: #ff8000; }
+    .anakapalle { background-color: #66cc33; }
+    .complaint { background-color: #993399; }
+    .professional { background-color: #ff9900; }
+    .rti { background-color: #006699; }
+    .fire { background-color: #228B22; }
+
+    @media (max-width: 768px) {
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong><A href="home.html">Home</A> &gt; Citizen Services</strong></div>
+  </header>
+
+  <div class="note">
+    KIND ATTENTION: Website will be Under Maintenance from 09-11-2018 8:00 PM to 12:00 Midnight and New Website will be Commenced from 10-11-2018 01:00 AM.
+  </div>
+
+  <div class="container">
+    <h2>Virtual Civic Center (Online Service)</h2>
+    <p>Welcome to Greater Visakha Municipal Corporation’s Virtual Civic Center, which is a simple and convenient way for citizens to access various services from anywhere at any time. The services of Virtual Civic Center can be accessed without paying any additional charges.</p>
+
+    <p><a href="#">Previous Online payments Duplicate receipt (till 13/06/2017) - House Tax</a></p>
+    <p><strong>Note (House Tax & VLT payees):</strong><br>Enter your Assessment number in place of ‘Old Assessment Number’ & note your New Assessment Number.</p>
+
+    <h3 style="color: red;">Assessment Number.</h3>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-header property">Property Tax</div>
+        <div class="card-content">
+          <a href="PropertyTax.html">Check & Pay Property Tax</a>
+          <a href="#">Payment through BharatQR</a>
+          <a href="#">Property Tax Services</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header water">Water Tax</div>
+        <div class="card-content">
+          <a href="#">Check & Pay Water Tax</a>
+          <a href="#">Search by Name</a>
+          <a href="#">Water Tax Services</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header vacant">Vacant Land Tax</div>
+        <div class="card-content">
+          <a href="#">Check & Pay Vacant Land Tax</a>
+          <a href="#">Payment through BharatQR</a>
+          <a href="#">Vacant Land Tax Services</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header shop">Shop Lease & Rentals</div>
+        <div class="card-content">
+          <a href="#">Check & Pay Shop Lease Tax</a>
+          <a href="#">Check Status</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header trade">D & O Trade License</div>
+        <div class="card-content">
+          <a href="#">Check & Pay D & O Trade Tax</a>
+          <a href="#">Old Payment Details</a>
+          <a href="#">Check Status</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header anakapalle">Anakapalle & Bheemili</div>
+        <div class="card-content">
+          <a href="#">Check & Pay Taxes</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header complaint">Complaint Registration</div>
+        <div class="card-content">
+          <a href="#">Register a Complaint</a>
+          <a href="#">PuraSeva Grievance Status</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header professional">Professional Tax</div>
+        <div class="card-content">
+          <a href="#">Pay Professional Tax</a>
+          <a href="#">Sign In</a>
+          <a href="#">View Status</a>
+          <a href="#">Know Your Professional Tax</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header rti">Right To Information</div>
+        <div class="card-content">
+          <a href="#">RTI Request</a>
+          <a href="#">First Appeal</a>
+          <a href="#">Check Status</a>
+          <a href="#">Payments</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header fire">Fire NOC</div>
+        <div class="card-content">
+          <a href="#">Temporary Fire NOC Registration</a>
+          <a href="#">View Status</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

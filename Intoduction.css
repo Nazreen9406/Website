@@ -1,0 +1,35 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+div
+{
+  display: inline-block;
+}
+span{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+    /* margin-left: 25px; */
+}
+#Vizag{
+  background-color: #323232;
+  Padding:15px;
+  width: 164.675em;
+height: 343px;
+  text-align: center;
+}
+.Glance{
+  background-color: #FEFEF5;
+  Padding:15px;
+  height: 194.6%;
+  width: 192.8%;
+  border-radius: 5px;
+  box-shadow:0px 0px 4px #666;
+}
+table{
+  padding: 15px;
+  line-height: 20px;
+  font-family: Helvetica, sans-serif;
+  font-size:14px;
+}

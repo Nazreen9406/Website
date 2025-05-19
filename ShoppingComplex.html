@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zone Wise Shopping Complexes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h2 {
+      text-align: center;
+      color: #c00;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    thead th {
+      background-color: #f3f3f3;
+      font-weight: bold;
+    }
+
+    thead th.zone {
+      background-color: #eafbea;
+      color: green;
+    }
+
+    thead th.title {
+      background-color: #fff0f0;
+      color: red;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    tfoot td {
+      background: #fff0f0;
+      color: red;
+      font-weight: bold;
+    }
+
+    td[colspan] {
+      text-align: left;
+    }
+
+    @media screen and (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead tr {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+      }
+
+      td {
+        padding-left: 50%;
+        text-align: left;
+        position: relative;
+      }
+
+      td::before {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-weight: bold;
+      }
+
+      td:nth-of-type(1)::before { content: "Zone No."; }
+      td:nth-of-type(2)::before { content: "Total No. of Shop Rooms"; }
+      td:nth-of-type(3)::before { content: "Total No. of Shops Allotted"; }
+      td:nth-of-type(4)::before { content: "Total No. of Shops Vacant"; }
+      td:nth-of-type(5)::before { content: "Remarks"; }
+    }
+  </style>
+</head>
+<body>
+
+<h2>STATEMENT SHOWING THE DETAILS OF ZONE WISE SHOPPING COMPLEXES LIST</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th class="zone">Zone No.</th>
+      <th class="zone">Total No. of Shop Rooms</th>
+      <th class="zone">Total No. of Shops Allotted</th>
+      <th class="zone">Total No. of Shops Vacant</th>
+      <th class="zone">Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I</td>
+      <td>72</td>
+      <td>55</td>
+      <td>17</td>
+      <td>There are no shops beyond 25 years of lease</td>
+    </tr>
+    <tr>
+      <td>II</td>
+      <td>232</td>
+      <td>226</td>
+      <td>6</td>
+      <td>There are no shops beyond 25 years of lease</td>
+    </tr>
+    <tr>
+      <td>III</td>
+      <td>213</td>
+      <td>199</td>
+      <td>14</td>
+      <td style="text-align: left;">
+        <strong>1)</strong> Janatha bazaar Shopping Complex – There are 49 Shops in above 25 Years, due to enhancement of Shop Room Rents all lessees have been paying rent through Court, the matter is pending in District Court.<br><br>
+        <strong>2)</strong> TSR Shopping Complex (GF) – There are 52 Shops on Ground Floor, out of which 26 Shops have continued above 23 years. The notices have been issued for vacancy.<br><br>
+        <strong>3)</strong> Working Women Hostel at Ramnagar – Maintained by Social Welfare Department. Continued above 25 years. GVMC requested continuation. Letter sent to MA & UD Dept., awaiting Govt. response.
+      </td>
+    </tr>
+    <tr>
+      <td>IV</td>
+      <td>184</td>
+      <td>174</td>
+      <td>10</td>
+      <td>There are no shops beyond 25 years of lease</td>
+    </tr>
+    <tr>
+      <td>V</td>
+      <td>8</td>
+      <td>5</td>
+      <td>3</td>
+      <td>There are no shops beyond 25 years of lease</td>
+    </tr>
+    <tr>
+      <td>VI</td>
+      <td>39</td>
+      <td>36</td>
+      <td>3</td>
+      <td>There are no shops beyond 25 years of lease</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td>748</td>
+      <td>695</td>
+      <td>53</td>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>
+
+<p style="margin-top: 20px; font-weight: bold;">Zone Wise Shopping Complex</p>
+
+</body>
+</html>
