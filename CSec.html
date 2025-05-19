@@ -22,9 +22,35 @@
             background-color: #f2f2f2;
             text-align: center;
         }
+                .tabs {
+  display: flex;
+  border-bottom: 3px solid #333;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.tab.active {
+  background: #7fae18;
+  color: white;
+}
     </style>
 </head>
 <body>
+     <div class="tabs">
+    <button class="tab"><A href="web.html">Home</A></button>
+    <button class="tab "><A href="#">Departments</A></button>
+     <button class="tab"><a href="#">General Adminsitration</a></button>
+    <button class="tab active"><a href="CSec.html">C Section</a></button>
+    <button class="tab "><A href="HRD.html">HRD</A></button>
+  </div>
+
     <table>
         <tr>
             <th>Section</th>

@@ -64,6 +64,10 @@ body {
   color: #666;
   margin-bottom: 10px;
 }
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
 
 .title {
   color: red;
