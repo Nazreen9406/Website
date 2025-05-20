@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Citizen Charter - Engineering Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .tabs {
+      display: flex;
+      background: #333;
+      padding: 5px;
+    }
+
+    .tabs .tab-item {
+      padding: 10px 15px;
+      background: #88b400;
+      color: white;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    .tabs .tab-item:not(:first-child) {
+      background: #444;
+    }
+
+    .steps {
+      display: flex;
+      align-items: center;
+      margin: 20px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .steps span {
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .citizen { background: #d9534f; color: white; }
+    .office { background: #5cb85c; color: white; }
+    .desk { background: #337ab7; color: white; }
+    .form { background: #f0ad4e; color: white; }
+    .officer { background: #6f42c1; color: white; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    caption {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    img.header-img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    h2, h3 {
+      margin-left: 20px;
+    }
+
+    p {
+      margin: 0 20px 20px 20px;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin: 15px 20px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="web.html" class="home-button">Home</a>
+  <img src="citizen img1.png" 
+       alt="Banner for Citizen Charter showcasing various services" class="header-img">
+  <nav class="tabs">
+    <div class="tab-item">Engineering Section</div>
+    <div class="tab-item">Revenue Section</div>
+    <div class="tab-item">Town Planning</div>
+    <div class="tab-item">Citizen Health</div>
+  </nav>
+
+  <h2>Step-By-Step Procedure</h2>
+  <div class="steps">
+    <span class="citizen">Citizen</span>
+    <span class="office">Nearby Zonal Office</span>
+    <span class="desk">Citizen Charter Desk</span>
+    <span class="form">Form</span>
+    <span class="officer">Concerned Officer</span>
+  </div>
+
+  <h3>Citizen’s Charter</h3>
+  <p><strong>Service Standards</strong><br>
+    A. The services in ULBs are provided by various sections. The services rendered by various sections, and the officer responsible to render the service and the officer to whom a grievance/complaint be made in case of delay or default of service are listed in the following table.
+  </p>
+
+  <table summary="This table lists the services provided by the Engineering Section along with required documents, fees, and responsible officers.">
+    <caption>Engineering Section</caption>
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>Service</th>
+        <th>Documents Required (Copies)</th>
+        <th>Fee</th>
+        <th>Time Frame</th>
+        <th>Officer Responsible to render services</th>
+        <th>Officer to whom a grievance/complaint be made in case of delay or default of service</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Sanction/Disposal of Water Supply Connection (where distribution lines are available)</td>
+        <td>Property tax receipt showing up to date payment</td>
+        <td>-</td>
+        <td>15 days</td>
+        <td>Assistant Engineer</td>
+        <td>Municipal Engineer / Executive Engineer</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Water supply pipe lines leakages</td>
+        <td>Application is sufficient</td>
+        <td>-</td>
+        <td>1 day</td>
+        <td>Asst. Engineer</td>
+        <td>Municipal Engineer / Executive Engineer</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
