@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>GVMC</title>
   <style>
     body {
@@ -16,6 +16,9 @@
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
       display: flex;
+      position: relative; 
+      z-index: 1000; 
+      overflow: visible; 
     }
     .left-section {
       display: flex;
@@ -53,6 +56,8 @@
       gap: 15px;
       margin-top: 10px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 1000;
     }
     nav a {
       text-decoration: none;
@@ -61,6 +66,8 @@
       padding: 5px 10px;
       border-radius: 5px;
       transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+      white-space: nowrap;
     }
     nav a.active {
       color: #1a3e8b;
@@ -102,30 +109,117 @@
         align-self: flex-end;
         margin-top: 10px;
       }
+      nav {
+        width: 100%;
+      }
     }
-    .slideshow-container {
-      background-size: cover;
-      width: 100%;
-      max-height: 400px;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      position: relative;
-      margin-top: 20px;
-    }
+   .slideshow-container {
+  background-size: contain;     
+  background-position: center; 
+  background-repeat: no-repeat; 
+  width: 100%;
+  max-height: 400px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+  flex: 1 1 60%;
+  min-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+    
     .slide {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: none;
+      border-radius: 8px;
     }
     @media (max-width: 600px) {
       .slideshow-container {
         max-height: 250px;
+        width: 100%;
+        flex: none;
       }
     }
+    .container {
+      display: flex;
+      margin-top: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .side-div {
+  flex: 1 1 25%;
+  max-width: 25%;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-width: 200px;
+  height: fit-content;
+}
+
+    .officials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .officials img {
+  width: 235px;
+  height: auto;
+  margin: 5px;
+  border-radius: 5px;
+}
+    .official-names {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+    }
+    .info-section {
+      margin-bottom: 15px;
+    }
+    .info-section h4 {
+      color: orange;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+   .info-section img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+    .social-icons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+    .social-icons img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    .footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+   
     .dropdown {
       position: relative;
       display: inline-block;
+      z-index: 2000; 
     }
     .dropdown-content {
       display: none;
@@ -133,9 +227,12 @@
       background-color: #fff;
       min-width: 160px;
       box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-      z-index: 1;
       border: 1px solid #ddd;
       border-radius: 5px;
+      top: 100%;
+      left: 0;
+      z-index: 3000;
+      white-space: nowrap;
     }
     .dropdown-content a {
       color: #333;
@@ -164,7 +261,6 @@
       </div>
       <nav>
         <a href="#" class="active" style="font-weight: bold;">Home</a>
-
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" style="font-weight:bold;">About Vizag</a>
           <div class="dropdown-content">
@@ -179,7 +275,6 @@
             <a href="Education.html">Education</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" style="font-weight:bold;">Corporation</a>
           <div class="dropdown-content">
@@ -192,7 +287,6 @@
             <a href="#">Officers Seniority List</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" style="font-weight:bold;">Zones</a>
           <div class="dropdown-content">
@@ -210,7 +304,6 @@
             </div>
           </div>
         </div>
-
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" style="font-weight:bold;">Departments</a>
           <div class="dropdown-content">
@@ -227,13 +320,12 @@
             <a href="IT1.html">IT & E-Governance</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a href="CitizenServices.html" class="dropdown-toggle" style="font-weight:bold;">Citizen Services</a>
           <div class="dropdown-content">
             <a href="CitizenServices.html">Citizen Services list</a>
             <a href="PropertyTax.html">Property Tax</a>
-            <a href="#">Water TAx</a>
+            <a href="#">Water Tax</a>
             <a href="#">Vacant Land Tax</a>
             <a href="#">Shop Lease & Rentals</a>
             <a href="#">D & O Trade License</a>
@@ -241,7 +333,6 @@
             <a href="#"> Online Forms & Tenders</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" style="font-weight:bold;">Information</a>
           <div class="dropdown-content">
@@ -249,21 +340,19 @@
             <a href="FAQ'S.html">FAQ'S</a>
             <a href="Right To Information.html">Right to Information</a>
             <a href="#">Citizen's Charter Rules & Procedures</a>
-            <a href="#">Dial a Tanker</a>
+            <a href="Dail A Tanker.html">Dial a Tanker</a>
             <a href="Grievances.html">Grievances</a>
             <a href="#">RAY</a>
             <a href="#">GVMC Press Notes</a>
             <a href="#"> Photo Gallery & News</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" style="font-weight:bold;">Tenders</a>
           <div class="dropdown-content">
             <a href="#">Tenders & Downloads</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" style="font-weight:bold;">Contact</a>
           <div class="dropdown-content">
@@ -274,19 +363,68 @@
       </nav>
     </div>
     <div class="search-box">
-      <input type="text" placeholder="Search...">
+      <input type="text" placeholder="Search..." />
       <span>🔍</span>
     </div>
   </div>
-  <div class="slideshow-container">
-    <img class="slide" src="1.jpg" alt="Slide 1">
+<div class="container">
+  <div style="flex: 1 1 70%; min-width: 300px;">
+    <div class="slideshow-container">
+      <img class="slide" src="Building.png" alt="Slide 1" />
+    </div>
+    <div class="info-section">
+      <h4>Welcome</h4>
+      <p>
+        Welcome to the Greater Visakhapatnam Municipal Corporation (GVMC). We are dedicated to improving the quality of life for all citizens of Visakhapatnam by providing transparent, accountable, and citizen-friendly services.
+      </p>
+    </div>
+    <div class="info-section">
+      <h4>E-News letters</h4>
+      <ul>
+        <li><a href="#">Newsletter - April 2025</a></li>
+        <li><a href="#">Updates - March 2025</a></li>
+        <li><a href="#">Commissioner's Note - Feb 2025</a></li>
+      </ul>
+    </div>
   </div>
+  <div class="side-div">
+    <div class="officials">
+      <img src="collector.webp" alt="Sri Hari Narayanan" />
+      <div class="official-names">
+        <div>
+          <strong>Sri<br />Hari Narayanan<br />I.A.S.<br />Commissioner</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h4>General Information</h4>
+      <img src="SB.jpg" alt="Swachh Bharat" />
+    </div>
+
+    <div class="info-section">
+      <h4>Social Media & APP's</h4>
+      <div class="social-icons">
+        <a href="https://facebook.com/gvmc" target="_blank">
+          <img src="facebook-logo-png-3.png" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com/gvmc" target="_blank">
+          <img src="x logo.jpg" alt="X" />
+        </a>
+        <a href="https://www.instagram.com/gvmc_visakhapatnam/" target="_blank">
+          <img src="ig.jpg" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+>
   <script>
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
+    const slides = document.querySelectorAll(".slide");
     function showSlide(index) {
       slides.forEach((slide, i) => {
-        slide.style.display = i === index ? 'block' : 'none';
+        slide.style.display = i === index ? "block" : "none";
       });
     }
     function nextSlide() {
@@ -295,24 +433,41 @@
     }
     showSlide(currentSlide);
     setInterval(nextSlide, 3000);
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-    dropdownToggles.forEach(toggle => {
-      toggle.addEventListener('click', function (e) {
+
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener("click", function (e) {
         e.preventDefault();
         const parent = this.parentElement;
-        document.querySelectorAll('.dropdown').forEach(drop => {
+        document.querySelectorAll(".dropdown").forEach((drop) => {
           if (drop !== parent) {
-            drop.classList.remove('open');
+            drop.classList.remove("open");
           }
         });
-        parent.classList.toggle('open');
+        parent.classList.toggle("open");
       });
     });
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".dropdown")) {
+        document.querySelectorAll(".dropdown").forEach((drop) =>
+          drop.classList.remove("open")
+        );
       }
     });
   </script>
+    ...
+  </div> 
+
+  <div class="footer">
+    <div>
+      <a href="Bottom-Contacts.html" style="color: white; margin: 0 10px; text-decoration: underline;">Contacts</a> | 
+      <a href="#" style="color: white; margin: 0 10px; text-decoration: underline;">Privacy Policy</a> | 
+      <span>Visitors Count: 0</span>
+    </div>
+  </div>
 </body>
 </html>
+
+</body>
+</html>
+

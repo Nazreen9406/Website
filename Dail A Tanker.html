@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IVRS Instructions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f4f4f4;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .home-button:hover {
+      background-color: #0056b3;
+    }
+
+    h1{
+      margin: 20px 0;
+      font-size: 24px;
+      color: blue
+    }
+
+
+    .image-container {
+      margin-top: 20px;
+    }
+
+    img {
+      width: 80%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      margin: 30px 0;
+    }
+
+    .container a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 18px;
+    }
+
+    .container a:hover {
+      text-decoration: underline;
+    }
+
+    .steps {
+      margin: 40px auto;
+      width: 80%;
+      text-align: center;
+    }
+
+    .step-button {
+      background-color: red;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 30px;
+      margin: 20px auto 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: block;
+      width: 150px;
+    }
+
+    .step-button:hover {
+      background-color: #cc0000;
+    }
+
+    .step-text {
+      font-size: 16px;
+      color: #333;
+      margin: 10px 0 30px;
+      padding: 0 20px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    nav a.active {
+      color: #1a3e8b;
+      background: #e6efff;
+    }
+    nav a:hover {
+      background-color: #f0f8ff;
+      color: #1a3e8b;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      z-index: 2000; 
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      z-index: 3000;
+      white-space: nowrap;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+    }
+    .dropdown-content a:hover {
+      background-color: #f0f8ff;
+    }
+    .dropdown.open .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+ <nav>
+        <a href="#" class="active" style="font-weight: bold;">Home</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">About Vizag</a>
+          <div class="dropdown-content">
+            <a href="Index.html">Introduction</a>
+            <a href="History.html">History</a>
+            <a href="Heritage.html">Heritage</a>
+            <a href="#"> Weather</a>
+            <a href="Industries.html">Industries</a>
+            <a href="Health.html">Health</a>
+            <a href="FunctionHalls.html">Function Halls</a>
+            <a href="Markets.html">Markets</a> 
+            <a href="Education.html">Education</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Corporation</a>
+          <div class="dropdown-content">
+            <a href="Corporation-Introduction.html">Introduction</a>
+            <a href="Corporation-Elected Wing.html">Elected wing</a>
+            <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
+            <a href="Corporation- Comissioner.html">Commissioner</a>
+            <a href="#">Awards</a>
+            <a href="#">List of Holidays</a>
+            <a href="#">Officers Seniority List</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Zones</a>
+          <div class="dropdown-content">
+            <a href="Zones.html">Organization Structure</a>
+            <div class="dropdown" style="position: relative;">
+              <a href="List of Zones.html" class="dropdown-toggle">List of Zones ▸</a>
+              <div class="dropdown-content" style="left: 100%; top: 0;">
+                <a href="#">Zone-1</a>
+                <a href="#">Zone-2</a>
+                <a href="#">Zone-3</a>
+                <a href="#">Zone-4</a>
+                <a href="#">Zone-5</a>
+                <a href="#">Zone-6</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Departments</a>
+          <div class="dropdown-content">
+            <a href="CSec.html">General Administration</a>
+            <a href="#">Projects</a>
+            <a href="#">Engineering</a>
+            <a href="RevDepStru.html">Revenue</a>
+            <a href="#">Public Health</a>
+            <a href="#">Town Planning</a>
+            <a href="#">Horticulture</a>
+            <a href="UCD.html">UCD</a>
+            <a href="EducationalProjects.html">Education</a>
+            <a href="#">Finance</a>
+            <a href="IT1.html">IT & E-Governance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="CitizenServices.html" class="dropdown-toggle" style="font-weight:bold;">Citizen Services</a>
+          <div class="dropdown-content">
+            <a href="CitizenServices.html">Citizen Services list</a>
+            <a href="PropertyTax.html">Property Tax</a>
+            <a href="#">Water Tax</a>
+            <a href="#">Vacant Land Tax</a>
+            <a href="#">Shop Lease & Rentals</a>
+            <a href="#">D & O Trade License</a>
+            <a href="#">Complaint Registration</a>
+            <a href="#"> Online Forms & Tenders</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Information</a>
+          <div class="dropdown-content">
+            <a href="Information- Population-Details.html">Population-Details</a>
+            <a href="FAQ'S.html">FAQ'S</a>
+            <a href="Right To Information.html">Right to Information</a>
+            <a href="#">Citizen's Charter Rules & Procedures</a>
+            <a href="Dail A Tanker.html">Dial a Tanker</a>
+            <a href="Grievances.html">Grievances</a>
+            <a href="#">RAY</a>
+            <a href="#">GVMC Press Notes</a>
+            <a href="#"> Photo Gallery & News</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Tenders</a>
+          <div class="dropdown-content">
+            <a href="#">Tenders & Downloads</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Contact</a>
+          <div class="dropdown-content">
+            <a href="#">Water Supply & Sewage Officers List</a>
+            <a href="#">Contacts</a>
+          </div>
+        </div>
+      </nav>
+<body>
+
+  <header>
+    <h2>Dail A Tanker</h2>
+</header>
+
+  <div class="image-container">
+    <img src="Tanker.png" alt="Tanker Info Image">
+  </div>
+  <p> Contact Numbers:</p>
+  <p> Toll Free: 180042500009</p>
+  <p>Landline: 0891-2569335, 2762876</p>
+  </body>
+  </html>
