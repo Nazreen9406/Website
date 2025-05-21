@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HRD Activities - GVMC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        a{
+            text-decoration:none;
+            color:white;
+        }
+        a:hover{
+            font-weight:bold;
+        }
+         body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+      display: flex;
+    }
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: url("GVMC logo.jpg") no-repeat center center;
+      background-size: contain;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.2;
+    }
+    .title strong {
+      color: #1a3e8b;
+      font-size: 32px;
+    }
+    .title span {
+      font-size: 18px;
+      color: #555;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav a.active {
+      color: #1a3e8b;
+      background: #e6efff;
+    }
+    nav a:hover {
+      background-color: #f0f8ff;
+      color: #1a3e8b;
+    }
+    .search-box {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 3px 6px;
+      width: 120px;
+      font-size: 14px;
+    }
+    .search-box span {
+      color: #888;
+      margin-left: 5px;
+    }
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .left-section {
+        width: 100%;
+        align-items: flex-start;
+      }
+      .search-box {
+        align-self: flex-end;
+        margin-top: 10px;
+      }
+    }
+    .slideshow-container {
+      background-size: cover;
+      width: 100%;
+      max-height: 400px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      position: relative;
+      margin-top: 20px;
+    }
+    .slide {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .slideshow-container {
+        max-height: 250px;
+      }
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      z-index: 1;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+    }
+    .dropdown-content a:hover {
+      background-color: #f0f8ff;
+    }
+    .dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content .dropdown:hover .dropdown-content {
+  display: block;
+  left: 100%;
+  top: 0;
+}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .headers {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .navbar {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .navbar button {
+            background-color: #ffa07a;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar button:hover {
+            background-color: #ff7f50;
+        }
+
+        .content {
+            max-width: 800px;
+            background: white;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #c71585;
+            font-weight: 700;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        ul li {
+            padding: 8px 0;
+            color: #007BFF;
+            border-left: 4px solid #17a2b8;
+            padding-left: 12px;
+            margin-bottom: 8px;
+            transition: background 0.3s, padding-left 0.3s;
+        }
+        ul li a{
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        ul li:hover {
+            background: #e6f7ff;
+            padding-left: 20px;
+        }
+                .tabs {
+  display: flex;
+  border-bottom: 3px solid #333;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.tab.active {
+  background: #7fae18;
+  color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+    <div class="left-section">
+      <div class="logo-title">
+        <div class="logo"></div>
+        <div class="title">
+          <strong>GVMC</strong>
+          <span style="font-family: 'Georgia', serif; font-weight: bold;">Greater Visakhapatnam Municipal Corporation</span>
+        </div>
+      </div>
+      <nav>
+        <a href="web.html" class="active" style="font-weight: bold;">Home</a>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">About Vizag</a>
+          <div class="dropdown-content">
+            <a href="Index.html">Introduction</a>
+            <a href="History.html">History</a>
+            <a href="Heritage.html">Heritage</a>
+            <a href="#"> Weather</a>
+            <a href="Industries.html">Industries</a>
+            <a href="Health.html">Health</a>
+            <a href="FunctionHalls.html">Function Halls</a>
+            <a href="Markets.html">Markets</a> 
+            <a href="Education.html">Education</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Corporation</a>
+          <div class="dropdown-content">
+            <a href="Corporation-Introduction.html">Introduction</a>
+            <a href="Corporation-Elected Wing.html">Elected wing</a>
+            <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
+            <a href="Corporation- Comissioner.html">Commissioner</a>
+            <a href="#">Awards</a>
+            <a href="#">List of Holidays</a>
+            <a href="#">Officers Seniority List</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Zones</a>
+          <div class="dropdown-content">
+            <a href="Zones.html">Organization Structure</a>
+            <div class="dropdown" style="position: relative;">
+              <a href="List of Zones.html" class="dropdown-toggle">List of Zones ▸</a>
+              <div class="dropdown-content" style="left: 100%; top: 0;">
+                <a href="#">Zone-1</a>
+                <a href="#">Zone-2</a>
+                <a href="#">Zone-3</a>
+                <a href="#">Zone-4</a>
+                <a href="#">Zone-5</a>
+                <a href="#">Zone-6</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Departments</a>
+          <div class="dropdown-content">
+            <a href="CSec.html">General Administration</a>
+            <a href=" Projects.html">Projects</a>
+            <a href="Engineering.html">Engineering</a>
+            <a href="RevDepStru.html">Revenue</a>
+            <a href="PublicHealth.html">Public Health</a>
+            <a href="TownPlanning.html">Town Planning</a>
+            <a href="Horticulture.html">Horticulture</a>
+            <a href="UCD.html">UCD</a>
+            <a href="EducationalProjects.html">Education</a>
+            <a href="Finance.html">Finance</a>
+            <a href="IT1.html">IT & E-Governance</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="CitizenServices.html" class="dropdown-toggle" style="font-weight:bold;">Citizen Services</a>
+          <div class="dropdown-content">
+            <a href="CitizenServices.html">Citizen Services list</a>
+            <a href="PropertyTax.html">Property Tax</a>
+            <a href="#">Water TAx</a>
+            <a href="#">Vacant Land Tax</a>
+            <a href="#">Shop Lease & Rentals</a>
+            <a href="#">D & O Trade License</a>
+            <a href="#">Complaint Registration</a>
+            <a href="#"> Online Forms & Tenders</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Information</a>
+          <div class="dropdown-content">
+            <a href="Information- Population-Details.html">Population-Details</a>
+            <a href="FAQ'S.html">FAQ'S</a>
+            <a href="Right To Information.html">Right to Information</a>
+            <a href="#">Citizen's Charter Rules & Procedures</a>
+            <a href="#">Dial a Tanker</a>
+            <a href="Grievances.html">Grievances</a>
+            <a href="#">RAY</a>
+            <a href="#">GVMC Press Notes</a>
+            <a href="#"> Photo Gallery & News</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Tenders</a>
+          <div class="dropdown-content">
+            <a href="#">Tenders & Downloads</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Contact</a>
+          <div class="dropdown-content">
+            <a href="#">Water Supply & Sewage Officers List</a>
+            <a href="#">Contacts</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <span>🔍</span>
+    </div>
+  </div>
+     <div class="tabs">
+    <button class="tab"><a href="web.html">Departments</a></button>
+    <button class="tab "><A href="Engineering.html">Engineering Department Structure</A></button>
+    <button class="tab"><a href="Engineering2.html">Engineering Department Pattern</a></button>
+    <button class="tab  active"><a href="Engineering3.html">Engineering Department Activities</a></button>
+  </div>
+<h3>Introduction</h3>
+<p>This department is entrusted with the overall infrastructure development of the Corporation, related to road development, water supply system, sewage system, public amenity buildings, construction and maintenance of government quarters and other public works to name a few. An executive of the cadre of Chief Engineer is responsible for this department</p>
+<H3>Activities</H3>
+<div style="display: flex;flex-wrap: wrap;justify-content: space-around;">
+<div><img src="publicworks.png">
+<figcaption>Public Works</figcaption></div>
+<div><img src="water.png">
+<figcaption>Water Supply</figcaption></div>
+<div><img src="UGD.png">
+<figcaption>UGD</figcaption></div>
+<div><img src="streetlights.png">
+<figcaption>Street Lights</figcaption></div>
+<div><img src="jnnur.png">
+<figcaption>Jnnurm</figcaption></div>
+<div><img src="sanitation.png">
+<figcaption>Sanitation</figcaption></div></div>
+</body>
+</html>
