@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>GVMC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Open Sans', Arial, sans-serif;
+      background-color: #f9f9f9; /* Subtle background color */
+      color: #333;
+      line-height: 1.6;
     }
     .header {
       justify-content: space-between;
@@ -17,8 +21,9 @@
       flex-wrap: wrap;
       display: flex;
       position: relative; 
-      z-index: 1000; 
-      overflow: visible; 
+      z-index: 1000;
+      overflow: visible;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     }
     .left-section {
       display: flex;
@@ -30,6 +35,10 @@
       display: flex;
       align-items: center;
       gap: 20px;
+      transition: transform 0.3s ease; /* For hover effect */
+    }
+    .logo-title:hover {
+      transform: scale(1.02); /* Subtle grow effect */
     }
     .logo {
       width: 80px;
@@ -46,10 +55,12 @@
     .title strong {
       color: #1a3e8b;
       font-size: 32px;
+      font-family: 'Merriweather', serif;
     }
     .title span {
       font-size: 18px;
       color: #555;
+      /* font-family: 'Georgia', serif; already applied inline, consider moving to CSS */
     }
     nav {
       display: flex;
@@ -60,34 +71,118 @@
       z-index: 1000;
     }
     nav a {
+      /* Base styling for all nav links, will be enhanced by .nav-gooey-link */
       text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      padding: 5px 10px;
+      padding: 8px 12px; /* Increased padding for better touch targets */
       border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
       cursor: pointer;
       white-space: nowrap;
+      position: relative; /* For positioning child elements */
+      z-index: 1;
+      transition: transform 0.2s ease; /* Keep the lift effect */
+      outline: none;
+      border: none; /* Gooey buttons typically don't have their own border */
+      background-color: transparent; /* Gooey buttons start transparent */
+      display: inline-block; /* Behaves better with internal spans */
     }
-    nav a.active {
-      color: #1a3e8b;
+
+    .nav-gooey-link__text {
+      position: relative;
+      z-index: 2; /* Text above blobs */
+      color: #333;
+      font-weight: 500;
+      transition: color 0.5s;
+    }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
+      color: #FFFFFF; /* White text on hover */
+    }
+
+    .nav-gooey-link:hover {
+      transform: translateY(-2px); /* Subtle lift effect */
+    }
+
+    /* Active state - overrides gooey effects */
+    nav a.active, .nav-gooey-link.active {
       background: #e6efff;
+      border-radius: 5px; /* Ensure radius is maintained */
     }
-    nav a:hover {
-      background-color: #f0f8ff;
-      color: #1a3e8b;
+    nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
+      color: #1a3e8b; /* GVMC blue text for active */
+      font-weight: bold;
     }
+    .nav-gooey-link.active .nav-gooey-link__inner {
+      display: none; /* Hide goo mechanism for active link */
+    }
+
+    /* Gooey effect styles */
+    .nav-gooey-link__inner {
+      z-index: 1; /* Behind text, above potential :after if we used it */
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px; /* Match parent's border-radius */
+      /* background: #ffffff; /* Optional: if you want a solid background behind blobs */
+    }
+
+    .nav-gooey-link__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url('#goo'); /* Apply the SVG filter */
+    }
+
+    .nav-gooey-link__blob {
+      position: absolute;
+      top: 2px; /* Small offset from top, adjust as needed */
+      width: 25%; /* 100% / 4 blobs */
+      height: 100%;
+      background: #1a3e8b; /* GVMC Blue */
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+    }
+
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link__blob {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+      }
+    }
+
+    .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
+    .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
+    .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
+    .nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+      transform: translateZ(0) scale(1.7);
+    }
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+
     .search-box {
       padding: 5px 10px;
       border: 1px solid #ccc;
       border-radius: 20px;
       display: flex;
       align-items: center;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease; /* For hover/focus effect */
+    }
+    .search-box:hover,
+    .search-box input:focus-within { /* More specific selector for focus within */
+      border-color: #1a3e8b;
+      box-shadow: 0 0 5px rgba(26, 62, 139, 0.3);
     }
     .search-box input {
       border: none;
       outline: none;
-      padding: 3px 6px;
+      padding: 5px 10px; /* Increased padding slightly */
       width: 120px;
       font-size: 14px;
     }
@@ -114,28 +209,24 @@
       }
     }
    .slideshow-container {
-  background-size: contain;     
-  background-position: center; 
-  background-repeat: no-repeat; 
-  width: 100%;
-  max-height: 400px;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  position: relative;
-  margin-top: 20px;
-  flex: 1 1 60%;
-  min-width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-    
+      width: 100%;
+      max-height: 450px; /* Slightly increased max-height */
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      position: relative;
+      margin-top: 20px;
+      flex: 1 1 60%;
+      min-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Enhanced shadow */
+    }
     .slide {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: none;
       border-radius: 8px;
+      transition: opacity 1s ease-in-out; /* Smooth transition for slides */
     }
     @media (max-width: 600px) {
       .slideshow-container {
@@ -148,49 +239,73 @@
       display: flex;
       margin-top: 20px;
       gap: 20px;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+      padding: 0 20px; /* Add some padding to the container */
     }
     .side-div {
-  flex: 1 1 25%;
-  max-width: 25%;
-  background-color: #f2f2f2;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  min-width: 200px;
-  height: fit-content;
-}
-
+      flex: 1 1 300px; /* More flexible basis */
+      background-color: #ffffff; /* White background for cards */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      min-width: 250px; /* Adjusted min-width */
+      height: fit-content; /* Ensure it only takes needed height */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+    }
+    .side-div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
     .officials {
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* background-color: #003366; */
       color: black;
-      padding: 10px;
+      padding: 15px;
       border-radius: 5px;
       margin-bottom: 10px;
+      text-align: center;
     }
     .officials img {
-  width: 235px;
-  height: auto;
-  margin: 5px;
-  border-radius: 5px;
-}
+      width: 100%;
+      max-width: 200px; /* Max width for official image */
+      height: auto;
+      margin-bottom: 10px; /* Space below image */
+      border-radius: 8px; /* Rounded corners for images */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
     .official-names {
       display: flex;
       justify-content: space-around;
       width: 100%;
       text-align: center;
-      font-size: 12px;
+      font-size: 14px; /* Slightly larger font */
+      line-height: 1.4;
     }
     .info-section {
-      margin-bottom: 15px;
+      margin-bottom: 25px; /* Increased margin */
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+    }
+    .info-section:hover {
+      transform: translateY(-3px); /* Subtle lift for info sections */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     }
     .info-section h4 {
-      color: orange;
-      margin-bottom: 5px;
-      font-size: 16px;
+      color: #d67600; /* Darker orange for better contrast */
+      margin-top: 0; /* Remove default top margin */
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-family: 'Merriweather', serif;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+    .info-section p, .info-section ul {
+      font-size: 15px;
+      color: #555;
     }
    .info-section img {
   width: 150px;
@@ -198,16 +313,42 @@
   border-radius: 5px;
   display: block;
   margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
+    .info-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .info-section ul li {
+      padding: 5px 0;
+      transition: background-color 0.3s ease; /* For hover effect on list items */
+      border-left: 3px solid transparent; /* For hover border effect */
+      padding-left: 8px; /* Space for the border */
+    }
+    .info-section ul li:hover {
+      background-color: #f0f8ff; /* Light blue background on hover */
+      border-left-color: #1a3e8b; /* Blue border on hover */
+    }
+    .info-section ul li a {
+      color: #1a3e8b;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
     .social-icons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
+      gap: 10px; /* Increased gap */
+      justify-items: center; /* Center icons in grid cells */
     }
     .social-icons img {
       width: 50px;
       height: 50px;
       object-fit: contain;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .social-icons a:hover img {
+      transform: scale(1.1);
+      opacity: 0.8;
     }
     .footer {
       background-color: #003366;
@@ -215,14 +356,23 @@
       text-align: center;
       padding: 10px;
     }
-   
+    .footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: underline;
+      transition: color 0.3s ease, opacity 0.3s ease;
+    }
+    .footer a:hover {
+      color: #add8e6; /* Light blue on hover */
+      opacity: 0.8;
+    }
     .dropdown {
       position: relative;
       display: inline-block;
-      z-index: 2000; 
+      z-index: 2000;
     }
     .dropdown-content {
-      display: none;
+      /* display: none; Rely on opacity and visibility for initial hidden state */
       position: absolute;
       background-color: #fff;
       min-width: 160px;
@@ -233,6 +383,10 @@
       left: 0;
       z-index: 3000;
       white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
     .dropdown-content a {
       color: #333;
@@ -240,12 +394,54 @@
       text-decoration: none;
       display: block;
       font-weight: normal;
+      position: relative; /* For ::after positioning */
+      z-index: 1;         /* Ensure text is above ::after */
+      overflow: hidden;   /* Clip the ::after element */
+      transition: color 0.3s ease; /* Smooth text color change */
     }
+
+    .dropdown-content a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0; /* Start with no width */
+      height: 100%;
+      background-color: #1a3e8b; /* GVMC Blue for the fill effect */
+      transition: width 0.3s ease;
+      z-index: -1; /* Behind the text */
+    }
+
     .dropdown-content a:hover {
-      background-color: #f0f8ff;
+      /* background-color: #f0f8ff; /* This is now handled by the ::after pseudo-element */
+      color: #fff; /* Text color changes to white on hover */
     }
-    .dropdown.open .dropdown-content {
-      display: block;
+
+    .dropdown-content a:hover::after {
+      width: 100%; /* Expand pseudo-element to full width on hover */
+    }
+    /* .dropdown.open .dropdown-content { REMOVED - .open class logic is being replaced by hover */
+      /* display: block; */
+    /* } */
+    .dropdown:hover > .dropdown-content { /* Show dropdown on hover */
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Main content area specific styling */
+    .main-content-area {
+      flex: 1 1 65%; /* Adjust flex properties */
+      min-width: 300px;
+      padding-right: 20px; /* Add some space between slideshow and side-div if they are side by side */
+    }
+    @media (max-width: 992px) { /* Adjust breakpoint as needed */
+      .main-content-area { padding-right: 0; }
+    }
+
+    /* Ensure dropdown toggle text remains bold */
+    .dropdown-toggle .nav-gooey-link__text {
+      font-weight: bold;
     }
   </style>
 </head>
@@ -260,9 +456,23 @@
         </div>
       </div>
       <nav>
-        <a href="#" class="active" style="font-weight: bold;">Home</a>
+        <a href="#" class="nav-gooey-link active">
+          <span class="nav-gooey-link__text">Home</span>
+          <span class="nav-gooey-link__inner">
+            <span class="nav-gooey-link__blobs">
+              <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+            </span>
+          </span>
+        </a>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">About Vizag</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">About Vizag</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Index.html">Introduction</a>
             <a href="History.html">History</a>
@@ -276,36 +486,57 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Corporation</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Corporation</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Corporation-Introduction.html">Introduction</a>
             <a href="Corporation-Elected Wing.html">Elected wing</a>
             <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
             <a href="Corporation- Comissioner.html">Commissioner</a>
-            <a href="#">Awards</a>
-            <a href="#">List of Holidays</a>
-            <a href="#">Officers Seniority List</a>
+            <a href="Awards.html">Awards</a>
+            <a href="Holidays.html">List of Holidays</a>
+            <a href="Officers.html">Officers Seniority List</a>
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Zones</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Zones</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Zones.html">Organization Structure</a>
             <div class="dropdown" style="position: relative;">
               <a href="List of Zones.html" class="dropdown-toggle">List of Zones ▸</a>
               <div class="dropdown-content" style="left: 100%; top: 0;">
-                <a href="#">Zone-1</a>
-                <a href="#">Zone-2</a>
-                <a href="#">Zone-3</a>
-                <a href="#">Zone-4</a>
-                <a href="#">Zone-5</a>
-                <a href="#">Zone-6</a>
+                <a href="Zone1.html">Zone-1</a>
+                <a href="Zone2.html">Zone-2</a>
+                <a href="Zone3.html">Zone-3</a>
+                <a href="Zone4.html">Zone-4</a>
+                <a href="Zone5.html">Zone-5</a>
+                <a href="Zone6.html">Zone-6</a>
               </div>
             </div>
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Departments</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Departments</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="CSec.html">General Administration</a>
             <a href=" Projects.html">Projects</a>
@@ -321,7 +552,14 @@
           </div>
         </div>
         <div class="dropdown">
-           <a href="CitizenServices.html" class="dropdown-toggle" style="font-weight:bold;">Citizen Services</a>
+           <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Citizen Services</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="CitizenServices.html">Citizen Services list</a>
             <a href="PropertyTax.html">Property Tax</a>
@@ -334,30 +572,51 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Information</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Information</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Information- Population-Details.html">Population-Details</a>
             <a href="FAQ'S.html">FAQ'S</a>
             <a href="Right To Information.html">Right to Information</a>
-            <a href="#">Citizen's Charter Rules & Procedures</a>
+            <a href="Citizen.html">Citizen's Charter Rules & Procedures</a>
             <a href="Dail A Tanker.html">Dial a Tanker</a>
             <a href="Grievances.html">Grievances</a>
-            <a href="#">RAY</a>
-            <a href="#">GVMC Press Notes</a>
-            <a href="#"> Photo Gallery & News</a>
+            <a href="RAY.html">RAY</a>
+            <a href="PressNote.html">GVMC Press Notes</a>
+            <a href="PhotoGallery.html"> Photo Gallery & News</a>
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Tenders</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Tenders</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
-            <a href="#">Tenders & Downloads</a>
+            <a href="Tenders.html">Tenders & Downloads</a>
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Contact</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Contact</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
-            <a href="#">Water Supply & Sewage Officers List</a>
-            <a href="#">Contacts</a>
+            <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
+            <a href="#Contacts.html">Contacts</a>
           </div>
         </div>
       </nav>
@@ -368,14 +627,20 @@
     </div>
   </div>
 <div class="container">
-  <div style="flex: 1 1 70%; min-width: 300px;">
+  <div class="main-content-area">
     <div class="slideshow-container">
       <img class="slide" src="Building.png" alt="Slide 1" />
+      <img class="slide" src="v1.jpg" alt="Slide 2" />
+    <img class="slide" src="v2.jpg" alt="Slide 3" />
+    <img class="slide" src="v3.jpg" alt="Slide 4" />
+    <img class="slide" src="v4.jpg" alt="Slide 5" />
     </div>
-    <div class="info-section">
-      <h4>Welcome</h4>
+    <div class="info-section" style="margin-top: 20px;"> <!-- Added margin-top -->
+      <h4>
+        <marquee behavior="scroll" direction="left" scrollamount="5"><a href="#" style="color: inherit; text-decoration: none;"><span style="color:red;">Welcome</span> to<span style="color:blue;"> Greater Visakhapatnam Municipal Corporation Official Website</span></a></marquee>
+      </h4>
       <p>
-        Welcome to the Greater Visakhapatnam Municipal Corporation (GVMC). We are dedicated to improving the quality of life for all citizens of Visakhapatnam by providing transparent, accountable, and citizen-friendly services.
+        Call Centre Numbers - 0891-2569335, IVRS Number - 180042500009; Dial a Tanker - 2762876
       </p>
     </div>
     <div class="info-section">
@@ -399,7 +664,7 @@
 
     <div class="info-section">
       <h4>General Information</h4>
-      <img src="SB.jpg" alt="Swachh Bharat" />
+      <img src="SB.jpg" alt="Swachh Bharat" style="width: 100%; max-width: 200px;" /> <!-- Adjusted image size -->
     </div>
 
     <div class="info-section">
@@ -418,13 +683,16 @@
     </div>
   </div>
 </div>
->
+
   <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll(".slide");
     function showSlide(index) {
       slides.forEach((slide, i) => {
-        slide.style.display = i === index ? "block" : "none";
+        // slide.style.display = i === index ? "block" : "none"; // Replaced by opacity
+        slide.style.opacity = i === index ? 1 : 0;
+        slide.style.position = i === index ? 'relative' : 'absolute';
+        slide.style.visibility = i === index ? 'visible' : 'hidden';
       });
     }
     function nextSlide() {
@@ -432,42 +700,29 @@
       showSlide(currentSlide);
     }
     showSlide(currentSlide);
+    // Initialize all slides for opacity transition
+    slides.forEach(slide => {
+        slide.style.display = 'block'; // Make them block for opacity to work over each other
+    });
     setInterval(nextSlide, 3000);
-
-    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-    dropdownToggles.forEach((toggle) => {
-      toggle.addEventListener("click", function (e) {
-        e.preventDefault();
-        const parent = this.parentElement;
-        document.querySelectorAll(".dropdown").forEach((drop) => {
-          if (drop !== parent) {
-            drop.classList.remove("open");
-          }
-        });
-        parent.classList.toggle("open");
-      });
-    });
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".dropdown")) {
-        document.querySelectorAll(".dropdown").forEach((drop) =>
-          drop.classList.remove("open")
-        );
-      }
-    });
-  </script>
-    ...
-  </div> 
-
+  </script> 
   <div class="footer">
+    <p>&copy; 2024 Greater Visakhapatnam Municipal Corporation. All Rights Reserved.</p>
     <div>
-      <a href="Bottom-Contacts.html" style="color: white; margin: 0 10px; text-decoration: underline;">Contacts</a> | 
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: underline;">Privacy Policy</a> | 
+      <a href="Bottom-Contacts.html">Contacts</a> |
+      <a href="#">Privacy Policy</a> |
       <span>Visitors Count: 0</span>
     </div>
   </div>
+  <!-- SVG Goo Filter Definition -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
+        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+      </filter>
+    </defs>
+  </svg>
 </body>
 </html>
-
-</body>
-</html>
-
