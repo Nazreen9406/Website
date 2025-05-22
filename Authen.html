@@ -2,26 +2,288 @@
 <html lang="en">
 <head>
     <STYLE>
-        a{
+        /* Base link styles (kept minimal to avoid conflicts) */
+        a {
             text-decoration:none;
-            color:white;
+            /* Generic color and font-weight on hover removed to allow component-specific styling */
         }
-        a:hover{
-            font-weight:bold;
-        }
-        
-        body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-}
 
-.header {
-  background: #004080;
-  color: white;
+        /* General body styles */
+        body {
+          font-family: 'Open Sans', Arial, sans-serif; /* Using imported Open Sans */
+          background-color: #f9f9f9; /* Consistent background */
+          color: #333; /* Consistent text color */
+          line-height: 1.6; /* Consistent line height */
+          margin: 0;
+          padding: 0;
+        }
+
+    /* Styles for the main GVMC header (copied from web.html header) */
+    .header {
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+      display: flex;
+      position: relative; 
+      z-index: 1000;
+      overflow: visible;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    }
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: transform 0.3s ease; /* For hover effect */
+    }
+    .logo-title:hover {
+      transform: scale(1.02); /* Subtle grow effect */
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: url("GVMC logo.jpg") no-repeat center center;
+      background-size: contain;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.2;
+    }
+    .title strong {
+      color: #1a3e8b;
+      font-size: 32px;
+      font-family: 'Merriweather', serif;
+    }
+    .title span {
+      font-size: 18px;
+      color: #555;
+      /* font-family: 'Georgia', serif; already applied inline, consider moving to CSS */
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1000;
+    }
+    nav a {
+      /* Base styling for all nav links, will be enhanced by .nav-gooey-link */
+      text-decoration: none;
+      padding: 8px 12px; /* Increased padding for better touch targets */
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      position: relative; /* For positioning child elements */
+      z-index: 1;
+      transition: transform 0.2s ease; /* Keep the lift effect */
+      outline: none;
+      border: none; /* Gooey buttons typically don't have their own border */
+      background-color: transparent; /* Gooey buttons start transparent */
+      display: inline-block; /* Behaves better with internal spans */
+    }
+
+    .nav-gooey-link__text {
+      position: relative;
+      z-index: 2; /* Text above blobs */
+      color: #333;
+      font-weight: 500;
+      transition: color 0.5s;
+    }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
+      color: #FFFFFF; /* White text on hover */
+    }
+
+    .nav-gooey-link:hover {
+      transform: translateY(-2px); /* Subtle lift effect */
+    }
+
+    /* Active state - overrides gooey effects */
+    nav a.active, .nav-gooey-link.active {
+      background: #e6efff;
+      border-radius: 5px; /* Ensure radius is maintained */
+    }
+    nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
+      color: #1a3e8b; /* GVMC blue text for active */
+      font-weight: bold;
+    }
+    .nav-gooey-link.active .nav-gooey-link__inner {
+      display: none; /* Hide goo mechanism for active link */
+    }
+
+    /* Gooey effect styles */
+    .nav-gooey-link__inner {
+      z-index: 1; /* Behind text, above potential :after if we used it */
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px; /* Match parent's border-radius */
+    }
+
+    .nav-gooey-link__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url('#goo'); /* Apply the SVG filter */
+    }
+
+    .nav-gooey-link__blob {
+      position: absolute;
+      top: 2px; /* Small offset from top, adjust as needed */
+      width: 25%; /* 100% / 4 blobs */
+      height: 100%;
+      background: #1a3e8b; /* GVMC Blue */
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+    }
+
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link__blob {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+      }
+    }
+
+    .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
+    nav a .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
+    nav a .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
+    nav a .nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+      transform: translateZ(0) scale(1.7);
+    }
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+
+    .search-box {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease; /* For hover/focus effect */
+    }
+    .search-box:hover,
+    .search-box input:focus-within { /* More specific selector for focus within */
+      border-color: #1a3e8b;
+      box-shadow: 0 0 5px rgba(26, 62, 139, 0.3);
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 5px 10px; /* Increased padding slightly */
+      width: 120px;
+      font-size: 14px;
+    }
+    .search-box span {
+      color: #888;
+      margin-left: 5px;
+    }
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .left-section {
+        width: 100%;
+        align-items: flex-start;
+      }
+      .search-box {
+        align-self: flex-end;
+        margin-top: 10px;
+      }
+      nav {
+        width: 100%;
+      }
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      z-index: 2000;
+    }
+    .dropdown-content {
+      position: absolute;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      z-index: 3000;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+      position: relative; /* For ::after positioning */
+      z-index: 1;         /* Ensure text is above ::after */
+      overflow: hidden;   /* Clip the ::after element */
+      transition: color 0.3s ease, font-size 0.3s ease; /* Smooth text color and font-size change */
+    }
+
+    .dropdown-content a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0; /* Start with no width */
+      height: 100%;
+      background-color: #D6EAF8; /* Lighter shade of blue for the fill effect */
+      transition: width 0.3s ease;
+      z-index: -1; /* Behind the text */
+    }
+
+    .dropdown-content a:hover {
+      color: #1a3e8b; /* GVMC primary blue for text on hover */
+      font-size: 1.05em; /* Slightly increase font size on hover */
+    }
+
+    .dropdown-content a:hover::after {
+      width: 100%; /* Expand pseudo-element to full width on hover */
+    }
+    .dropdown:hover > .dropdown-content { /* Show dropdown on hover */
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    /* Ensure dropdown toggle text remains bold */
+    .dropdown-toggle .nav-gooey-link__text {
+      font-weight: bold;
+    }
+    /* End of styles copied from web.html header */
+
+/* Added padding-top to main content to prevent it from being hidden by fixed header */
+.main-content {
+  flex: 1;
+  background: white;
   padding: 20px;
-  text-align: center;
+  padding-top: 120px; /* Adjust based on header height */
 }
 
 .container {
@@ -35,6 +297,11 @@
   padding: 20px;
   height: 100vh;
   box-sizing: border-box;
+}
+
+.sidebar ul li a { /* Ensuring sidebar links are white */
+    color: white;
+    display: block; /* Optional: makes the whole li area more clickable if padding is on 'a' */
 }
 
 .sidebar h3 {
@@ -65,11 +332,6 @@
   border-radius: 5px;
 }
 
-.main-content {
-  flex: 1;
-  background: white;
-  padding: 20px;
-}
 
 .breadcrumb {
   font-size: 14px;
@@ -81,15 +343,12 @@
   text-decoration: none;
 }
 
-.title {
+.page-section-title { /* Renamed from .title to avoid conflict with header's .title */
   color: red;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-p {
-  line-height: 1.6;
-}
 .imgsec{
     margin-top:5%;
     display:flex;
@@ -98,44 +357,231 @@ p {
 }
     </STYLE>
   <meta charset="UTF-8">
-  <title>Education</title>
+  <title>GVMC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="header">
-    <h1>IT & Governance</h1>
+    <div class="left-section">
+      <div class="logo-title">
+        <div class="logo"></div>
+        <div class="title">
+          <strong>GVMC</strong>
+          <span style="font-family: 'Georgia', serif; font-weight: bold;">Greater Visakhapatnam Municipal Corporation</span>
+        </div>
+      </div>
+      <nav>
+        <a href="web.html" class="nav-gooey-link">
+          <span class="nav-gooey-link__text">Home</span>
+          <span class="nav-gooey-link__inner">
+            <span class="nav-gooey-link__blobs">
+              <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+            </span>
+          </span>
+        </a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">About Vizag</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Index.html">Introduction</a>
+            <a href="History.html">History</a>
+            <a href="Heritage.html">Heritage</a>
+            <a href="https://mausam.imd.gov.in/visakhapatnam/"> Weather</a>
+            <a href="Industries.html">Industries</a>
+            <a href="Health.html">Health</a>
+            <a href="FunctionHalls.html">Function Halls</a>
+            <a href="Markets.html">Markets</a> 
+            <a href="Education.html">Education</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Corporation</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Corporation-Introduction.html">Introduction</a>
+            <a href="Corporation-Elected Wing.html">Elected wing</a>
+            <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
+            <a href="Corporation- Comissioner.html">Commissioner</a>
+            <a href="Awards.html">Awards</a>
+            <a href="Holidays.html">List of Holidays</a>
+            <a href="Officers.html">Officers Seniority List</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Zones</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Zones.html">Organization Structure</a>
+            <div class="dropdown" style="position: relative;">
+              <a href="List of Zones.html" class="dropdown-toggle">List of Zones ▸</a>
+              <div class="dropdown-content" style="left: 100%; top: 0;">
+                <a href="Zone1.html">Zone-1</a>
+                <a href="Zone2.html">Zone-2</a>
+                <a href="Zone3.html">Zone-3</a>
+                <a href="Zone4.html">Zone-4</a>
+                <a href="Zone5.html">Zone-5</a>
+                <a href="Zone6.html">Zone-6</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link active">
+            <span class="nav-gooey-link__text">Departments</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="CSec.html">General Administration</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Engineering.html">Engineering</a>
+            <a href="RevDepStru.html">Revenue</a>
+            <a href="PublicHealth.html">Public Health</a>
+            <a href="TownPlanning.html">Town Planning</a>
+            <a href="Horticulture.html">Horticulture</a>
+            <a href="UCD.html">UCD</a>
+            <a href="EducationalProjects.html">Education</a>
+            <a href="Finance.html">Finance</a>
+            <a href="IT1.html">IT & E-Governance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+           <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Citizen Services</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="CitizenServices.html">Citizen Services list</a>
+            <a href="PropertyTax.html">Property Tax</a>
+            <a href="https://cdma.ap.gov.in/en/water-charges">Water TAx</a>
+            <a href="https://cdma.ap.gov.in/en/vacant-land-tax">Vacant Land Tax</a>
+            <a href="https://cdma.ap.gov.in/en/lamspayments">Shop Lease & Rentals</a>
+            <a href="https://cdma.ap.gov.in/en/issue-trade-licenses">D & O Trade License</a>
+            <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
+            <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Information</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Information- Population-Details.html">Population-Details</a>
+            <a href="FAQ'S.html">FAQ'S</a>
+            <a href="Right To Information.html">Right to Information</a>
+            <a href="Citizen.html">Citizen's Charter Rules & Procedures</a>
+            <a href="Dail A Tanker.html">Dial a Tanker</a>
+            <a href="Grievances.html">Grievances</a>
+            <a href="RAY.html">RAY</a>
+            <a href="PressNote.html">GVMC Press Notes</a>
+            <a href="PhotoGallery.html"> Photo Gallery & News</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Tenders</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Tenders.html">Tenders & Downloads</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Contact</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
+            <a href="#Contacts.html">Contacts</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <span>🔍</span>
+    </div>
   </div>
+
+  <!-- SVG Goo Filter Definition -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
+        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+
  
   <div class="container">
     <div class="sidebar">
       <h3>Departments</h3>
       <ul>
-        <li><A HREF ="CSec.html">General Administration</A></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Engineering</a></li>
-        <li><a href="#">Revenue</a></li>
-        <li><a href="#">Public Health</a></li>
-        <li><a href="#">Town Planning</a></li>
-        <li><a href="#">Horticulture</a></li>
-        <li><a href="#">UCD</a></li>
+        <li><a href ="CSec.html">General Administration</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="Engineering.html">Engineering</a></li>
+        <li><a href="RevDepStru.html">Revenue</a></li>
+        <li><a href="PublicHealth.html">Public Health</a></li>
+        <li><a href="TownPlanning.html">Town Planning</a></li>
+        <li><a href="Horticulture.html">Horticulture</a></li>
+        <li><a href="UCD.html">UCD</a></li>
         <li><a href="EducationalProjects.html">Education</a></li>
-         <li><a href="#">Finance</a></li>
-          <li><a href="IT1.html">IT & E-Governance</a></li>
-
+        <li><a href="Finance.html">Finance</a></li>
+        <li><a href="IT1.html">IT & E-Governance</a></li>
       </ul>
     </div>
 
  <div class="main-content">
       <div class="breadcrumb">
-        <A HREF ="web.html">Home</A> >
-         <a href="Departmentes.html">Departments</a>>  <A href="IT1.html">IT Governance</A></div>
-      <h2 class="title"><A href="IT1.html" style="color:inherit">It & E-Governance Structure |</A>
-        <span><a href="IT2.htnl" class="l"style="color:inherit">  It & E-Governance Activities</a></span>
-        <span><a href="Authen.htnl" class="l"style="color:inherit"> | Authentication Statements </a></span>
+        <a href ="web.html">Home</a> >
+         <a href="Departmentes.html">Departments</a> > <a href="IT1.html">IT Governance</a></div>
+      <h2 class="page-section-title"><a href="IT1.html" style="color:inherit">It & E-Governance Structure |</a>
+        <span><a href="IT2.html" style="color:inherit">  It & E-Governance Activities</a></span>
+        <span><a href="Authen.html" style="color:inherit"> | Authentication Statements </a></span>
     </h2>
         <h3>Authentication Statements</h3>
-        <P>This would include the areas where the citizens need the certificates of authentication from competent authorities in government like the copy of land records, registration of sale and property deeds, birth/death Certificates, and various other permissions required under various acts of the state and central and local self governments. The principle here is that the process of sorting, calculating and reading through a huge database is best done by a machine and should be done so..</P><BR>
-        
-        
+        <p>This would include the areas where the citizens need the certificates of authentication from competent authorities in government like the copy of land records, registration of sale and property deeds, birth/death Certificates, and various other permissions required under various acts of the state and central and local self governments. The principle here is that the process of sorting, calculating and reading through a huge database is best done by a machine and should be done so..</p>
       </div>
 </body>
 </html>

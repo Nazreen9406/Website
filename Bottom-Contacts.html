@@ -2,48 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Vizag Corporation</title>
-   <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 40px;
-        background-color: #f9f9f9;
-    }
-    h1 {
-        text-align: center;
-        color: rgb(7, 45, 214);
-        
-    }
+    <title>GVMC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Styles copied from web.html header */
+        body {
+            margin: 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+            background-color: #f9f9f9; /* Subtle background color */
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            flex-wrap: wrap;
+            display: flex;
+            position: relative;
+            z-index: 1000;
+            overflow: visible;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        }
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s ease; /* For hover effect */
+        }
+        .logo-title:hover {
+            transform: scale(1.02); /* Subtle grow effect */
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: url("GVMC logo.jpg") no-repeat center center;
+            background-size: contain;
+        }
+        .title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1.2;
+        }
+        .title strong {
+            color: #1a3e8b;
+            font-size: 32px;
+            font-family: 'Merriweather', serif;
+        }
+        .title span {
+            font-size: 18px;
+            color: #555;
+            /* font-family: 'Georgia', serif; already applied inline, consider moving to CSS */
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1000;
+        }
+        nav a {
+            /* Base styling for all nav links */
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.2s ease;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            display: inline-block;
+            color: #333;
+            font-weight: 500;
+        }
 
-    .home-button {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        background-color: #87b8ec;
-        color: white;
-        padding: 10px 16px;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-    .home-button:hover {
-        background-color: #516d8a;
-    }
-    p, b {
-        margin: 12px 0;
-        line-height: 1.6;
-    }
-    p {
-        text-align: center;
-    }
-  </style>
+        nav a:hover {
+            transform: translateY(-2px); /* Subtle lift effect */
+            color: #1a3e8b;
+        }
+
+        nav a.active {
+            background: #e6efff;
+            border-radius: 5px;
+            color: #1a3e8b;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<header><a href="web.html" class="home-button"> Home</a></header>
 <body>
-   
-    <h1> Contacts</h1>
-    <p>Call Centre Number:- 0891-2569335</p><br>
-    <p> IVRS Number:- 180042500009</p><br>
-    <p> Dial a Tanker:- 2762876</p>
-    </body>
-    </html>
+<div class="header">
+    <div class="left-section">
+        <div class="logo-title">
+            <div class="logo"></div>
+            <div class="title">
+                <strong>GVMC</strong>
+                <span style="font-family: 'Georgia', serif; font-weight: bold;">Greater Visakhapatnam Municipal Corporation</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="web.html" class="active">Home</a>
+        </nav>
+    </div>
+
+    </div>
