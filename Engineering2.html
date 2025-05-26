@@ -533,7 +533,7 @@ tr:nth-child(even) {
 }
 .side-div-zones {
       flex: 0 0 220px;
-      background: #181a1b;
+      background:black;
       color: #fff;
       padding: 25px 18px;
       border-radius: 10px;
@@ -579,10 +579,12 @@ tr:nth-child(even) {
       font-weight: 500;
       border-left: none;
     }
-    .side-div-zones a:hover {
-      background: #23272b;
-      color: #ffd700;
+    .side-div-zones a:hover,
+    .side-div-zones a.active {
+      background: b;
+      color: yellow;
       padding-left: 18px;
+      font-weight: bold;
     }
     /* Remove inherited ul/li styles for sidebar only */
     .side-div-zones ul li {
