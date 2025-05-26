@@ -24,6 +24,10 @@
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
       display: flex;
+      position: relative;
+      z-index: 1000;
+      overflow: visible;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .left-section {
       display: flex;
@@ -35,6 +39,10 @@
       display: flex;
       align-items: center;
       gap: 20px;
+      transition: transform 0.3s ease;
+    }
+    .logo-title:hover {
+      transform: scale(1.02);
     }
     .logo {
       width: 80px;
@@ -51,6 +59,7 @@
     .title strong {
       color: #1a3e8b;
       font-size: 32px;
+      font-family: 'Merriweather', serif;
     }
     .title span {
       font-size: 18px;
@@ -61,20 +70,32 @@
       gap: 15px;
       margin-top: 10px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 1000;
     }
     nav a {
       text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.2s ease;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      display: inline-block;
       color: #333;
       font-weight: 500;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
     }
     nav a.active {
-      color: #1a3e8b;
       background: #e6efff;
+      color: #1a3e8b;
+      font-weight: bold;
     }
     nav a:hover {
+      transform: translateY(-2px);
       background-color: #f0f8ff;
       color: #1a3e8b;
     }
@@ -84,11 +105,17 @@
       border-radius: 20px;
       display: flex;
       align-items: center;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .search-box:hover,
+    .search-box input:focus-within {
+      border-color: #1a3e8b;
+      box-shadow: 0 0 5px rgba(26, 62, 139, 0.3);
     }
     .search-box input {
       border: none;
       outline: none;
-      padding: 3px 6px;
+      padding: 5px 10px;
       width: 120px;
       font-size: 14px;
     }
@@ -109,6 +136,9 @@
       .search-box {
         align-self: flex-end;
         margin-top: 10px;
+      }
+      nav {
+        width: 100%;
       }
     }
     .slideshow-container {
@@ -258,6 +288,181 @@
   background: #7fae18;
   color: white;
 }
+    .side-div-zones {
+      flex: 0 0 220px;
+      background: #181a1b;
+      color: #fff;
+      padding: 25px 18px;
+      border-radius: 10px;
+      min-width: 180px;
+      max-width: 260px;
+      height: fit-content;
+      margin-right: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .side-div-zones h4 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 8px;
+      width: 100%;
+      font-family: 'Merriweather', serif;
+    }
+    .side-div-zones ul {
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+      margin: 0;
+    }
+    .side-div-zones li {
+      margin-bottom: 10px;
+      width: 100%;
+      border: none;
+      padding: 0;
+      background: none;
+    }
+    .side-div-zones a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      padding: 7px 10px;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s, padding-left 0.2s;
+      font-weight: 500;
+      border-left: none;
+    }
+    .side-div-zones a:hover {
+      background: #23272b;
+      color: #ffd700;
+      padding-left: 18px;
+    }
+    /* Remove inherited ul/li styles for sidebar only */
+    .side-div-zones ul li {
+      color: inherit;
+      border-left: none;
+      padding-left: 0;
+      background: none;
+      transition: none;
+    }
+    .side-div-zones ul li:hover {
+      background: none;
+      padding-left: 0;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
+    }
+    /* Gooey nav effect styles from web.html */
+.nav-gooey-link__text {
+  position: relative;
+  z-index: 2;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.5s;
+}
+.nav-gooey-link:not(.active):hover .nav-gooey-link__text {
+  color: #FFFFFF;
+}
+.nav-gooey-link:hover {
+  transform: translateY(-2px);
+}
+nav a.active, .nav-gooey-link.active {
+  background: #e6efff;
+  border-radius: 5px;
+}
+nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
+  color: #1a3e8b;
+  font-weight: bold;
+}
+.nav-gooey-link.active .nav-gooey-link__inner {
+  display: none;
+}
+.nav-gooey-link__inner {
+  z-index: 1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.nav-gooey-link__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url('#goo');
+}
+.nav-gooey-link__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #1a3e8b;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+@supports (filter: url('#goo')) {
+  .nav-gooey-link__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+.nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
+.nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
+.nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
+.nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
+.nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+  transform: translateZ(0) scale(1.7);
+}
+@supports (filter: url('#goo')) {
+  .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
+.engineering-img-container {
+  position: relative;
+  display: inline-block;
+  max-width: 600px;
+  width: 100%;
+}
+.engineering-img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: block;
+}
+.engineering-img-hover-text {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: rgba(26,62,139,0.7);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  text-align: center;
+  padding: 20px;
+}
+.engineering-img-container:hover .engineering-img {
+  opacity: 0.4;
+}
+.engineering-img-container:hover .engineering-img-hover-text {
+  opacity: 1;
+}
     </style>
 </head>
 <body>
@@ -271,59 +476,92 @@
         </div>
       </div>
       <nav>
-        <a href="web.html" class="active" style="font-weight: bold;">Home</a>
-
+        <a href="web.html" class="nav-gooey-link active">
+          <span class="nav-gooey-link__text">Home</span>
+          <span class="nav-gooey-link__inner">
+            <span class="nav-gooey-link__blobs">
+              <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+            </span>
+          </span>
+        </a>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">About Vizag</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">About Vizag</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Index.html">Introduction</a>
             <a href="History.html">History</a>
             <a href="Heritage.html">Heritage</a>
-            <a href="#"> Weather</a>
+            <a href="https://mausam.imd.gov.in/visakhapatnam/"> Weather</a>
             <a href="Industries.html">Industries</a>
             <a href="Health.html">Health</a>
             <a href="FunctionHalls.html">Function Halls</a>
-            <a href="Markets.html">Markets</a> 
+            <a href="Markets.html">Markets</a>
             <a href="Education.html">Education</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Corporation</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Corporation</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Corporation-Introduction.html">Introduction</a>
             <a href="Corporation-Elected Wing.html">Elected wing</a>
             <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
             <a href="Corporation- Comissioner.html">Commissioner</a>
-            <a href="#">Awards</a>
-            <a href="#">List of Holidays</a>
-            <a href="#">Officers Seniority List</a>
+            <a href="Awards.html">Awards</a>
+            <a href="Holidays.html">List of Holidays</a>
+            <a href="Officers.html">Officers Seniority List</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Zones</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Zones</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Zones.html">Organization Structure</a>
             <div class="dropdown" style="position: relative;">
               <a href="List of Zones.html" class="dropdown-toggle">List of Zones ▸</a>
               <div class="dropdown-content" style="left: 100%; top: 0;">
-                <a href="#">Zone-1</a>
-                <a href="#">Zone-2</a>
-                <a href="#">Zone-3</a>
-                <a href="#">Zone-4</a>
-                <a href="#">Zone-5</a>
-                <a href="#">Zone-6</a>
+                <a href="Zone1.html">Zone-1</a>
+                <a href="Zone2.html">Zone-2</a>
+                <a href="Zone3.html">Zone-3</a>
+                <a href="Zone4.html">Zone-4</a>
+                <a href="Zone5.html">Zone-5</a>
+                <a href="Zone6.html">Zone-6</a>
+                <a href="Zone7.html">Zone-7</a>
+                <a href="Zone8.html">Zone-8</a>
               </div>
             </div>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Departments</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Departments</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="CSec.html">General Administration</a>
-            <a href=" Projects.html">Projects</a>
+            <a href="Projects.html">Projects</a>
             <a href="Engineering.html">Engineering</a>
             <a href="RevDepStru.html">Revenue</a>
             <a href="PublicHealth.html">Public Health</a>
@@ -335,49 +573,72 @@
             <a href="IT1.html">IT & E-Governance</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="CitizenServices.html" class="dropdown-toggle" style="font-weight:bold;">Citizen Services</a>
-          <a href="CitizenServices.html" class="dropdown-toggle" style="font-weight:bold;">Citizen Services</a>
+          <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Citizen Services</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="CitizenServices.html">Citizen Services list</a>
-            <a href="PropertyTax.html">Property Tax</a>
-            <a href="https://cdma.ap.gov.in/en/water-charges">Water TAx</a>
-            <a href="https://cdma.ap.gov.in/en/vacant-land-tax">Vacant Land Tax</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Property Tax</a>
+            <a href="https://cdma.ap.gov.in/en/wcpayments">Water TAx</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
             <a href="https://cdma.ap.gov.in/en/lamspayments">Shop Lease & Rentals</a>
-            <a href="https://cdma.ap.gov.in/en/issue-trade-licenses">D & O Trade License</a>
+            <a href="https://cdma.ap.gov.in/en/tlpayments">D & O Trade License</a>
             <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
             <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Information</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Information</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Information- Population-Details.html">Population-Details</a>
             <a href="FAQ'S.html">FAQ'S</a>
             <a href="Right To Information.html">Right to Information</a>
-            <a href="#">Citizen's Charter Rules & Procedures</a>
-            <a href="#">Dial a Tanker</a>
+            <a href="Citizen.html">Citizen's Charter Rules & Procedures</a>
+            <a href="Dail A Tanker.html">Dial a Tanker</a>
             <a href="Grievances.html">Grievances</a>
-            <a href="#">RAY</a>
-            <a href="#">GVMC Press Notes</a>
-            <a href="#"> Photo Gallery & News</a>
+            <a href="RAY.html">RAY</a>
+            <a href="PressNote.html">GVMC Press Notes</a>
+            <a href="PhotoGallery.html"> Photo Gallery & News</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Tenders</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Tenders</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
-            <a href="#">Tenders & Downloads</a>
+            <a href="Tenders.html">Tenders & Downloads</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Contact</a>
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Contact</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
-            <a href="#">Water Supply & Sewage Officers List</a>
-            <a href="#">Contacts</a>
+            <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
+            <a href="Bottom-Contacts.html">Contacts</a>
           </div>
         </div>
       </nav>
@@ -387,14 +648,44 @@
       <span>🔍</span>
     </div>
   </div>
-     <div class="tabs">
-    <button class="tab"><a href="web.html">Departments</a></button>
-    <button class="tab active "><A href="Engineering.html">Engineering Department Structure</A></button>
-    <button class="tab"><a href="Engineering2.html">Engineering Department Pattern</a></button>
-    <button class="tab"><a href="Engineering3.html">Engineering Department Activities</a></button>
-    
-    
-  </div>
-  <img src="eng1.jpg">
+    <div style="display: flex; flex-direction: row; gap: 32px; align-items: flex-start; margin-top: 0;">
+      <div class="side-div-zones">
+        <h4>Departments</h4>
+        <ul>
+          <li><a href="CSec.html">General Administration</a></li>
+          <li><a href="Projects.html">Projects</a></li>
+          <li><a href="Engineering.html" style="background:#23272b; color:#ffd700; padding-left:18px;">Engineering</a></li>
+          <li><a href="RevDepStru.html">Revenue</a></li>
+          <li><a href="PublicHealth.html">Public Health</a></li>
+          <li><a href="TownPlanning.html">Town Planning</a></li>
+          <li><a href="Horticulture.html">Horticulture</a></li>
+          <li><a href="UCD.html">UCD</a></li>
+          <li><a href="EducationalProjects.html">Education</a></li>
+          <li><a href="Finance.html">Finance</a></li>
+          <li><a href="IT1.html">IT & E-Governance</a></li>
+        </ul>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 8px;">
+        <div class="tabs">
+          <button class="tab active"><a href="Engineering.html">Engineering Department Structure</a></button>
+          <button class="tab"><a href="Engineering2.html">Engineering Department Pattern</a></button>
+          <button class="tab"><a href="Engineering3.html">Engineering Department Activities</a></button>
+        </div>
+        <div class="engineering-img-container">
+          <img src="eng1.jpg" class="engineering-img" alt="Engineering Department Structure">
+          <div class="engineering-img-hover-text">GVMC Engineering Department Structure</div>
+        </div>
+      </div>
+    </div>
+    <!-- SVG Goo Filter Definition -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
+        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+      </filter>
+    </defs>
+  </svg>
 </body>
 </html>

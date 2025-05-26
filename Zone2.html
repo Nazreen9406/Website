@@ -213,6 +213,65 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       margin: 20px;
     }
+    .container {
+      display: flex;
+      margin-top: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+    .side-div-zones {
+      flex: 0 0 220px;
+      background: #181a1b;
+      color: #fff;
+      padding: 25px 18px;
+      border-radius: 10px;
+      min-width: 180px;
+      max-width: 260px;
+      height: fit-content;
+      margin-right: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .side-div-zones h4 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 8px;
+      width: 100%;
+      font-family: 'Merriweather', serif;
+    }
+    .side-div-zones ul {
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+    }
+    .side-div-zones li {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .side-div-zones a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      padding: 7px 10px;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s, padding-left 0.2s;
+      font-weight: 500;
+    }
+    .side-div-zones a:hover {
+      background: #23272b;
+      color: #ffd700;
+      padding-left: 18px;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
+    }
     </style>
 </head>
 <body>
@@ -294,6 +353,8 @@
                 <a href="Zone4.html">Zone-4</a>
                 <a href="Zone5.html">Zone-5</a>
                 <a href="Zone6.html">Zone-6</a>
+                <a href="Zone7.html">Zone-7</a>
+                <a href="Zone8.html">Zone-8</a>
               </div>
             </div>
           </div>
@@ -334,9 +395,9 @@
             <a href="CitizenServices.html">Citizen Services list</a>
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Property Tax</a>
             <a href="https://cdma.ap.gov.in/en/wcpayments">Water TAx</a>
-            <a href="https://cdma.ap.gov.in/en/vacant-land-tax">Vacant Land Tax</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
             <a href="https://cdma.ap.gov.in/en/lamspayments">Shop Lease & Rentals</a>
-            <a href="https://cdma.ap.gov.in/en/issue-trade-licenses">D & O Trade License</a>
+            <a href="https://cdma.ap.gov.in/en/tlpayments">D & O Trade License</a>
             <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
             <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
           </div>
@@ -397,10 +458,27 @@
     </div>
   </div>
 
-  <div class="zone-content">
-    <h1>Zone 2</h1>
-    <p>Welcome to the Zone-2 page of Greater Visakhapatnam Municipal Corporation.</p>
-    <!-- Add more content specific to Zone-1 here -->
+  <div class="container">
+    <div class="side-div-zones">
+      <h4>Zones & Sub-Zones</h4>
+      <ul>
+        <li><a href="Zones.html">Organization Structure</a></li>
+        <li><a href="Zone1.html">Zone-1</a></li>
+        <li><a href="Zone2.html">Zone-2</a></li>
+        <li><a href="Zone3.html">Zone-3</a></li>
+        <li><a href="Zone4.html">Zone-4</a></li>
+        <li><a href="Zone5.html">Zone-5</a></li>
+        <li><a href="Zone6.html">Zone-6</a></li>
+        <li><a href="Zone7.html">Zone-7</a></li>
+        <li><a href="Zone8.html">Zone-8</a></li>
+      </ul>
+    </div>
+
+    <div class="zone-content">
+      <h1>Zone 2 -- Madhurwada</h1>
+      <p>Welcome to the Zone-2 page of Greater Visakhapatnam Municipal Corporation.</p>
+      <!-- Add more content specific to Zone-1 here -->
+    </div>
   </div>
 
   <!-- SVG Gooey Filter for navigation effect -->
