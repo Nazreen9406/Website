@@ -4,8 +4,413 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    .header {
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+      display: flex;
+      position: relative;
+      z-index: 1000;
+      overflow: visible;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+    .logo-title:hover {
+      transform: scale(1.02);
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: url("GVMC logo.jpg") no-repeat center center;
+      background-size: contain;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.2;
+    }
+    .title strong {
+      color: #1a3e8b;
+      font-size: 32px;
+      font-family: 'Merriweather', serif;
+    }
+    .title span {
+      font-size: 18px;
+      color: #555;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.2s ease;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      display: inline-block;
+    }
+    .nav-gooey-link__text {
+      position: relative;
+      z-index: 2;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.5s;
+    }
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
+      color: #FFFFFF;
+    }
+    .nav-gooey-link:hover {
+      transform: translateY(-2px);
+    }
+    nav a.active, .nav-gooey-link.active {
+      background: #e6efff;
+      border-radius: 5px;
+    }
+    nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
+      color: #1a3e8b;
+      font-weight: bold;
+    }
+    .nav-gooey-link.active .nav-gooey-link__inner {
+      display: none;
+    }
+    .nav-gooey-link__inner {
+      z-index: 1;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      pointer-events: none;
+    }
+    .nav-gooey-link__blobs {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: url('#goo');
+      z-index: 0;
+    }
+    .nav-gooey-link__blob {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 25%;
+      height: 100%;
+      background: #1a3e8b;
+      border-radius: 50%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+    }
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link__blob {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+      }
+    }
+    .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
+    .nav-gooey-link__blob:nth-child(2) { left: 25%; transition-delay: 0.08s; }
+    .nav-gooey-link__blob:nth-child(3) { left: 50%; transition-delay: 0.16s; }
+    .nav-gooey-link__blob:nth-child(4) { left: 75%; transition-delay: 0.24s; }
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+      transform: translateY(0) scale(1.4);
+    }
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-toggle {
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: rgba(26,62,139,0.1);
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .search-box {
+      position: relative;
+    }
+    .search-box input {
+      padding: 10px 40px 10px 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 300px;
+      transition: width 0.4s ease;
+    }
+    .search-box input:focus {
+      width: 400px;
+      border-color: #1a3e8b;
+      outline: none;
+    }
+    .search-box span {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #aaa;
+    }
+    .zone-content {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 20px;
+    }
+    </style>
 </head>
 <body>
-    
+  <div class="header">
+    <div class="left-section">
+      <div class="logo-title">
+        <div class="logo"></div>
+        <div class="title">
+          <strong>GVMC</strong>
+          <span style="font-family: 'Georgia', serif; font-weight: bold;">Greater Visakhapatnam Municipal Corporation</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#" class="nav-gooey-link active">
+          <span class="nav-gooey-link__text">Home</span>
+          <span class="nav-gooey-link__inner">
+            <span class="nav-gooey-link__blobs">
+              <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+            </span>
+          </span>
+        </a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">About Vizag</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Index.html">Introduction</a>
+            <a href="History.html">History</a>
+            <a href="Heritage.html">Heritage</a>
+            <a href="https://mausam.imd.gov.in/visakhapatnam/"> Weather</a>
+            <a href="Industries.html">Industries</a>
+            <a href="Health.html">Health</a>
+            <a href="FunctionHalls.html">Function Halls</a>
+            <a href="Markets.html">Markets</a> 
+            <a href="Education.html">Education</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Corporation</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Corporation-Introduction.html">Introduction</a>
+            <a href="Corporation-Elected Wing.html">Elected wing</a>
+            <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
+            <a href="Corporation- Comissioner.html">Commissioner</a>
+            <a href="Awards.html">Awards</a>
+            <a href="Holidays.html">List of Holidays</a>
+            <a href="Officers.html">Officers Seniority List</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Zones</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Zones.html">Organization Structure</a>
+            <div class="dropdown" style="position: relative;">
+              <a href="List of Zones.html" class="dropdown-toggle">List of Zones ▸</a>
+              <div class="dropdown-content" style="left: 100%; top: 0;">
+                <a href="Zone1.html">Zone-1</a>
+                <a href="Zone2.html">Zone-2</a>
+                <a href="Zone3.html">Zone-3</a>
+                <a href="Zone4.html">Zone-4</a>
+                <a href="Zone5.html">Zone-5</a>
+                <a href="Zone6.html">Zone-6</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Departments</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="CSec.html">General Administration</a>
+            <a href=" Projects.html">Projects</a>
+            <a href="Engineering.html">Engineering</a>
+            <a href="RevDepStru.html">Revenue</a>
+            <a href="PublicHealth.html">Public Health</a>
+            <a href="TownPlanning.html">Town Planning</a>
+            <a href="Horticulture.html">Horticulture</a>
+            <a href="UCD.html">UCD</a>
+            <a href="EducationalProjects.html">Education</a>
+            <a href="Finance.html">Finance</a>
+            <a href="IT1.html">IT & E-Governance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+           <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Citizen Services</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="CitizenServices.html">Citizen Services list</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Property Tax</a>
+            <a href="https://cdma.ap.gov.in/en/wcpayments">Water TAx</a>
+            <a href="https://cdma.ap.gov.in/en/vacant-land-tax">Vacant Land Tax</a>
+            <a href="https://cdma.ap.gov.in/en/lamspayments">Shop Lease & Rentals</a>
+            <a href="https://cdma.ap.gov.in/en/issue-trade-licenses">D & O Trade License</a>
+            <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
+            <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Information</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Information- Population-Details.html">Population-Details</a>
+            <a href="FAQ'S.html">FAQ'S</a>
+            <a href="Right To Information.html">Right to Information</a>
+            <a href="Citizen.html">Citizen's Charter Rules & Procedures</a>
+            <a href="Dail A Tanker.html">Dial a Tanker</a>
+            <a href="Grievances.html">Grievances</a>
+            <a href="RAY.html">RAY</a>
+            <a href="PressNote.html">GVMC Press Notes</a>
+            <a href="PhotoGallery.html"> Photo Gallery & News</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Tenders</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="Tenders.html">Tenders & Downloads</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Contact</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
+            <a href="#Contacts.html">Contacts</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <span>🔍</span>
+    </div>
+  </div>
+
+  <div class="zone-content">
+    <h1>Zone 3</h1>
+    <p>Welcome to the Zone-3 page of Greater Visakhapatnam Municipal Corporation.</p>
+    <!-- Add more content specific to Zone-1 here -->
+  </div>
+
+  <!-- SVG Gooey Filter for navigation effect -->
+  <svg width="0" height="0">
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </svg>
+
 </body>
 </html>
