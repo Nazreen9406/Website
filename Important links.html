@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Open Sans', Arial, sans-serif;
-      background-color: #f9f9f9; /* Subtle background color */
+      background-color: #f9f9f9;
       color: #333;
       line-height: 1.6;
     }
@@ -23,7 +23,7 @@
       position: relative; 
       z-index: 1000;
       overflow: visible;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .left-section {
       display: flex;
@@ -35,10 +35,10 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      transition: transform 0.3s ease; /* For hover effect */
+      transition: transform 0.3s ease;
     }
     .logo-title:hover {
-      transform: scale(1.02); /* Subtle grow effect */
+      transform: scale(1.02);
     }
     .logo {
       width: 80px;
@@ -60,7 +60,6 @@
     .title span {
       font-size: 18px;
       color: #555;
-
     }
     nav {
       display: flex;
@@ -71,92 +70,78 @@
       z-index: 1000;
     }
     nav a {
-      /* Base styling for all nav links, will be enhanced by .nav-gooey-link */
       text-decoration: none;
-      padding: 8px 12px; /* Increased padding for better touch targets */
+      padding: 8px 12px;
       border-radius: 5px;
       cursor: pointer;
       white-space: nowrap;
-      position: relative; /* For positioning child elements */
+      position: relative;
       z-index: 1;
-      transition: transform 0.2s ease; /* Keep the lift effect */
+      transition: transform 0.2s ease;
       outline: none;
-      border: none; /* Gooey buttons typically don't have their own border */
-      background-color: transparent; /* Gooey buttons start transparent */
-      display: inline-block; /* Behaves better with internal spans */
+      border: none;
+      background-color: transparent;
+      display: inline-block;
     }
-
     .nav-gooey-link__text {
       position: relative;
-      z-index: 2; /* Text above blobs */
+      z-index: 2;
       color: #333;
       font-weight: 500;
       transition: color 0.5s;
     }
-
     .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
-      color: #FFFFFF; /* White text on hover */
+      color: #FFFFFF;
     }
-
     .nav-gooey-link:hover {
-      transform: translateY(-2px); /* Subtle lift effect */
+      transform: translateY(-2px);
     }
-
-    /* Active state - overrides gooey effects */
     nav a.active, .nav-gooey-link.active {
       background: #e6efff;
-      border-radius: 5px; /* Ensure radius is maintained */
+      border-radius: 5px;
     }
     nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
-      color: #1a3e8b; /* GVMC blue text for active */
+      color: #1a3e8b;
       font-weight: bold;
     }
     .nav-gooey-link.active .nav-gooey-link__inner {
-      display: none; /* Hide goo mechanism for active link */
+      display: none;
     }
-
-    /* Gooey effect styles */
     .nav-gooey-link__inner {
-      z-index: 1; /* Behind text, above potential :after if we used it */
+      z-index: 1;
       overflow: hidden;
       position: absolute;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      border-radius: 5px; /* Match parent's border-radius */
-      /* background: #ffffff; /* Optional: if you want a solid background behind blobs */
+      border-radius: 5px;
     }
-
     .nav-gooey-link__blobs {
       position: relative;
       display: block;
       height: 100%;
-      filter: url('#goo'); /* Apply the SVG filter */
+      filter: url('#goo');
     }
-
     .nav-gooey-link__blob {
       position: absolute;
-      top: 2px; /* Small offset from top, adjust as needed */
-      width: 25%; /* 100% / 4 blobs */
+      top: 2px;
+      width: 25%;
       height: 100%;
-      background: #1a3e8b; /* GVMC Blue */
+      background: #1a3e8b;
       border-radius: 100%;
       transform: translate3d(0, 150%, 0) scale(1.7);
       transition: transform 0.45s;
     }
-
     @supports (filter: url('#goo')) {
       .nav-gooey-link__blob {
         transform: translate3d(0, 150%, 0) scale(1.4);
       }
     }
-
     .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
     .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
     .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
     .nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
-
     .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
       transform: translateZ(0) scale(1.7);
     }
@@ -165,24 +150,23 @@
         transform: translateZ(0) scale(1.4);
       }
     }
-
     .search-box {
       padding: 5px 10px;
       border: 1px solid #ccc;
       border-radius: 20px;
       display: flex;
       align-items: center;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease; /* For hover/focus effect */
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     .search-box:hover,
-    .search-box input:focus-within { /* More specific selector for focus within */
+    .search-box input:focus-within {
       border-color: #1a3e8b;
       box-shadow: 0 0 5px rgba(26, 62, 139, 0.3);
     }
     .search-box input {
       border: none;
       outline: none;
-      padding: 5px 10px; /* Increased padding slightly */
+      padding: 5px 10px;
       width: 120px;
       font-size: 14px;
     }
@@ -207,147 +191,6 @@
       nav {
         width: 100%;
       }
-    }
-   .slideshow-container {
-      width: 100%;
-      max-height: 450px; /* Slightly increased max-height */
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      position: relative;
-      margin-top: 20px;
-      flex: 1 1 60%;
-      min-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Enhanced shadow */
-    }
-    .slide {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none;
-      border-radius: 8px;
-      transition: opacity 1s ease-in-out; /* Smooth transition for slides */
-    }
-    @media (max-width: 600px) {
-      .slideshow-container {
-        max-height: 250px;
-        width: 100%;
-        flex: none;
-      }
-    }
-    .container {
-      display: flex;
-      margin-top: 20px;
-      gap: 20px;
-      flex-wrap: wrap; /* Ensure wrapping on smaller screens */
-      padding: 0 20px; /* Add some padding to the container */
-    }
-    .side-div {
-      flex: 1 1 300px; /* More flexible basis */
-      background-color: #ffffff; /* White background for cards */
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      min-width: 250px; /* Adjusted min-width */
-      height: fit-content; /* Ensure it only takes needed height */
-      transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    }
-    .side-div:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    .officials {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: black;
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .officials img {
-      width: 100%;
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 10px; 
-      border-radius: 8px; 
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .official-names {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .info-section {
-      margin-bottom: 25px; 
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    }
-    .info-section:hover {
-      transform: translateY(-3px); 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    }
-    .info-section h4 {
-      color: #d67600; 
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 18px;
-      font-family: 'Merriweather', serif;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 8px;
-    }
-    .info-section p, .info-section ul {
-      font-size: 15px;
-      color: #555;
-    }
-   .info-section img {
-  width: 150px;
-  height: auto;
-  border-radius: 5px;
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-    .info-section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .info-section ul li {
-      padding: 5px 0;
-      transition: background-color 0.3s ease; 
-      padding-left: 8px; 
-    }
-    .info-section ul li:hover {
-      background-color: #f0f8ff; 
-      border-left-color: #1a3e8b; 
-    }
-    .info-section ul li a {
-      color: #1a3e8b;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .social-icons {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px; /* Increased gap */
-      justify-items: center; /* Center icons in grid cells */
-    }
-    .social-icons img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .social-icons a:hover img {
-      transform: scale(1.1);
-      opacity: 0.8;
     }
     .footer {
       background-color: #003366;
@@ -397,7 +240,6 @@
       overflow: hidden;  
       transition: color 0.3s ease; 
     }
-    
     .dropdown-content a::after {
       content: "";
       position: absolute;
@@ -409,22 +251,17 @@
       transition: width 0.3s ease;
       z-index: -1; 
     }
-
     .dropdown-content a:hover {
       color: #fff; 
     }
-
     .dropdown-content a:hover::after {
       width: 100%;
     }
-    
     .dropdown:hover > .dropdown-content { 
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
     }
-
-   
     .main-content-area {
       flex: 1 1 65%; 
       min-width: 300px;
@@ -433,10 +270,67 @@
     @media (max-width: 992px) { 
       .main-content-area { padding-right: 0; }
     }
-
-  
     .dropdown-toggle .nav-gooey-link__text {
       font-weight: bold;
+    }
+    .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 20px); /* 3 cards in a row with gap accounted */
+  background: #1a3e8b;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+  word-break: break-word;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+  background-color: #2a4d8b; 
+}
+
+.card a {
+  color: #add8e6;
+  text-decoration: underline;
+  word-break: break-word;
+  transition: color 0.3s ease; 
+}
+
+.card a:hover {
+  color: #e0ebff;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+    .card h4 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .card p {
+      margin: 0;
+      font-size: 16px;
+    }
+    .card-container a {
+      color: #add8e6; 
+      text-decoration: underline; 
+    }
+    .card-container a:hover {
+      color: #e0ebff; 
+      text-decoration: none; 
     }
   </style>
 </head>
@@ -444,7 +338,7 @@
   <div class="header">
     <div class="left-section">
       <div class="logo-title">
-        <div class="logo"></div>
+        <div class="logo" role="img" aria-label="GVMC Logo"></div>
         <div class="title">
           <strong>GVMC</strong>
           <span style="font-family: 'Georgia', serif; font-weight: bold;">Greater Visakhapatnam Municipal Corporation</span>
@@ -472,7 +366,7 @@
             <a href="Index.html">Introduction</a>
             <a href="History.html">History</a>
             <a href="Heritage.html">Heritage</a>
-            <a href="https://mausam.imd.gov.in/visakhapatnam/"> Weather</a>
+            <a href="https://mausam.imd.gov.in/visakhapatnam/">Weather</a>
             <a href="Industries.html">Industries</a>
             <a href="Health.html">Health</a>
             <a href="FunctionHalls.html">Function Halls</a>
@@ -491,9 +385,9 @@
           </a>
           <div class="dropdown-content">
             <a href="Corporation-Introduction.html">Introduction</a>
-            <a href="Corporation-Elected Wing.html">Elected wing</a>
-            <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
-            <a href="Corporation- Comissioner.html">Commissioner</a>
+            <a href="Corporation-Elected Wing.html">Elected Wing</a>
+            <a href="Corporation-Adminstrator Wing.html">Administrative Wing</a>
+            <a href="Corporation-Comissioner.html">Commissioner</a>
             <a href="Awards.html">Awards</a>
             <a href="Holidays.html">List of Holidays</a>
             <a href="Officers.html">Officers Seniority List</a>
@@ -534,7 +428,7 @@
           </a>
           <div class="dropdown-content">
             <a href="CSec.html">General Administration</a>
-            <a href=" Projects.html">Projects</a>
+            <a href="Projects.html">Projects</a>
             <a href="Engineering.html">Engineering</a>
             <a href="RevDepStru.html">Revenue</a>
             <a href="PublicHealth.html">Public Health</a>
@@ -547,7 +441,7 @@
           </div>
         </div>
         <div class="dropdown">
-           <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+          <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Citizen Services</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -556,14 +450,14 @@
             </span>
           </a>
           <div class="dropdown-content">
-            <a href="CitizenServices.html">Citizen Services list</a>
-            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Property Tax</a>
-            <a href="https://visakhapatnam.emunicipal.ap.gov.in/wtms/search/waterSearch/">Water TAx</a>
-            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
-            <a href="https://visakhapatnam.emunicipal.ap.gov.in/lams-web/app/citizen/search-agreement/citizen-search.html">Shop Lease & Rentals</a>
-            <a href="https://cdma.ap.gov.in/en/tlpayments">D & O Trade License</a>
-            <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
-            <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
+            <a href="CitizenServices.html">Citizen Services List</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button" target="_blank" rel="noopener noreferrer">Property Tax</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/wtms/search/waterSearch/" target="_blank" rel="noopener noreferrer">Water Tax</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button" target="_blank" rel="noopener noreferrer">Vacant Land Tax</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/lams-web/app/citizen/search-agreement/citizen-search.html" target="_blank" rel="noopener noreferrer">Shop Lease & Rentals</a>
+            <a href="https://cdma.ap.gov.in/en/tlpayments" target="_blank" rel="noopener noreferrer">D & O Trade License</a>
+            <a href="https://cdma.ap.gov.in/en/complaintregistration" target="_blank" rel="noopener noreferrer">Complaint Registration</a>
+            <a href="https://etenders.gov.in/eprocure/app" target="_blank" rel="noopener noreferrer">Online Forms & Tenders</a>
           </div>
         </div>
         <div class="dropdown">
@@ -576,15 +470,15 @@
             </span>
           </a>
           <div class="dropdown-content">
-            <a href="Information- Population-Details.html">Population-Details</a>
-            <a href="FAQ'S.html">FAQ'S</a>
+            <a href="Information-Population-Details.html">Population Details</a>
+            <a href="FAQ'S.html">FAQ's</a>
             <a href="Right To Information.html">Right to Information</a>
             <a href="Citizen.html">Citizen's Charter Rules & Procedures</a>
-            <a href="Dail A Tanker.html">Dial a Tanker</a>
+            <a href="Dial A Tanker.html">Dial a Tanker</a>
             <a href="Grievances.html">Grievances</a>
             <a href="RAY.html">RAY</a>
             <a href="PressNote.html">GVMC Press Notes</a>
-            <a href="PhotoGallery.html"> Photo Gallery & News</a>
+            <a href="PhotoGallery.html">Photo Gallery & News</a>
           </div>
         </div>
         <div class="dropdown">
@@ -611,7 +505,6 @@
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
-            
             <a href="#Contacts.html">Contacts</a>
           </div>
         </div>
@@ -622,110 +515,34 @@
       <span>🔍</span>
     </div>
   </div>
-<div class="container">
-  <div class="main-content-area">
-    <div class="slideshow-container">
-      <img class="slide" src="Building.png" alt="Slide 1" />
-      <img class="slide" src="img1.jpg" alt="Slide 2" />
-    <img class="slide" src="img4.webp" alt="Slide 3" />
-    <img class="slide" src="img2.jpg" alt="Slide 4" />
-    <img class="slide" src="v4.jpg" alt="Slide 5" />
-    <img class="slide" src="img4.jpg" alt="Slide 6" />
+
+  <div class="card-container" aria-label="Important contacts">
+    <div class="card">
+      <h4>Blood Bank</h4>
+      <p><a href="https://www.google.com/maps/place/Blood+Bank,+KGH/@17.7085835,83.3047026,17z/data=!3m1!4b1!4m6!3m5!1s0x3a39430fdd8f176b:0xfce595f0206dd607!8m2!3d17.7085835!4d83.3047026!16s%2Fg%2F11b6syt0rg?entry=ttu&g_ep=EgoyMDI1MDUxNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Blood Bank Details (KGH)</a></p>
+      <p><a href="https://www.google.com/maps/place/A.+S.+Raja+Voluntary+Blood+Bank/@17.7202888,83.3104758,17z/data=!3m1!4b1!4m6!3m5!1s0x3a3943156f3605a3:0x1bc2e9333b02d7d8!8m2!3d17.7202888!4d83.3130507!16s%2Fg%2F1tdzdds9?entry=ttu&g_ep=EgoyMDI1MDUxNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Blood Bank Details (A. S. Raja Voluntary)</a></p>
     </div>
-    <div class="info-section" style="margin-top: 20px;">
-      <h4>
-        <marquee behavior="scroll" direction="left" scrollamount="5"><a href="#" style="color: inherit; text-decoration: none;"><span style="color:red;">Welcome</span> to<span style="color:blue;"> Greater Visakhapatnam Municipal Corporation Official Website</span></a></marquee>
-      </h4>
-      <p>
-        Call Centre Numbers - 0891-2569335, IVRS Number - 180042500009; Dial a Tanker - 2762876
-      </p>
+    <div class="card">
+      <h4>Fire Station</h4>
+      <p><a href="fire.pdf" target="_blank" rel="noopener noreferrer">Fire Station Details</a></p>
     </div>
-    <div class="info-section">
-      <h4>E-News letters</h4>
-      <ul>
-        <li><a href="#">Newsletter - April 2025</a></li>
-        <li><a href="#">Updates - March 2025</a></li>
-        <li><a href="#">Commissioner's Note - Feb 2025</a></li>
-      </ul>
+    <div class="card">
+      <h4>APEPDCL</h4>
+      <p><a href="https://www.apeasternpower.com/contactsNew?type=VSP" target="_blank" rel="noopener noreferrer">APEPDCL Official Website</a></p>
     </div>
-  </div>
-  <div class="side-div">
-    <div class="officials">
-      <img src="collector.webp" alt="Sri Hari Narayanan" />
-      <div class="official-names">
-        <div>
-          <strong>Sri<br />Hari Narayanan<br />I.A.S.<br />Commissioner i/c</strong>
-        </div>
+    <div class="card">
+      <h4>Police</h4>
+      <p><a href="https://vizagcitypolice.gov.in/vspcontacts.aspx" target="_blank" rel="noopener noreferrer">Vizag City Police Contacts</a></p>
+    </div>
+    <div class="card">
+      <h4>Ambulance</h4>
+      <p>108  : Ambulance Contact</p>
       </div>
+      <div class="card">
+        <h4>APSRTC</h4>
+        <p><a href="https://www.apsrtconline.in/oprs-web/guest/home.do?h=1" target="_blank" rel="noopener noreferrer">APSRTC Online Services</a></p>
     </div>
 
-    <div class="info-section">
-      <h4>General Information</h4>
-      <img src="SB.jpg" alt="Swachh Bharat" style="width: 100%; max-width: 200px;" /> 
-    </div>
-
-    <div class="info-section">
-      <h4>Social Media & APP's</h4>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/GVMC.VISAKHA/" target="_blank">
-          <img src="facebook-logo-png-3.png" alt="Facebook" />
-        </a>
-        <a href="https://twitter.com/gvmc" target="_blank">
-          <img src="x logo.jpg" alt="X" />
-        </a>
-        <a href="https://www.instagram.com/gvmc_visakhapatnam/" target="_blank">
-          <img src="ig.jpg" alt="Instagram" />
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.opacity = i === index ? 1 : 0;
-        slide.style.position = i === index ? 'relative' : 'absolute';
-        slide.style.visibility = i === index ? 'visible' : 'hidden';
-      });
-    }
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-    showSlide(currentSlide);
-    slides.forEach(slide => {
-        slide.style.display = 'block'; 
-    });
-    setInterval(nextSlide, 3000);
-  </script> 
-<div class="footer">
-  <p>&copy; <span id="year"></span> Greater Visakhapatnam Municipal Corporation. All Rights Reserved.</p>
-  <div>
-    <a href="Bottom-Contacts.html">Contacts</a> |
-    <a href="#">Privacy Policy</a> |
-    <span>Visitors Count: 0</span> |
-    <span><strong><a href="Important links.html">Important Links:</strong> 
-   
-    </span>
-  </div>
-</div>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
-    <defs>
-      <filter id="goo">
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
-        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-      </filter>
-    </defs>
-  </svg>
 </body>
 </html>
+
