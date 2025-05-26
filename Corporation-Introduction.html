@@ -59,7 +59,6 @@
     .title span {
       font-size: 18px;
       color: #555;
-      /* font-family: 'Georgia', serif; already applied inline, consider moving to CSS */
     }
     nav {
       display: flex;
@@ -70,7 +69,6 @@
       z-index: 1000;
     }
     nav a {
-      /* Base styling for all nav links, will be enhanced by .nav-gooey-link */
       text-decoration: none;
       padding: 8px 12px; /* Increased padding for better touch targets */
       border-radius: 5px;
@@ -84,7 +82,6 @@
       background-color: transparent; /* Gooey buttons start transparent */
       display: inline-block; /* Behaves better with internal spans */
     }
-
     .nav-gooey-link__text {
       position: relative;
       z-index: 2; /* Text above blobs */
@@ -92,16 +89,12 @@
       font-weight: 500;
       transition: color 0.5s;
     }
-
     .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
       color: #FFFFFF; /* White text on hover */
     }
-
     .nav-gooey-link:hover {
       transform: translateY(-2px); /* Subtle lift effect */
     }
-
-    /* Active state - overrides gooey effects */
     nav a.active, .nav-gooey-link.active {
       background: #e6efff;
       border-radius: 5px; /* Ensure radius is maintained */
@@ -113,7 +106,6 @@
     .nav-gooey-link.active .nav-gooey-link__inner {
       display: none; /* Hide goo mechanism for active link */
     }
-/* Gooey effect styles */
     .nav-gooey-link__inner {
       z-index: 1; /* Behind text, above potential :after if we used it */
       overflow: hidden;
@@ -123,15 +115,12 @@
       width: 100%;
       height: 100%;
       border-radius: 5px; 
-    }
-
-    .nav-gooey-link__blobs {
+    }    .nav-gooey-link__blobs {
       position: relative;
       display: block;
       height: 100%;
       filter: url('#goo'); /* Apply the SVG filter */
     }
-
     .nav-gooey-link__blob {
       position: absolute;
       top: 2px; /* Small offset from top, adjust as needed */
@@ -142,13 +131,11 @@
       transform: translate3d(0, 150%, 0) scale(1.7);
       transition: transform 0.45s;
     }
-
     @supports (filter: url('#goo')) {
       .nav-gooey-link__blob {
         transform: translate3d(0, 150%, 0) scale(1.4);
       }
     }
-
     .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
     .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
     .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
@@ -162,7 +149,6 @@
         transform: translateZ(0) scale(1.4);
       }
     }
-
     .search-box {
       padding: 5px 10px;
       border: 1px solid #ccc;
@@ -205,7 +191,7 @@
         width: 100%;
       }
     }
-    .footer {
+  .footer {
       background-color: #003366;
       color: white;
       text-align: center;
@@ -221,6 +207,23 @@
       color: #add8e6; 
       opacity: 0.8;
     }
+    .page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Take up available vertical space */
+}
+
+footer {
+  background-color: #23272b;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
     .dropdown {
       position: relative;
       display: inline-block;
@@ -253,7 +256,6 @@
       overflow: hidden;  
       transition: color 0.3s ease; 
     }
-    
     .dropdown-content a::after {
       content: "";
       position: absolute;
@@ -264,23 +266,17 @@
       background-color: #1a3e8b; 
       transition: width 0.3s ease;
       z-index: -1; 
-    }
-
-    .dropdown-content a:hover {
+    }    .dropdown-content a:hover {
       color: #fff; 
     }
-
     .dropdown-content a:hover::after {
       width: 100%;
     }
-    
     .dropdown:hover > .dropdown-content { 
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
     }
-
-   
     .main-content-area {
       flex: 1 1 65%; 
       min-width: 300px;
@@ -289,14 +285,175 @@
     @media (max-width: 992px) { 
       .main-content-area { padding-right: 0; }
     }
-
-  
     .dropdown-toggle .nav-gooey-link__text {
       font-weight: bold;
     }
+ .side-div-zones {
+      flex: 0 0 220px;
+      background: #181a1b;
+      color: #fff;
+      padding: 25px 18px;
+      border-radius: 10px;
+      min-width: 180px;
+      max-width: 260px;
+      height: fit-content;
+      margin-right: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .side-div-zones h4 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 8px;
+      width: 100%;
+      font-family: 'Merriweather', serif;
+    }
+    .side-div-zones ul {
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+    }
+    .side-div-zones li {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .side-div-zones a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      padding: 7px 10px;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s, padding-left 0.2s;
+      font-weight: 500;
+    }
+    .side-div-zones a:hover {
+      background: #23272b;
+      color: #ffd700;
+      padding-left: 18px;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
+    }
+    footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* match actual height */
+  background-color: #333;
+  color: #fff;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Take up available vertical space */
+}
+.footer {
+  background-color: #23272b;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+.nav-gooey-link__text {
+      position: relative;
+      z-index: 2; /* Text above blobs */
+      color: #333;
+      font-weight: 500;
+      transition: color 0.5s;
+    }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
+      color: #FFFFFF; /* White text on hover */
+    }
+
+    .nav-gooey-link:hover {
+      transform: translateY(-2px); /* Subtle lift effect */
+    }
+
+    /* Active state - overrides gooey effects */
+    nav a.active, .nav-gooey-link.active {
+      background: #e6efff;
+      border-radius: 5px; /* Ensure radius is maintained */
+    }
+    nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
+      color: #1a3e8b; /* GVMC blue text for active */
+      font-weight: bold;
+    }
+    .nav-gooey-link.active .nav-gooey-link__inner {
+      display: none; /* Hide goo mechanism for active link */
+    }
+
+    /* Gooey effect styles */
+    .nav-gooey-link__inner {
+      z-index: 1; /* Behind text, above potential :after if we used it */
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px; /* Match parent's border-radius */
+      /* background: #ffffff; /* Optional: if you want a solid background behind blobs */
+    }
+
+    .nav-gooey-link__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url('#goo'); /* Apply the SVG filter */
+    }
+
+    .nav-gooey-link__blob {
+      position: absolute;
+      top: 2px; /* Small offset from top, adjust as needed */
+      width: 25%; /* 100% / 4 blobs */
+      height: 100%;
+      background: #1a3e8b; /* GVMC Blue */
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+    }
+
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link__blob {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+      }
+    }
+
+    .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
+    .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
+    .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
+    .nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+      transform: translateZ(0) scale(1.7);
+    }
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+
+
+
 </style>
 </head>
 <body>
+  <div class="page-container">
     <div class="header">
     <div class="left-section">
       <div class="logo-title">
@@ -306,7 +463,7 @@
           <span style="font-family: 'Georgia', serif; font-weight: bold;">Greater Visakhapatnam Municipal Corporation</span>
         </div>
       </div>
-          <nav>
+         <nav>
         <a href="#" class="nav-gooey-link active">
           <span class="nav-gooey-link__text">Home</span>
           <span class="nav-gooey-link__inner">
@@ -480,7 +637,20 @@
       <span>🔍</span>
     </div>
   </div>
-
+  <div style="display: flex; flex-direction: row; gap: 32px; align-items: flex-start; margin-top: 0;">
+    <div class="side-div-zones">
+      <h4>Corporation</h4>
+      <ul>
+        <li><a href="Corporation-Introduction.html" style="background:#23272b; color:#ffd700; padding-left:18px;">Corporation -Introduction</a></li>
+        <li><a href="Corporation-Elected Wing.html">Elected wing</a></li>
+        <li><a href="Corporation-Administration  Wing.html">Administration Wing</a></li>
+        <li><a href="Corporation- Comissioner.html">Commissioner</a></li>
+        <li><a href="Awards">Awards</a></li>
+        <li><a href="Holidays">List of Holidays</a></li>
+        <li><a href="Officers">Officers Seniority List</a></li>
+      </ul>
+    </div>
+  <div class="main-content">
 <h2>About Vizag Corporation</h2>
 
 <p>The Vizag (Visakhapatnam) Municipality Was Set up as early as in <b>1858.</b> The Vizag (Visakhapatnam) Municipality Was Formed in order to fulfill the basic infrastructural needs of the people of the city and was converted into Municipal Corporation in <b>1979</b>.</p>
@@ -507,17 +677,8 @@
           <p>Greater Visakha has finally arrived. The areas of the earstwhile Visakhapatnam Municipal Corporation along with the Gajuwaka Municipality and 32 villages (includes few Panchayats) that will now be governed under Greater Visakha Municipal Corporation (GVMC). GVMC came into existance after the Government of Andhra Pradesh released the Government Order (GO) on<b> November 21, 2005.</b> The High Court has earlier dismissed some cases against the merger of some villages into the Greater Visakha. A subsequent notification has put the total number of wards in the region to <b>72</b>.</p>
 
           With the inclusion of the Gajuwaka Municipality, Greater Visakha will have a large industrial base. Major industries such as the Visakhapatnam Steel Plant, the Bharat Heavy Plate and Vessels and the Hindustan Zinc, now a part of the Sterlite group will come under the limits of Greater Visakha.</p>
-          <div class="footer">
-  <p>&copy; <span id="year"></span> Greater Visakhapatnam Municipal Corporation. All Rights Reserved.</p>
-  <div>
-    <a href="Bottom-Contacts.html">Contacts</a> |
-    <a href="#">Privacy Policy</a> |
-    <span>Visitors Count: 0</span> |
-    <span><strong><a href="Important links.html">Important Links:</strong> 
-   
-    </span>
+          </div>
   </div>
-</div>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
@@ -530,5 +691,6 @@
       </filter>
     </defs>
   </svg>
+</div>
 </body>
 </html>
