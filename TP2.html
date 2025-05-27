@@ -285,7 +285,7 @@
   margin-right: 5px;
 }
 .tab.active {
-  background: #7fae18;
+  background: #5530ec;
   color: white;
 }
     .side-div-zones {
@@ -462,6 +462,100 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
 }
 .engineering-img-container:hover .engineering-img-hover-text {
   opacity: 1;
+}
+table {
+      background: #f5f5f5;
+      border-collapse: separate;
+      box-shadow: inset 0 1px 0 #fff;
+      font-size: 13px;
+      line-height: 24px;
+      margin: 30px auto;
+      text-align: left;
+      width: 800px;
+      font-family: 'Arial', 'Segoe UI', 'Arial', serif;
+    }
+    th {
+      background: #1a3e8b;
+      border-left: 1px solid #555;
+      border-right: 1px solid #777;
+      border-top: 1px solid #555;
+      border-bottom: 1px solid #333;
+      box-shadow: inset 0 1px 0 #999;
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 15px;
+      position: relative;
+      text-shadow: none;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    th:after {
+      background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+      content: '';
+      display: block;
+      height: 25%;
+      left: 0;
+      margin: 1px 0 0 0;
+      position: absolute;
+      top: 25%;
+      width: 100%;
+    }
+    th:first-child {
+      border-left: 1px solid #777;
+      box-shadow: inset 1px 1px 0 #999;
+    }
+    th:last-child {
+      box-shadow: inset -1px 1px 0 #999;
+    }
+    td {
+      border-right: 1px solid #fff;
+      border-left: 1px solid #e8e8e8;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 10px 15px;
+      position: relative;
+      transition: all 300ms;
+    }
+    td:first-child {
+      box-shadow: inset 1px 0 0 #fff;
+    }
+    td:last-child {
+      border-right: 1px solid #e8e8e8;
+      box-shadow: inset -1px 0 0 #fff;
+    }
+    tr {
+      background: url(https://jackrugile.com/images/misc/noise-diagonal.png);
+    }
+    tr:nth-child(odd) td {
+      background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
+    }
+    tr:last-of-type td {
+      box-shadow: inset 0 -1px 0 #fff;
+    }
+    tr:last-of-type td:first-child {
+      box-shadow: inset 1px -1px 0 #fff;
+    }
+    tr:last-of-type td:last-child {
+      box-shadow: inset -1px -1px 0 #fff;
+    }
+    tbody:hover td {
+      color: transparent;
+      text-shadow: 0 0 3px #aaa;
+    }
+    tbody:hover tr:hover td {
+      color: #444;
+      text-shadow: 0 1px 0 #fff;
+    }
+    td, th {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    tr:hover td, tr:hover th {
+      font-size: 17px;
+      z-index: 2;
+      position: relative;
+    }
+    table td, table th {
+  transition: font-size 0.3s;
 }
     </style>
 </head>
@@ -673,7 +767,137 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           <button class="tab "><a href="TP4.html">Fire Prevention Wing</a></button>
           <button class="tab "><a href="TP5.html">BPS Schemes</a></button>
         </div>
-        
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="color: rgb(231, 234, 231); border: 1px solid #ccc; padding: 10px;">S.No</th>
+      <th style="color: rgb(231, 234, 231); border: 1px solid #ccc; padding: 10px;">Office/Division</th>
+      <th style="color: rgb(231, 234, 231); border: 1px solid #ccc; padding: 10px;">Name</th>
+      <th style="color: rgb(231, 234, 231); border: 1px solid #ccc; padding: 10px;">Designation</th>
+      <th style="color: rgb(231, 234, 231); border: 1px solid #ccc; padding: 10px;">Contact Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">1</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">M.V. Suryanarayana</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Surveyor 1</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9701853777</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">2</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">L.Prabhakar</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Surveyor 2</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9398866591</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">3</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">S. Tirupathirao</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Surveyor 3</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9000031748</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">4</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">K. Balakrishna</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Surveyor 4</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">8885189066</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">5</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">smt. V. Leela</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Surveyor 5</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">8639591610</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">6</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">D. Jagadeeswara Rao</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Surveyor 6, 7 i/c</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">6300341746</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">7</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">K. Kumarswami</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Surveyor 8</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9573700671</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">8</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">G. Vijaya Kumar</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Supervisior 1, Town Planning Officer 1 i/c</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9398113835</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">9</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">G. Balaraju</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Supervisior 2 i/c, Town Planning Officer 2 </td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9440891667</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">10</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">V. Vani</td>
+      <td style="border: 1px solid #ccc; padding: 10px;"> Town Planning Officer 3</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9704778809</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">11</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Ch. V. Narayana Rao</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Supervisior 3 </td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9848055198</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">12</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">V. Kondalrao</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Supervisior 4 i/c, Town Planning Officer 4 </td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9491334858</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">13</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">C. S. Praveen Kumar</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Supervisior 5 i/c, Town Planning Officer 5 </td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9848137638</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">14</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">O. Varaprasad</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Supervisior 6 i/c, Town Planning Officer 6 </td>
+      <td style="border: 1px solid #ccc; padding: 10px;">7729995916</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">15</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">P. Kanakarao</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Supervisior 7 i/c, Town Planning Officer 7 </td>
+      <td style="border: 1px solid #ccc; padding: 10px;">8179413117</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">16</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">S. Gopanna</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Supervisior 3 </td>
+      <td style="border: 1px solid #ccc; padding: 10px;">9951450284</td>
+    </tr>
+     <tr>
+      <td style="border: 1px solid #ccc; padding: 10px;">17</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Zone</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">K. Padma</td>
+      <td style="border: 1px solid #ccc; padding: 10px;">Town Planning Officer 8 </td>
+      <td style="border: 1px solid #ccc; padding: 10px;">8187899207</td>
+    </tr>
+
     <!-- SVG Goo Filter Definition -->
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
     <defs>
