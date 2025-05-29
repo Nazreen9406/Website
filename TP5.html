@@ -463,6 +463,34 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
 .engineering-img-container:hover .engineering-img-hover-text {
   opacity: 1;
 }
+  .download-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #010101;
+      background: linear-gradient(to bottom, #1e86e0, #00f2fe); /* Blue gradient */
+      border: 1px solid #007BFF;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      position: relative;
+      transition: background 0.3s ease;
+      width: 150px;
+      height: 26px;
+    }
+    .download-btn:hover {
+      background: linear-gradient(to bottom, #00c6ff, #0072ff); /* Darker on hover */
+    }
+    .download-btn::after {
+      content: "⬇"; /* Unicode download arrow */
+      font-size: 16px;
+      margin-left: 10px;
+      position: relative;
+      top: 1px;
+    }
+}
     </style>
 </head>
 <body>
@@ -673,7 +701,18 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           <button class="tab "><a href="TP4.html">Fire Prevention Wing</a></button>
           <button class="tab active "><a href="TP5.html">BPS Schemes</a></button>
         </div>
-        
+ <h2 style="font-size: 20px; line-height: 1.6; text-align: justify; color: blue;">BPS Schemes</h2>
+        <a style="color:black; text-decoration: underline;" href="BPS1.pdf">Building Penalisation Scheme</a>
+        <a style="color:black; text-decoration: underline;" href="BPS2.pdf">BPS Lincensed Technical Persons</a>
+        <p style="font-size: 16px; line-height: 1.6; text-align: justify;">
+        Town Planning GO MS No 128
+        </p>
+        <a href="BPS3.pdf" class="download-btn">Download</a>
+         <p style="font-size: 16px; line-height: 1.6; text-align: justify;">
+        Frequently Asked Questions Under Building Penalization Scheme
+        </p>
+        <a href="BPS4.pdf" class="download-btn">Download</a>
+
     <!-- SVG Goo Filter Definition -->
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
     <defs>
