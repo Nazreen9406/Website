@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
+    <title>About Vizag Corporation</title>
+   <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+      background-color: #f9f9f9; /* Subtle background color */
+      color: #333;
+      line-height: 1.6;
+=======
     <title>HRD Activities - GVMC</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
@@ -15,6 +25,7 @@
          body {
       margin: 0;
       font-family: Arial, sans-serif;
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     }
     .header {
       justify-content: space-between;
@@ -24,10 +35,17 @@
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
       display: flex;
+<<<<<<< HEAD
+      position: relative; 
+      z-index: 1000;
+      overflow: visible;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+=======
       position: relative;
       z-index: 1000;
       overflow: visible;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     }
     .left-section {
       display: flex;
@@ -39,10 +57,17 @@
       display: flex;
       align-items: center;
       gap: 20px;
+<<<<<<< HEAD
+      transition: transform 0.3s ease; /* For hover effect */
+    }
+    .logo-title:hover {
+      transform: scale(1.02); /* Subtle grow effect */
+=======
       transition: transform 0.3s ease;
     }
     .logo-title:hover {
       transform: scale(1.02);
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     }
     .logo {
       width: 80px;
@@ -75,6 +100,86 @@
     }
     nav a {
       text-decoration: none;
+<<<<<<< HEAD
+      padding: 8px 12px; /* Increased padding for better touch targets */
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      position: relative; /* For positioning child elements */
+      z-index: 1;
+      transition: transform 0.2s ease; /* Keep the lift effect */
+      outline: none;
+      border: none; /* Gooey buttons typically don't have their own border */
+      background-color: transparent; /* Gooey buttons start transparent */
+      display: inline-block; /* Behaves better with internal spans */
+    }
+    .nav-gooey-link__text {
+      position: relative;
+      z-index: 2; /* Text above blobs */
+      color: #333;
+      font-weight: 500;
+      transition: color 0.5s;
+    }
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
+      color: #FFFFFF; /* White text on hover */
+    }
+    .nav-gooey-link:hover {
+      transform: translateY(-2px); /* Subtle lift effect */
+    }
+    nav a.active, .nav-gooey-link.active {
+      background: #e6efff;
+      border-radius: 5px; /* Ensure radius is maintained */
+    }
+    nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
+      color: #1a3e8b; /* GVMC blue text for active */
+      font-weight: bold;
+    }
+    .nav-gooey-link.active .nav-gooey-link__inner {
+      display: none; /* Hide goo mechanism for active link */
+    }
+    .nav-gooey-link__inner {
+      z-index: 1; /* Behind text, above potential :after if we used it */
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px; 
+    }    .nav-gooey-link__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url('#goo'); /* Apply the SVG filter */
+    }
+    .nav-gooey-link__blob {
+      position: absolute;
+      top: 2px; /* Small offset from top, adjust as needed */
+      width: 25%; /* 100% / 4 blobs */
+      height: 100%;
+      background: #1a3e8b; /* GVMC Blue */
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+    }
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link__blob {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+      }
+    }
+    .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
+    .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
+    .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
+    .nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+      transform: translateZ(0) scale(1.7);
+    }
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+        transform: translateZ(0) scale(1.4);
+      }
+=======
       padding: 8px 12px;
       border-radius: 5px;
       cursor: pointer;
@@ -98,6 +203,7 @@
       transform: translateY(-2px);
       background-color: #f0f8ff;
       color: #1a3e8b;
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     }
     .search-box {
       padding: 5px 10px;
@@ -105,17 +211,28 @@
       border-radius: 20px;
       display: flex;
       align-items: center;
+<<<<<<< HEAD
+      transition: border-color 0.3s ease, box-shadow 0.3s ease; /* For hover/focus effect */
+    }
+    .search-box:hover,
+    .search-box input:focus-within { /* More specific selector for focus within */
+=======
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     .search-box:hover,
     .search-box input:focus-within {
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
       border-color: #1a3e8b;
       box-shadow: 0 0 5px rgba(26, 62, 139, 0.3);
     }
     .search-box input {
       border: none;
       outline: none;
+<<<<<<< HEAD
+      padding: 5px 10px; /* Increased padding slightly */
+=======
       padding: 5px 10px;
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
       width: 120px;
       font-size: 14px;
     }
@@ -141,6 +258,47 @@
         width: 100%;
       }
     }
+<<<<<<< HEAD
+  .footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    .footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: underline;
+      transition: color 0.3s ease, opacity 0.3s ease;
+    }
+    .footer a:hover {
+      color: #add8e6; 
+      opacity: 0.8;
+    }
+    .page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Take up available vertical space */
+}
+
+footer {
+  background-color: #23272b;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      z-index: 2000;
+    }
+    .dropdown-content {
+=======
     .slideshow-container {
       background-size: cover;
       width: 100%;
@@ -167,13 +325,27 @@
     }
     .dropdown-content {
       display: none;
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
       position: absolute;
       background-color: #fff;
       min-width: 160px;
       box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+<<<<<<< HEAD
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      z-index: 3000;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+=======
       z-index: 1;
       border: 1px solid #ddd;
       border-radius: 5px;
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     }
     .dropdown-content a {
       color: #333;
@@ -181,6 +353,46 @@
       text-decoration: none;
       display: block;
       font-weight: normal;
+<<<<<<< HEAD
+      position: relative; 
+      z-index: 1;        
+      overflow: hidden;  
+      transition: color 0.3s ease; 
+    }
+    .dropdown-content a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #1a3e8b; 
+      transition: width 0.3s ease;
+      z-index: -1; 
+    }    .dropdown-content a:hover {
+      color: #fff; 
+    }
+    .dropdown-content a:hover::after {
+      width: 100%;
+    }
+    .dropdown:hover > .dropdown-content { 
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .main-content-area {
+      flex: 1 1 65%; 
+      min-width: 300px;
+      padding-right: 20px; 
+    }
+    @media (max-width: 992px) { 
+      .main-content-area { padding-right: 0; }
+    }
+    .dropdown-toggle .nav-gooey-link__text {
+      font-weight: bold;
+    }
+ .side-div-zones {
+=======
     }
     .dropdown-content a:hover {
       background-color: #f0f8ff;
@@ -271,6 +483,7 @@
             padding-left: 20px;
         }
     .side-div-zones {
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
       flex: 0 0 220px;
       background: #181a1b;
       color: #fff;
@@ -298,14 +511,20 @@
       list-style: none;
       padding-left: 0;
       width: 100%;
+<<<<<<< HEAD
+=======
       margin: 0;
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     }
     .side-div-zones li {
       margin-bottom: 10px;
       width: 100%;
+<<<<<<< HEAD
+=======
       border: none;
       padding: 0;
       background: none;
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     }
     .side-div-zones a {
       color: #fff;
@@ -316,13 +535,18 @@
       border-radius: 5px;
       transition: background 0.2s, color 0.2s, padding-left 0.2s;
       font-weight: 500;
+<<<<<<< HEAD
+=======
       border-left: none;
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     }
     .side-div-zones a:hover {
       background: #23272b;
       color: #ffd700;
       padding-left: 18px;
     }
+<<<<<<< HEAD
+=======
     /* Remove inherited ul/li styles for sidebar only */
     .side-div-zones ul li {
       color: inherit;
@@ -335,10 +559,124 @@
       background: none;
       padding-left: 0;
     }
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     @media (max-width: 900px) {
       .container { flex-direction: column; }
       .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
     }
+<<<<<<< HEAD
+    footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* match actual height */
+  background-color: #333;
+  color: #fff;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Take up available vertical space */
+}
+.footer {
+  background-color: #23272b;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+.nav-gooey-link__text {
+      position: relative;
+      z-index: 2; /* Text above blobs */
+      color: #333;
+      font-weight: 500;
+      transition: color 0.5s;
+    }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
+      color: #FFFFFF; /* White text on hover */
+    }
+
+    .nav-gooey-link:hover {
+      transform: translateY(-2px); /* Subtle lift effect */
+    }
+
+    /* Active state - overrides gooey effects */
+    nav a.active, .nav-gooey-link.active {
+      background: #e6efff;
+      border-radius: 5px; /* Ensure radius is maintained */
+    }
+    nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
+      color: #1a3e8b; /* GVMC blue text for active */
+      font-weight: bold;
+    }
+    .nav-gooey-link.active .nav-gooey-link__inner {
+      display: none; /* Hide goo mechanism for active link */
+    }
+
+    /* Gooey effect styles */
+    .nav-gooey-link__inner {
+      z-index: 1; /* Behind text, above potential :after if we used it */
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px; /* Match parent's border-radius */
+      /* background: #ffffff; /* Optional: if you want a solid background behind blobs */
+    }
+
+    .nav-gooey-link__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url('#goo'); /* Apply the SVG filter */
+    }
+
+    .nav-gooey-link__blob {
+      position: absolute;
+      top: 2px; /* Small offset from top, adjust as needed */
+      width: 25%; /* 100% / 4 blobs */
+      height: 100%;
+      background: #1a3e8b; /* GVMC Blue */
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+    }
+
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link__blob {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+      }
+    }
+
+    .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
+    .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
+    .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
+    .nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
+
+    .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+      transform: translateZ(0) scale(1.7);
+    }
+    @supports (filter: url('#goo')) {
+      .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+</style>
+</head>
+<body>
+  <div class="header">
+=======
     /* Gooey nav effect styles from web.html */
 .nav-gooey-link__text {
   position: relative;
@@ -545,6 +883,7 @@ table td, table th {
 </head>
 <body>
     <div class="header">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     <div class="left-section">
       <div class="logo-title">
         <div class="logo"></div>
@@ -563,7 +902,11 @@ table td, table th {
           </span>
         </a>
         <div class="dropdown">
+<<<<<<< HEAD
+          <a href="Index.html" class="dropdown-toggle nav-gooey-link">
+=======
           <a href="#" class="dropdown-toggle nav-gooey-link">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <span class="nav-gooey-link__text">About Vizag</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -579,12 +922,20 @@ table td, table th {
             <a href="Industries.html">Industries</a>
             <a href="Health.html">Health</a>
             <a href="FunctionHalls.html">Function Halls</a>
+<<<<<<< HEAD
+            <a href="Markets.html">Markets</a> 
+=======
             <a href="Markets.html">Markets</a>
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <a href="Education.html">Education</a>
           </div>
         </div>
         <div class="dropdown">
+<<<<<<< HEAD
+          <a href="Corporation-Introduction.html" class="dropdown-toggle nav-gooey-link">
+=======
           <a href="#" class="dropdown-toggle nav-gooey-link">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <span class="nav-gooey-link__text">Corporation</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -595,7 +946,11 @@ table td, table th {
           <div class="dropdown-content">
             <a href="Corporation-Introduction.html">Introduction</a>
             <a href="Corporation-Elected Wing.html">Elected wing</a>
+<<<<<<< HEAD
+            <a href="Corporation-Administration Wing.html ">Administrative wing</a>
+=======
             <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <a href="Corporation- Comissioner.html">Commissioner</a>
             <a href="Awards.html">Awards</a>
             <a href="Holidays.html">List of Holidays</a>
@@ -603,7 +958,11 @@ table td, table th {
           </div>
         </div>
         <div class="dropdown">
+<<<<<<< HEAD
+          <a href="Zones.html" class="dropdown-toggle nav-gooey-link">
+=======
           <a href="#" class="dropdown-toggle nav-gooey-link">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <span class="nav-gooey-link__text">Zones</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -629,7 +988,11 @@ table td, table th {
           </div>
         </div>
         <div class="dropdown">
+<<<<<<< HEAD
+          <a href="CSec.html" class="dropdown-toggle nav-gooey-link">
+=======
           <a href="#" class="dropdown-toggle nav-gooey-link">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <span class="nav-gooey-link__text">Departments</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -639,7 +1002,11 @@ table td, table th {
           </a>
           <div class="dropdown-content">
             <a href="CSec.html">General Administration</a>
+<<<<<<< HEAD
+            <a href=" Projects.html">Projects</a>
+=======
             <a href="Projects.html">Projects</a>
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <a href="Engineering.html">Engineering</a>
             <a href="RevDepStru.html">Revenue</a>
             <a href="PublicHealth.html">Public Health</a>
@@ -652,7 +1019,11 @@ table td, table th {
           </div>
         </div>
         <div class="dropdown">
+<<<<<<< HEAD
+           <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+=======
           <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <span class="nav-gooey-link__text">Citizen Services</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -663,16 +1034,26 @@ table td, table th {
           <div class="dropdown-content">
             <a href="CitizenServices.html">Citizen Services list</a>
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Property Tax</a>
+<<<<<<< HEAD
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/wtms/search/waterSearch/">Water TAx</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/lams-web/app/citizen/search-agreement/citizen-search.html">Shop Lease & Rentals</a>
+=======
             <a href="https://cdma.ap.gov.in/en/wcpayments">Water TAx</a>
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
             <a href="https://cdma.ap.gov.in/en/lamspayments">Shop Lease & Rentals</a>
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <a href="https://cdma.ap.gov.in/en/tlpayments">D & O Trade License</a>
             <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
             <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
           </div>
         </div>
         <div class="dropdown">
+<<<<<<< HEAD
+          <a href="Information- Population-Details.html" class="dropdown-toggle nav-gooey-link">
+=======
           <a href="#" class="dropdown-toggle nav-gooey-link">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <span class="nav-gooey-link__text">Information</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -693,7 +1074,11 @@ table td, table th {
           </div>
         </div>
         <div class="dropdown">
+<<<<<<< HEAD
+          <a href="Tenders.html" class="dropdown-toggle nav-gooey-link">
+=======
           <a href="#" class="dropdown-toggle nav-gooey-link">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <span class="nav-gooey-link__text">Tenders</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -706,7 +1091,11 @@ table td, table th {
           </div>
         </div>
         <div class="dropdown">
+<<<<<<< HEAD
+          <a href="WaterSupply.html" class="dropdown-toggle nav-gooey-link">
+=======
           <a href="#" class="dropdown-toggle nav-gooey-link">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
             <span class="nav-gooey-link__text">Contact</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -716,12 +1105,39 @@ table td, table th {
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
+<<<<<<< HEAD
+            <a href="Contacts.html">Contacts</a>
+=======
             <a href="Bottom-Contacts.html">Contacts</a>
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
           </div>
         </div>
       </nav>
     </div>
     <div class="search-box">
+<<<<<<< HEAD
+      <input type="text" placeholder="Search..." />
+      <span>🔍</span>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: row; gap: 32px; align-items: flex-start; margin-top: 0;">
+    <div class="side-div-zones">
+      <h4>Corporation</h4>
+      <ul>
+         <li><a href="Information- Population-Details.html">Population-Details</a></li>
+        <li><a href="FAQ'S.html">FAQ'S</a></li>
+        <li><a href="Right To Information.html">Right To Information</a></li>
+        <li><a href="Citizen.html" style="background:#23272b; color:#ffd700; padding-left:18px;">Citizen's Charter Rules & Procedures</a></li>
+        <li><a href="Holidays.html">List of Holidays</a></li>
+        <li><a href="Dail A Tanker.html">Dail a Tanker</a></li>
+        <li><a href="Grievances.html">Grievances</a></li>
+        <li><a href="RAY.html">RAY</a></li>
+        <li><a href="PressNote.html">GVMC Press Notes</a></li>
+        <li><a href="PhotoGallery.html">Photo Gallery & News</a></li>
+      </ul>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+=======
       <input type="text" placeholder="Search...">
       <span>🔍</span>
     </div>
@@ -745,6 +1161,7 @@ table td, table th {
            
     <!-- SVG Goo Filter Definition -->
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
     <defs>
       <filter id="goo">
         <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
@@ -753,7 +1170,13 @@ table td, table th {
       </filter>
     </defs>
   </svg>
+<<<<<<< HEAD
+</div>
+</body>
+</html>
+=======
 </body>
 </html>
 
 
+>>>>>>> 64ed5936358a6ed7f2a6a3fd83539399e6e958f3
