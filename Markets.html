@@ -165,29 +165,68 @@
     .dropdown {
       position: relative;
       display: inline-block;
-    }
-    .dropdown-toggle {
-      cursor: pointer;
+      z-index: 2000;
     }
     .dropdown-content {
-      display: none;
       position: absolute;
-      background-color: #f9f9f9;
+      background-color: #fff;
       min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      z-index: 3000;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
     .dropdown-content a {
       color: #333;
-      padding: 12px 16px;
+      padding: 8px 12px;
       text-decoration: none;
       display: block;
+      font-weight: normal;
+      position: relative; 
+      z-index: 1;        
+      overflow: hidden;  
+      transition: color 0.3s ease; 
+    }
+    
+    .dropdown-content a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #1a3e8b; 
+      transition: width 0.3s ease;
+      z-index: -1; 
     }
     .dropdown-content a:hover {
-      background-color: rgba(26,62,139,0.1);
+      color: #fff; 
     }
-    .dropdown:hover .dropdown-content {
-      display: block;
+    .dropdown-content a:hover::after {
+      width: 100%;
+    }
+    .dropdown:hover > .dropdown-content { 
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .main-content-area {
+      flex: 1 1 65%; 
+      min-width: 300px;
+      padding-right: 20px; 
+    }
+    @media (max-width: 992px) { 
+      .main-content-area { padding-right: 0; }
+    }
+    .dropdown-toggle .nav-gooey-link__text {
+      font-weight: bold;
     }
     .search-box {
       position: relative;
@@ -255,7 +294,6 @@
   border-bottom: 3px solid #333;
   margin-bottom: 20px;
 }
-
 .tab {
   padding: 10px 20px;
   border: none;
@@ -265,7 +303,7 @@
   margin-right: 5px;
 }
 .tab.active {
-  background: #7fae18;
+  background: #5530eC;
   color: white;
 }
     .side-div-zones ul {
@@ -318,7 +356,7 @@
           </span>
         </a>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Index.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">About Vizag</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -339,7 +377,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Corporation-Introduction.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Corporation</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -358,7 +396,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Zones.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Zones</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -384,7 +422,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="CSec.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Departments</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -394,7 +432,7 @@
           </a>
           <div class="dropdown-content">
             <a href="CSec.html">General Administration</a>
-            <a href=" Projects.html">Projects</a>
+            <a href="Projects.html">Projects</a>
             <a href="Engineering.html">Engineering</a>
             <a href="RevDepStru.html">Revenue</a>
             <a href="PublicHealth.html">Public Health</a>
@@ -427,7 +465,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Information- Population-Details.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Information</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -448,7 +486,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Tenders.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Tenders</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -461,7 +499,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="WaterSupply.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Contact</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -471,7 +509,7 @@
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
-            <a href="#Contacts.html">Contacts</a>
+            <a href="Contacts.html">Contacts</a>
           </div>
         </div>
       </nav>
@@ -481,7 +519,6 @@
       <span>🔍</span>
     </div>
   </div>
-
   <div class="container">
     <div class="side-div-zones">
       <h4>About Vizag</h4>
@@ -495,13 +532,10 @@
         <li><a href="FunctionHalls.html">Function Halls</a></li>
         <li><a href="Markets.html" style="background:#23272b; color:#ffd700; padding-left:18px;">Markets</a></li>
         <li><a href="Education.html">Education</a></li>
-    
       </ul>
     </div>
-   
       <div style="background:#fff; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08); padding:32px 24px; margin-top:0; position:relative; max-width:700px; margin-left:auto; margin-right:auto;">
-        <div style="position:relative; width:100%; max-width:700px; margin:0 auto 0px auto;">
-          
+        <div style="position:relative; width:100%; max-width:700px; margin:0 auto 0px auto;"> 
         </div>
         <h1 style="color:#1a3e8b; font-size:2rem; text-align:center; margin-bottom:1.2em;">Markets</h1>
          <p><h3 Style="text-align: center;">Shopping in Vizag</h3>While Vizag may be better known as an industrial centre, it is in reality a city of shopkeepers. For some reason shops in the same trade tend to be located next to each other (security in numbers?) which makes shop-hopping and bargain hunting easier.If you are new to Vizag, you might find the following information useful<br><h3>GOLD & SILVER JEWELLERY:</h3><BR>The area around Kurupam Market with its narrow lanes and poky shops used to be the only place for Gold & Silver. Here, goldsmiths (often bare above the waist) stoking their furnaces by blowing into them or using a mechanical rotary device, melting ornaments in their crucibles, used to be a fairly common sight till recently. The advent of mass-produced machine-made jewellery has more or less killed these skills but our jewellers have been quick to adapt to the changes forced onto them. Of late jewellery shops have sprung up in another area (with more fancy shops and trendier names) - the area in Dwaraka Nagar on the other side of TSR Complex.<br>
@@ -542,7 +576,6 @@ If you are on the lookout for clothes, then the ideal places for you to visit wo
       </div>
     </div>
   </div>
-
   <!-- SVG Gooey Filter for navigation effect -->
   <svg width="0" height="0">
     <filter id="gooey">
@@ -551,6 +584,5 @@ If you are on the lookout for clothes, then the ideal places for you to visit wo
       <feBlend in="SourceGraphic" in2="goo" />
     </filter>
   </svg>
-
 </body>
 </html>

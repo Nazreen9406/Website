@@ -259,7 +259,7 @@
   margin-right: 5px;
 }
 .tab.active {
-  background: #7fae18;
+  background: #5530eC;
   color: white;
 }
     .side-div-zones ul {
@@ -290,6 +290,143 @@
       .container { flex-direction: column; }
       .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
     }
+     .page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tab {
+    background: #f0f0f0;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tab a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .tab:hover {
+    background: #dce6ff;
+    transform: translateY(-2px);
+  }
+
+  .tab.active {
+    background: #4a90e2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .tab.active a {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .content-box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(138, 131, 131, 0.08);
+    padding: 32px 24px;
+    width: 100%;
+  }
+
+  .content-box h1 {
+    color: #4a90e2;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.2em;
+  }
+
+  .content-box img {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto 24px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(117, 148, 214, 0.1);
+  }
+
+  .content-box p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    text-align: center;
+    margin-top: 0;
+  }
+   .dropdown {
+      position: relative;
+      display: inline-block;
+      z-index: 2000;
+    }
+    .dropdown-content {
+      position: absolute;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      z-index: 3000;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+      position: relative; 
+      z-index: 1;        
+      overflow: hidden;  
+      transition: color 0.3s ease; 
+    }
+    
+    .dropdown-content a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #1a3e8b; 
+      transition: width 0.3s ease;
+      z-index: -1; 
+    }
+
+    .dropdown-content a:hover {
+      color: #fff; 
+    }
+
+    .dropdown-content a:hover::after {
+      width: 100%;
+    }
+    
+    .dropdown:hover > .dropdown-content { 
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
     </style>
 </head>
 <body>
@@ -312,7 +449,7 @@
           </span>
         </a>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Index.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">About Vizag</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -333,7 +470,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Corporation-Introduction.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Corporation</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -344,7 +481,7 @@
           <div class="dropdown-content">
             <a href="Corporation-Introduction.html">Introduction</a>
             <a href="Corporation-Elected Wing.html">Elected wing</a>
-            <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
+            <a href="Corporation-Administration Wing.html ">Administrative wing</a>
             <a href="Corporation- Comissioner.html">Commissioner</a>
             <a href="Awards.html">Awards</a>
             <a href="Holidays.html">List of Holidays</a>
@@ -352,7 +489,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Zones.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Zones</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -378,7 +515,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="CSec.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Departments</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -409,18 +546,19 @@
               </span>
             </span>
           </a>
-         <div class="dropdown-content">
+          <div class="dropdown-content">
             <a href="CitizenServices.html">Citizen Services list</a>
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Property Tax</a>
-            <a href="https://cdma.ap.gov.in/en/wcpayments">Water TAx</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/wtms/search/waterSearch/">Water TAx</a>
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
-            <a href="https://cdma.ap.gov.in/en/lamspayments">Shop Lease & Rentals</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/lams-web/app/citizen/search-agreement/citizen-search.html">Shop Lease & Rentals</a>
             <a href="https://cdma.ap.gov.in/en/tlpayments">D & O Trade License</a>
             <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
             <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
           </div>
+        </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Information- Population-Details.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Information</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -441,7 +579,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Tenders.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Tenders</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -454,7 +592,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="WaterSupply.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Contact</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -464,7 +602,8 @@
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
-            <a href="#Contacts.html">Contacts</a>
+            
+            <a href="Contacts.html">Contacts</a>
           </div>
         </div>
       </nav>
@@ -492,20 +631,20 @@
         <li><a href="IT1.html">IT & E-Governance</a></li>
       </ul>
     </div>
-    <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:18px;">
-      <div class="tabs">
-        <button class="tab"><a href="EducationalProjects.html">Educational Projects</a></button>
-        <button class="tab"><a href="GenEdu.html">General Education</a></button>
-        <button class="tab active"><a href="EduDeptSt.html">Education Department Structure</a></button>
-      </div>
-      <div style="background:#fff; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08); padding:32px 24px; margin-top:0;">
-        <h1 style="color:#1a3e8b; font-size:2rem; text-align:center; margin-bottom:1.2em;">Education Department Structure</h1>
-        <img src="ed3.png" alt="Education Department Structure" style="width:100%; max-width:700px; display:block; margin:0 auto 24px auto; border-radius:10px; box-shadow:0 4px 18px rgba(26,62,139,0.10);">
-        <p style="font-size:1.08rem; line-height:1.7; text-align:center; margin-top:0;">The structure of the Education Department is designed to efficiently manage and implement educational initiatives, projects, and daily operations across the Greater Visakhapatnam Municipal Corporation. The department coordinates with various schools, teachers, and administrative staff to ensure quality education and smooth functioning of all educational programs.</p>
-      </div>
-    </div>
+  <div class="page-container">
+  <div class="tabs">
+    <button class="tab"><a href="EducationalProjects.html">Educational Projects</a></button>
+    <button class="tab"><a href="GenEdu.html">General Education</a></button>
+    <button class="tab active"><a href="EduDeptSt.html">Education Department Structure</a></button>
   </div>
 
+  <div class="content-box">
+    <h1>Education Department Structure</h1>
+    <img src="ed3.png" alt="Education Department Structure">
+    <p>The structure of the Education Department is designed to efficiently manage and implement educational initiatives, projects, and daily operations across the Greater Visakhapatnam Municipal Corporation. The department coordinates with various schools, teachers, and administrative staff to ensure quality education and smooth functioning of all educational programs.</p>
+  </div>
+</div>
+  </div>
   <!-- SVG Gooey Filter for navigation effect -->
   <svg width="0" height="0">
     <filter id="gooey">
@@ -514,6 +653,5 @@
       <feBlend in="SourceGraphic" in2="goo" />
     </filter>
   </svg>
-
 </body>
 </html>

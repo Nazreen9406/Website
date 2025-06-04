@@ -407,6 +407,71 @@
       .container { flex-direction: column; }
       .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
     }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      z-index: 2000;
+    }
+    .dropdown-content {
+      position: absolute;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      z-index: 3000;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+      position: relative; 
+      z-index: 1;        
+      overflow: hidden;  
+      transition: color 0.3s ease; 
+    }
+    .dropdown-content a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #1a3e8b; 
+      transition: width 0.3s ease;
+      z-index: -1; 
+    }
+    .dropdown-content a:hover {
+      color: #fff; 
+    }
+    .dropdown-content a:hover::after {
+      width: 100%;
+    }
+    .dropdown:hover > .dropdown-content { 
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .main-content-area {
+      flex: 1 1 65%; 
+      min-width: 300px;
+      padding-right: 20px; 
+    }
+    @media (max-width: 992px) { 
+      .main-content-area { padding-right: 0; }
+    }
+    .dropdown-toggle .nav-gooey-link__text {
+      font-weight: bold;
+    }
     </style>
 </head>
 <body>
@@ -420,7 +485,7 @@
         </div>
       </div>
       <nav>
-        <a href="#" class="nav-gooey-link active">
+        <a href="Web.html" class="nav-gooey-link active">
           <span class="nav-gooey-link__text">Home</span>
           <span class="nav-gooey-link__inner">
             <span class="nav-gooey-link__blobs">
@@ -429,7 +494,7 @@
           </span>
         </a>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Index.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">About Vizag</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -450,7 +515,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Corporation-Introduction.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Corporation</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -469,7 +534,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Zones.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Zones</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -488,12 +553,14 @@
                 <a href="Zone4.html">Zone-4</a>
                 <a href="Zone5.html">Zone-5</a>
                 <a href="Zone6.html">Zone-6</a>
+                <a href="Zone7.html">Zone-5</a>
+                <a href="Zone8.html">Zone-6</a>
               </div>
             </div>
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="CSec.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Departments</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -536,7 +603,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Information- Population-Details.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Information</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -557,7 +624,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Tenders.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Tenders</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -570,7 +637,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="WaterSupply.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Contact</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -580,7 +647,7 @@
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
-            <a href="#Contacts.html">Contacts</a>
+            <a href="Contacts.html">Contacts</a>
           </div>
         </div>
       </nav>
@@ -645,4 +712,14 @@
       </table>
     </div>
   </div>
+   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
+        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+  </body>
 </html>
