@@ -60,7 +60,6 @@
     .title span {
       font-size: 18px;
       color: #555;
-
     }
     nav {
       display: flex;
@@ -85,7 +84,6 @@
       background-color: transparent; /* Gooey buttons start transparent */
       display: inline-block; /* Behaves better with internal spans */
     }
-
     .nav-gooey-link__text {
       position: relative;
       z-index: 2; /* Text above blobs */
@@ -93,15 +91,12 @@
       font-weight: 500;
       transition: color 0.5s;
     }
-
     .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
       color: #FFFFFF; /* White text on hover */
     }
-
     .nav-gooey-link:hover {
       transform: translateY(-2px); /* Subtle lift effect */
     }
-
     /* Active state - overrides gooey effects */
     nav a.active, .nav-gooey-link.active {
       background: #e6efff;
@@ -114,7 +109,6 @@
     .nav-gooey-link.active .nav-gooey-link__inner {
       display: none; /* Hide goo mechanism for active link */
     }
-
     /* Gooey effect styles */
     .nav-gooey-link__inner {
       z-index: 1; /* Behind text, above potential :after if we used it */
@@ -127,14 +121,12 @@
       border-radius: 5px; /* Match parent's border-radius */
       /* background: #ffffff; /* Optional: if you want a solid background behind blobs */
     }
-
     .nav-gooey-link__blobs {
       position: relative;
       display: block;
       height: 100%;
       filter: url('#goo'); /* Apply the SVG filter */
     }
-
     .nav-gooey-link__blob {
       position: absolute;
       top: 2px; /* Small offset from top, adjust as needed */
@@ -145,13 +137,11 @@
       transform: translate3d(0, 150%, 0) scale(1.7);
       transition: transform 0.45s;
     }
-
     @supports (filter: url('#goo')) {
       .nav-gooey-link__blob {
         transform: translate3d(0, 150%, 0) scale(1.4);
       }
     }
-
     .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
     .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
     .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
@@ -165,7 +155,20 @@
         transform: translateZ(0) scale(1.4);
       }
     }
+ .title {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .content {
+            text-align: justify;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 10px 100px;
 
+        }
     .search-box {
       padding: 5px 10px;
       border: 1px solid #ccc;
@@ -208,166 +211,6 @@
         width: 100%;
       }
     }
-   .slideshow-container {
-      width: 100%;
-      max-height: 350px; /* Increased from 250px to 350px */
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      position: relative;
-      margin-top: 20px;
-      flex: 1 1 60%;
-      min-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Enhanced shadow */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    @media (max-width: 600px) {
-      .slideshow-container {
-        max-height: 250px; /* Also increase for mobile */
-        width: 100%;
-        flex: none;
-      }
-    }
-    .slide {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none;
-      border-radius: 8px;
-      transition: opacity 1s ease-in-out; /* Smooth transition for slides */
-    }
-    .container {
-      display: flex;
-      margin-top: 20px;
-      gap: 20px;
-      flex-wrap: wrap; /* Ensure wrapping on smaller screens */
-      padding: 0 20px; /* Add some padding to the container */
-    }
-    .side-div {
-      flex: 1 1 300px; /* More flexible basis */
-      background-color: #ffffff; /* White background for cards */
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      min-width: 250px; /* Adjusted min-width */
-      height: fit-content; /* Ensure it only takes needed height */
-      transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    }
-    .side-div:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    .officials {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: black;
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .officials img {
-      width: 100%;
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 10px; 
-      border-radius: 8px; 
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .official-names {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .info-section {
-      margin-bottom: 25px; 
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    }
-    .info-section:hover {
-      transform: translateY(-3px); 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    }
-    .info-section h4 {
-      color: #d67600; 
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 18px;
-      font-family: 'Merriweather', serif;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 8px;
-    }
-    .info-section p, .info-section ul {
-      font-size: 15px;
-      color: #555;
-    }
-   .info-section img {
-  width: 150px;
-  height: auto;
-  border-radius: 5px;
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-    .info-section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .info-section ul li {
-      padding: 5px 0;
-      transition: background-color 0.3s ease; 
-      padding-left: 8px; 
-    }
-    .info-section ul li:hover {
-      background-color: #f0f8ff; 
-      border-left-color: #1a3e8b; 
-    }
-    .info-section ul li a {
-      color: #1a3e8b;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .social-icons {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px; /* Increased gap */
-      justify-items: center; /* Center icons in grid cells */
-    }
-    .social-icons img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .social-icons a:hover img {
-      transform: scale(1.1);
-      opacity: 0.8;
-    }
-    .footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-    .footer a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: underline;
-      transition: color 0.3s ease, opacity 0.3s ease;
-    }
-    .footer a:hover {
-      color: #add8e6; 
-      opacity: 0.8;
-    }
     .dropdown {
       position: relative;
       display: inline-block;
@@ -400,7 +243,6 @@
       overflow: hidden;  
       transition: color 0.3s ease; 
     }
-    
     .dropdown-content a::after {
       content: "";
       position: absolute;
@@ -412,15 +254,12 @@
       transition: width 0.3s ease;
       z-index: -1; 
     }
-
     .dropdown-content a:hover {
       color: #fff; 
     }
-
     .dropdown-content a:hover::after {
       width: 100%;
     }
-    
     .dropdown:hover > .dropdown-content { 
       opacity: 1;
       visibility: visible;
@@ -437,18 +276,101 @@
     .dropdown-toggle .nav-gooey-link__text {
       font-weight: bold;
     }
-    /* Fit images inside slideshow-container */
-.slideshow-container img.slide {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  display: none;
-  transition: opacity 1s ease-in-out;
+      .side-div-zones {
+      flex: 0 0 220px;
+      background: #181a1b;
+      color: #fff;
+      padding: 25px 18px;
+      border-radius: 10px;
+      min-width: 180px;
+      max-width: 260px;
+      height: fit-content;
+      margin-right: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .side-div-zones h4 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 8px;
+      width: 100%;
+      font-family: 'Merriweather', serif;
+    }          
+   .tabs  {
+  display: flex;
+  border-bottom: 3px solid #333;
+  margin-bottom: 20px;
 }
-  </style>
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.tab.active {
+  background: #7156dd;
+  color: white;
+}
+  .container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.side-div-zones {
+  width: 250px;
+  background-color: #141416; /* slightly darker black */
+  padding: 10px;
+  border-radius: 8px;
+}
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  .side-div-zones {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.side-div-zones ul {
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+  margin: 0;
+}
+.side-div-zones li {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.side-div-zones a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s, padding-left 0.3s;
+  font-weight: 500;
+}
+/* Hover style */
+.side-div-zones a:hover {
+  background: #ffd700;
+  color: #000;
+  padding-left: 20px;
+}
+.side-div-zones a.active {
+  background-color: #23272b; /* slightly lighter black */
+  color: #ffd700; /* gold */
+  font-weight: bold;
+}
+     </style>
 </head>
 <body>
   <div class="header">
@@ -633,100 +555,32 @@
       <span>🔍</span>
     </div>
   </div>
-<div class="container">
-  <div class="main-content-area">
-    <div class="slideshow-container">
-      <img class="slide" src="Building.png" alt="Slide 1" />
-      <img class="slide" src="img1.jpg" alt="Slide 2" />
-    <img class="slide" src="img4.webp" alt="Slide 3" />
-    <img class="slide" src="img2.jpg" alt="Slide 4" />
-    <img class="slide" src="v4.jpg" alt="Slide 5" />
-    <img class="slide" src="img4.jpg" alt="Slide 6" />
-    </div>
-    <div class="info-section" style="margin-top: 20px;">
-      <h4>
-        <marquee behavior="scroll" direction="left" scrollamount="5"><a href="#" style="color: inherit; text-decoration: none;"><span style="color:red;">Welcome</span> to<span style="color:blue;"> Greater Visakhapatnam Municipal Corporation Official Website</span></a></marquee>
-      </h4>
-      <p>
-        Call Centre Numbers - 0891-2569335, IVRS Number - 180042500009; Dial a Tanker - 2762876
-      </p>
-    </div>
-    <div class="info-section">
-      <h4>E-News letters</h4>
-      <ul>
-        <li><a href="#">Newsletter - April 2025</a></li>
-        <li><a href="#">Updates - March 2025</a></li>
-        <li><a href="#">Commissioner's Note - Feb 2025</a></li>
-      </ul>
-    </div>
+ <div class="container">
+  <div class="side-div-zones">
+    <h4>Departments</h4>
+    <ul>
+      <li><a href="CSec.html">General Administration</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="Engineering.html">Engineering</a></li>
+      <li><a href="RevDepStru.html">Revenue</a></li>
+      <li><a href="PublicHealth.html">Public Health</a></li>
+      <li><a href="TownPlanning.html">Town Planning</a></li>
+      <li><a href="Horticulture.html">Horticulture</a></li>
+      <li><a href="UCD.html">UCD</a></li>
+      <li><a href="EducationalProjects.html">Education</a></li>
+      <li><a href="Finance.html">Finance</a></li>
+      <li><a href="IT1.html" style="background:#23272b; color:#ffd700; padding-left:18px;">IT & E-Governance</a></li>
+    </ul>
   </div>
-  <div class="side-div">
-    <div class="officials">
-      <img src="collector.webp" alt="Sri Hari Narayanan" />
-      <div class="official-names">
-        <div>
-          <strong>Sri<br />Hari Narayanan<br />I.A.S.<br />Commissioner i/c</strong>
-        </div>
-      </div>
-    </div>
-
-    <div class="info-section">
-      <h4>General Information</h4>
-      <img src="SB.jpg" alt="Swachh Bharat" style="width: 100%; max-width: 200px;" /> 
-    </div>
-
-    <div class="info-section">
-      <h4>Social Media & APP's</h4>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/GVMC.VISAKHA/" target="_blank">
-          <img src="facebook-logo-png-3.png" alt="Facebook" />
-        </a>
-        <a href="https://twitter.com/gvmc" target="_blank">
-          <img src="x logo.jpg" alt="X" />
-        </a>
-        <a href="https://www.instagram.com/gvmc_visakhapatnam/" target="_blank">
-          <img src="ig.jpg" alt="Instagram" />
-        </a>
-      </div>
+  <div class="main-content">
+    <div class="title">Online Delivery of Services</div>
+    <div class="content">
+      Connectivity and digitalization in areas like health care, education, policing, civic amenities like fire services,
+      rescue, relief and rehabilitation operations during calamities should make their delivery become better and more cost effective.
     </div>
   </div>
 </div>
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.opacity = i === index ? 1 : 0;
-        slide.style.position = i === index ? 'relative' : 'absolute';
-        slide.style.visibility = i === index ? 'visible' : 'hidden';
-      });
-    }
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-    showSlide(currentSlide);
-    slides.forEach(slide => {
-        slide.style.display = 'block'; 
-    });
-    setInterval(nextSlide, 3000);
-  </script> 
-<div class="footer">
-  <p>&copy; <span id="year"></span> Greater Visakhapatnam Municipal Corporation. All Rights Reserved.</p>
-  <div>
-    <a href="Bottom-Contacts.html">Contacts</a> |
-    <a href="#">Privacy Policy</a> |
-    <span>Visitors Count: 0</span> |
-    <span><strong><a href="Important links.html">Important Links:</strong> 
-   
-    </span>
-  </div>
-</div>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+ <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
     <defs>
       <filter id="goo">
         <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
@@ -735,5 +589,5 @@
       </filter>
     </defs>
   </svg>
-</body>
-</html>
+  </body>
+  </html>
