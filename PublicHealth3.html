@@ -161,19 +161,26 @@
         max-height: 250px;
       }
     }
-    .dropdown {
+  .dropdown {
       position: relative;
       display: inline-block;
+      z-index: 2000;
     }
     .dropdown-content {
-      display: none;
       position: absolute;
       background-color: #fff;
       min-width: 160px;
       box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-      z-index: 1;
       border: 1px solid #ddd;
       border-radius: 5px;
+      top: 100%;
+      left: 0;
+      z-index: 3000;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
     .dropdown-content a {
       color: #333;
@@ -181,22 +188,37 @@
       text-decoration: none;
       display: block;
       font-weight: normal;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      transition: color 0.3s ease;
+    }
+    .dropdown-content a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #1a3e8b;
+      transition: width 0.3s ease;
+      z-index: -1;
     }
     .dropdown-content a:hover {
-      background-color: #f0f8ff;
+      color: #fff;
     }
-    .dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content .dropdown:hover .dropdown-content {
-  display: block;
-  left: 100%;
-  top: 0;
-}
+    .dropdown-content a:hover::after {
+      width: 100%;
+    }
+    .dropdown:hover > .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-toggle .nav-gooey-link__text {
+      font-weight: bold;
+    }
+   
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f8f9fa;
@@ -204,7 +226,6 @@
             padding: 0;
             color: #333;
         }
-
         .headers {
             background: linear-gradient(to right, #ff758c, #ff7eb3);
             padding: 20px;
@@ -213,12 +234,10 @@
             font-size: 24px;
             font-weight: 700;
         }
-
         .navbar {
             margin: 20px;
             text-align: center;
         }
-
         .navbar button {
             background-color: #ffa07a;
             border: none;
@@ -229,11 +248,9 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         .navbar button:hover {
             background-color: #ff7f50;
         }
-
         .content {
             max-width: 800px;
             background: white;
@@ -285,7 +302,7 @@
   margin-right: 5px;
 }
 .tab.active {
-  background: #7fae18;
+  background: #5530eC;
   color: white;
 }
     .side-div-zones {
@@ -462,6 +479,23 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
 }
 .engineering-img-container:hover .engineering-img-hover-text {
   opacity: 1;
+}
+.tab-button {
+  background-color: #d3d3d3;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.tab-button:hover {
+  background-color: #4b2be5; /* Match the active tab's purple */
+  color: white;
+}
+.tab-button.active {
+  background-color: #4b2be5; /* Purple active */
+  color: white;
 }
     </style>
 </head>
@@ -665,13 +699,11 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           <li><a href="IT1.html">IT & E-Governance</a></li>
         </ul>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 8px; width:100%;">
-        <div class="tabs">
-          <button class="tab"><a href="PublicHealth.html">Public Health Department Structure</a></button>
-          <button class="tab "><a href="PublicHealth2.html">Public Health Department Pattern</a></button>
-          <button class="tab active"><a href="PublicHealth3.html">Public Health Department Activities</a></button>
-        </div>
-        
+    <div class="tab-container">
+  <button class="tab-button">Public Health Department Structure</button>
+  <button class="tab-button">Public Health Department Pattern</button>
+  <button class="tab-button active">Public Health Department Activities</button>
+</div>   
     <!-- SVG Goo Filter Definition -->
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
     <defs>
