@@ -63,13 +63,14 @@
       font-size: 18px;
       color: #555;
     }
-    nav {
+   nav {
       display: flex;
       gap: 15px;
       margin-top: 10px;
       flex-wrap: wrap;
       position: relative;
       z-index: 1000;
+<<<<<<< HEAD
     }
     .tabs {
       display: flex;
@@ -79,8 +80,11 @@
     .tab.active {
       background-color: #1a3e8b; /* GVMC Blue */
       color: white;
+=======
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     }
     nav a {
+      /* Base styling for all nav links, will be enhanced by .nav-gooey-link */
       text-decoration: none;
       padding: 8px 12px; /* Increased padding for better touch targets */
       border-radius: 5px;
@@ -94,6 +98,10 @@
       background-color: transparent; /* Gooey buttons start transparent */
       display: inline-block; /* Behaves better with internal spans */
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     .nav-gooey-link__text {
       position: relative;
       z-index: 2; /* Text above blobs */
@@ -107,6 +115,10 @@
     .nav-gooey-link:hover {
       transform: translateY(-2px); /* Subtle lift effect */
     }
+<<<<<<< HEAD
+=======
+    /* Active state - overrides gooey effects */
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     nav a.active, .nav-gooey-link.active {
       background: #e6efff;
       border-radius: 5px; /* Ensure radius is maintained */
@@ -118,6 +130,10 @@
     .nav-gooey-link.active .nav-gooey-link__inner {
       display: none; /* Hide goo mechanism for active link */
     }
+<<<<<<< HEAD
+=======
+    /* Gooey effect styles */
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     .nav-gooey-link__inner {
       z-index: 1; /* Behind text, above potential :after if we used it */
       overflow: hidden;
@@ -126,8 +142,15 @@
       top: 0;
       width: 100%;
       height: 100%;
+<<<<<<< HEAD
       border-radius: 5px; 
     }    .nav-gooey-link__blobs {
+=======
+      border-radius: 5px; /* Match parent's border-radius */
+      /* background: #ffffff; /* Optional: if you want a solid background behind blobs */
+    }
+    .nav-gooey-link__blobs {
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
       position: relative;
       display: block;
       height: 100%;
@@ -267,6 +290,7 @@ footer {
       z-index: 1;        
       overflow: hidden;  
       transition: color 0.3s ease; 
+<<<<<<< HEAD
     }
     .dropdown-content a::after {
       content: "";
@@ -279,6 +303,21 @@ footer {
       transition: width 0.3s ease;
       z-index: -1; 
     }    .dropdown-content a:hover {
+=======
+    }
+    .dropdown-content a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #1a3e8b; 
+      transition: width 0.3s ease;
+      z-index: -1; 
+    }
+    .dropdown-content a:hover {
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
       color: #fff; 
     }
     .dropdown-content a:hover::after {
@@ -300,6 +339,7 @@ footer {
     .dropdown-toggle .nav-gooey-link__text {
       font-weight: bold;
     }
+<<<<<<< HEAD
  .side-div-zones {
       flex: 0 0 220px;
       background: #181a1b;
@@ -369,6 +409,114 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+=======
+ .tabs {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom: none;
+}
+.tab {
+  padding: 10px 20px;
+  background-color: #f0f8ff;
+  color: #5530ec;
+  text-decoration: none;
+  border: 2px solid #5530ec;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.tab:hover {
+  background-color: #d4c7f3;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.tab.active {
+  background-color: #5530ec;
+  color: white;
+  border: none;
+  box-shadow: 0 6px 15px rgba(85, 48, 236, 0.5);
+}
+.main-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100vh;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+/* Sidebar style */
+.side-div-zones {
+  flex: 0 0 220px;
+  background: #181a1b;
+  color: #fff;
+  padding: 25px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 260px;
+  overflow-y: auto; /* Add scroll only if needed */
+}
+/* Heading */
+.side-div-zones h4 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+  width: 100%;
+  font-family: 'Merriweather', serif;
+}
+/* List */
+.side-div-zones ul {
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+}
+.side-div-zones li {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.side-div-zones a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 7px 10px;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
+  font-weight: 500;
+}
+.side-div-zones a:hover {
+  background: #23272b;
+  color: #ffd700;
+  padding-left: 18px;
+}
+/* Responsive */
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+  }
+  .side-div-zones {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+/* Content Area */
+.content {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: auto;
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
 }
 
 .main-content {
@@ -642,7 +790,10 @@ html, body {
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
+<<<<<<< HEAD
             
+=======
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <a href="Contacts.html">Contacts</a>
           </div>
         </div>
@@ -653,6 +804,7 @@ html, body {
       <span>🔍</span>
     </div>
   </div>
+<<<<<<< HEAD
   <div class="heritage-content" style="display: flex; flex-direction: row; gap: 32px; align-items: flex-start;">
 
     <!-- Sidebar -->
@@ -683,21 +835,41 @@ html, body {
     <a href="Heritage.html" class="tab">Ancient Heritage</a>
     <a href="CityHeri.html" class="tab active">City Heritage</a>
     <a href="GeoHeri.html" class="tab">Geo Heritage</a>
+=======
+ <div class="tabs">
+  <button class="tab active">Ancient Heritage</button>
+  <a href="CityHeri.html" class="tab">City Heritage</a>
+  <a href="GeoHeri.html" class="tab">Geo Heritage</a>
+</div>
+
+<div class="main-layout">
+  <div class="side-div-zones">
+    <h4>About Vizag</h4>
+    <ul>
+      <li><a href="Index.html">Introduction</a></li>
+      <li><a href="History.html">History</a></li>
+      <li><a href="Heritage.html" style="background:#23272b; color:#ffd700; padding-left:18px;">Heritage</a></li>
+      <li><a href="https://mausam.imd.gov.in/visakhapatnam/">Weather</a></li>
+      <li><a href="Industries.html">Industries</a></li>
+      <li><a href="Health.html">Health</a></li>
+      <li><a href="FunctionHalls.html">Function Halls</a></li>
+      <li><a href="Markets.html">Markets</a></li>
+      <li><a href="Education.html">Education</a></li>
+    </ul>
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
   </div>
 
   <div class="content">
     <div class="heritage-section">
       <div class="heritage-text">
         <h3>Simhachalam</h3>
-        <p>
-          Simhadri or Simhachalam is a Hindu temple located in the Visakhapatnam City, suburb of Simhachalam in Andhra Pradesh, South India.
-          It is dedicated to the incarnation (avatar) of Vishnu, known as Narasimha (the man-lion).
-          The architectural style of the temple’s central shrine is Oriya while its entrance is Dravidian.
-        </p>
-      </div>
+        <p>Simhadri or Simhachalam is a Hindu temple located in the Visakhapatam City, suburb of Simhachalam in Andhra Pradesh, South India. It is dedicated to the incarnation (avatar) of Vishnu, known as Narasimha (the man-lion). The architectural style of the temple’s central shrine is Oriya while its entrance is Dravidian.
+          </p>
+          </div>
     </div>
 
     <div class="heritage-gallery">
+<<<<<<< HEAD
 
         <p><strong>Bavikonda</strong><br>
         Bavikonda Buddhist Complex (17 49 N - 83 23 E) Lies about 16 km from Visakhapatnam city on a hill about 130 mts. Above Mean Sea Level.
@@ -707,6 +879,24 @@ html, body {
     </div>
   </div>
 </div>
+=======
+      <div class="gallery-item">
+        <p><strong>Bavikonda</strong><br>Bavikonda Buddhist Complex (17 49 N - 83 23 E) Lies about 16 km from Visakhapatnam city on a hill about 130 mts. Above Mean Sea Level. The term Bavikonda in Telugu language means a hill of wells.</p>
+      </div>
+      <div class="gallery-item"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- SVG Gooey Filter for navigation effect -->
+  <svg width="0" height="0">
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </svg>
+>>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
 </body>
  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
     <defs>

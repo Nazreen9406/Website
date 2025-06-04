@@ -176,7 +176,7 @@
         }
 
         .headers {
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            background: linear-gradient(to right, #ff758c, #5530eC);
             padding: 20px;
             text-align: center;
             color: white;
@@ -214,7 +214,7 @@
         }
 
         h2 {
-            color: #c71585;
+            color: #5530eC;
             font-weight: 700;
         }
 
@@ -245,7 +245,6 @@
   border-bottom: 3px solid #333;
   margin-bottom: 20px;
 }
-
 .tab {
   padding: 10px 20px;
   border: none;
@@ -255,9 +254,77 @@
   margin-right: 5px;
 }
 .tab.active {
-  background: #7fae18;
+  background: #5530eC;
   color: white;
 }
+ .side-div-zones {
+      flex: 0 0 220px;
+      background: #181a1b;
+      color: #fff;
+      padding: 25px 18px;
+      border-radius: 10px;
+      min-width: 180px;
+      max-width: 260px;
+      height: fit-content;
+      margin-right: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .side-div-zones h4 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 8px;
+      width: 100%;
+      font-family: 'Merriweather', serif;
+    }
+    .side-div-zones ul {
+      list-style: none;
+      padding-left: 0;
+      width: 100%;
+      margin: 0;
+    }
+    .side-div-zones li {
+      margin-bottom: 10px;
+      width: 100%;
+      border: none;
+      padding: 0;
+      background: none;
+    }
+    .side-div-zones a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      padding: 7px 10px;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s, padding-left 0.2s;
+      font-weight: 500;
+      border-left: none;
+    }
+    .side-div-zones a:hover {
+      background: #23272b;
+      color: #ffd700;
+      padding-left: 18px;
+    }
+    .side-div-zones ul li {
+      color: inherit;
+      border-left: none;
+      padding-left: 0;
+      background: none;
+      transition: none;
+    }
+    .side-div-zones ul li:hover {
+      background: none;
+      padding-left: 0;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
+    }
     </style>
 </head>
 <body>
@@ -271,15 +338,28 @@
         </div>
       </div>
       <nav>
-        <a href="#" class="active" style="font-weight: bold;">Home</a>
-
+        <a href="web.html" class="nav-gooey-link active">
+          <span class="nav-gooey-link__text">Home</span>
+          <span class="nav-gooey-link__inner">
+            <span class="nav-gooey-link__blobs">
+              <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+            </span>
+          </span>
+        </a>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">About Vizag</a>
+          <a href="Index.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">About Vizag</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Index.html">Introduction</a>
             <a href="History.html">History</a>
             <a href="Heritage.html">Heritage</a>
-            <a href="#"> Weather</a>
+            <a href="https://mausam.imd.gov.in/visakhapatnam/"> Weather</a>
             <a href="Industries.html">Industries</a>
             <a href="Health.html">Health</a>
             <a href="FunctionHalls.html">Function Halls</a>
@@ -287,40 +367,60 @@
             <a href="Education.html">Education</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Corporation</a>
+          <a href="Corporation-Introduction.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Corporation</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Corporation-Introduction.html">Introduction</a>
             <a href="Corporation-Elected Wing.html">Elected wing</a>
-            <a href="Corporation-Adminstrator  Wing.html">Administrative wing</a>
+            <a href="Corporation-Administration Wing.html ">Administrative wing</a>
             <a href="Corporation- Comissioner.html">Commissioner</a>
-            <a href="#">Awards</a>
-            <a href="#">List of Holidays</a>
-            <a href="#">Officers Seniority List</a>
+            <a href="Awards.html">Awards</a>
+            <a href="Holidays.html">List of Holidays</a>
+            <a href="Officers.html">Officers Seniority List</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Zones</a>
+          <a href="Zones.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Zones</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Zones.html">Organization Structure</a>
             <div class="dropdown" style="position: relative;">
               <a href="List of Zones.html" class="dropdown-toggle">List of Zones ▸</a>
               <div class="dropdown-content" style="left: 100%; top: 0;">
-                <a href="#">Zone-1</a>
-                <a href="#">Zone-2</a>
-                <a href="#">Zone-3</a>
-                <a href="#">Zone-4</a>
-                <a href="#">Zone-5</a>
-                <a href="#">Zone-6</a>
+                <a href="Zone1.html">Zone-1</a>
+                <a href="Zone2.html">Zone-2</a>
+                <a href="Zone3.html">Zone-3</a>
+                <a href="Zone4.html">Zone-4</a>
+                <a href="Zone5.html">Zone-5</a>
+                <a href="Zone6.html">Zone-6</a>
+                <a href="Zone7.html">Zone-7</a>
+                <a href="Zone8.html">Zone-8</a>
               </div>
             </div>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Departments</a>
+          <a href="CSec.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Departments</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="CSec.html">General Administration</a>
             <a href=" Projects.html">Projects</a>
@@ -335,89 +435,130 @@
             <a href="IT1.html">IT & E-Governance</a>
           </div>
         </div>
-
         <div class="dropdown">
-         <a href="CitizenServices.html" class="dropdown-toggle" style="font-weight:bold;">Citizen Services</a>
+           <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Citizen Services</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="CitizenServices.html">Citizen Services list</a>
-            <a href="PropertyTax.html">Property Tax</a>
-            <a href="https://cdma.ap.gov.in/en/water-charges">Water TAx</a>
-            <a href="https://cdma.ap.gov.in/en/vacant-land-tax">Vacant Land Tax</a>
-            <a href="https://cdma.ap.gov.in/en/lamspayments">Shop Lease & Rentals</a>
-            <a href="https://cdma.ap.gov.in/en/issue-trade-licenses">D & O Trade License</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Property Tax</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/wtms/search/waterSearch/">Water TAx</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
+            <a href="https://visakhapatnam.emunicipal.ap.gov.in/lams-web/app/citizen/search-agreement/citizen-search.html">Shop Lease & Rentals</a>
+            <a href="https://cdma.ap.gov.in/en/tlpayments">D & O Trade License</a>
             <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
             <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Information</a>
+          <a href="Information- Population-Details.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Information</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
             <a href="Information- Population-Details.html">Population-Details</a>
             <a href="FAQ'S.html">FAQ'S</a>
             <a href="Right To Information.html">Right to Information</a>
-            <a href="#">Citizen's Charter Rules & Procedures</a>
-            <a href="#">Dial a Tanker</a>
+            <a href="Citizen.html">Citizen's Charter Rules & Procedures</a>
+            <a href="Dail A Tanker.html">Dial a Tanker</a>
             <a href="Grievances.html">Grievances</a>
-            <a href="#">RAY</a>
-            <a href="#">GVMC Press Notes</a>
-            <a href="#"> Photo Gallery & News</a>
+            <a href="RAY.html">RAY</a>
+            <a href="PressNote.html">GVMC Press Notes</a>
+            <a href="PhotoGallery.html"> Photo Gallery & News</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Tenders</a>
+          <a href="Tenders.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Tenders</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
-            <a href="#">Tenders & Downloads</a>
+            <a href="Tenders.html">Tenders & Downloads</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-weight:bold;">Contact</a>
+          <a href="WaterSupply.html" class="dropdown-toggle nav-gooey-link">
+            <span class="nav-gooey-link__text">Contact</span>
+            <span class="nav-gooey-link__inner">
+              <span class="nav-gooey-link__blobs">
+                <span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span><span class="nav-gooey-link__blob"></span>
+              </span>
+            </span>
+          </a>
           <div class="dropdown-content">
-            <a href="#">Water Supply & Sewage Officers List</a>
-            <a href="#">Contacts</a>
+            <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
+            <a href="Contacts.html">Contacts</a>
           </div>
         </div>
       </nav>
     </div>
     <div class="search-box">
-      <input type="text" placeholder="Search...">
+      <input type="text" placeholder="Search..." />
       <span>🔍</span>
     </div>
   </div>
-     <div class="tabs">
-    <button class="tab"><a href="#">General Adminsitration</a></button>
-    <button class="tab"><a href="CSec.html">C Section</a></button>
-    <button class="tab"><a href="DSec.html">D Section</a></button>
-    <button class="tab active "><A href="HRD.html">HRD</A></button>
-    
+<div style="display: flex; flex-direction: row; gap: 32px; align-items: flex-start; margin-top: 0;">
+
+  <!-- Sidebar -->
+  <div class="side-div-zones" style="min-width: 220px;">
+    <h4>Departments</h4>
+    <ul>
+      <li><a href="CSec.html" style="background:#23272b; color:#ffd700; padding-left:18px;">General Administration</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="Engineering.html">Engineering</a></li>
+      <li><a href="RevDepStru.html">Revenue</a></li>
+      <li><a href="PublicHealth.html">Public Health</a></li>
+      <li><a href="TownPlanning.html">Town Planning</a></li>
+      <li><a href="Horticulture.html">Horticulture</a></li>
+      <li><a href="UCD.html">UCD</a></li>
+      <li><a href="EducationalProjects.html">Education</a></li>
+      <li><a href="Finance.html">Finance</a></li>
+      <li><a href="IT1.html">IT & E-Governance</a></li>
+    </ul>
   </div>
-
-
-    <div class="headers">BRIEF NOTE ON HRD ACTIVITIES IN GVMC</div>
-
-    <div class="navbar">
-        <button><A href="web.html">Home</A></button>
-        <button>Corporation</button>
+  <!-- Main content beside sidebar -->
+  <div style="flex: 1;">
+    <div class="headers" style="font-size: 1.5em; font-weight: bold; margin-bottom: 12px; text-align: center;">
+      BRIEF NOTE ON HRD ACTIVITIES IN GVMC
     </div>
-
     <div class="content">
-        <p>The HRD Department commenced its activities from June, 2008, after conducting preliminary study of all the departments in relation to the HR in GVMC. The following activities are performed by the HRD wing:</p>
-
-        <ul>
-            <li><a href="#">Internal and External Training Programs</a></li>
-            <li><a href="#">Study Visits under PEARL (JNNURM)</a></li>
-            <li><a href="#">Coordinating Activities</a></li>
-            <li><a href="#">Capacity Building for Urban Development (CBUD)</a></li>
-            <li><a href="#">Project Studies and Reports</a></li>
-            <li><a href="#">Government Programmes</a></li>
-            <li><a href="#">Research and Development</a></li>
-            <li><a href="#">Seminars and Workshops</a></li>
-            <li><a href="#">Preparation of HRD and other related Manuals</a></li>
-            <li><a href="#">Entries for Awards and Recognitions</a></li>
-        </ul>
+      <p>The HRD Department commenced its activities from June, 2008, after conducting preliminary study of all the departments in relation to the HR in GVMC. The following activities are performed by the HRD wing:</p>
+      <ul>
+        <li><a href="#">Internal and External Training Programs</a></li>
+        <li><a href="#">Study Visits under PEARL (JNNURM)</a></li>
+        <li><a href="#">Coordinating Activities</a></li>
+        <li><a href="#">Capacity Building for Urban Development (CBUD)</a></li>
+        <li><a href="#">Project Studies and Reports</a></li>
+        <li><a href="#">Government Programmes</a></li>
+        <li><a href="#">Research and Development</a></li>
+        <li><a href="#">Seminars and Workshops</a></li>
+        <li><a href="#">Preparation of HRD and other related Manuals</a></li>
+        <li><a href="#">Entries for Awards and Recognitions</a></li>
+      </ul>
     </div>
-
+  </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
+        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+      </filter>
+    </defs>
+  </svg>
 </body>
 </html>
