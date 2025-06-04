@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Establishment Section Table</title>
+    <meta charset="UTF-8">
+    <title>History of Visakhapatnam - GVMC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         a{
             text-decoration:none;
@@ -11,12 +13,12 @@
             font-weight:bold;
         }
          body {
-      margin: 0;
-      font-family: 'Open Sans', Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
+            margin: 0;
+            font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
     .header {
       justify-content: space-between;
       align-items: center;
@@ -25,7 +27,7 @@
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
       display: flex;
-      position: relative;
+      position: relative; 
       z-index: 1000;
       overflow: visible;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -35,6 +37,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
+      width: auto;
     }
     .logo-title {
       display: flex;
@@ -66,7 +69,6 @@
       font-size: 18px;
       color: #555;
     }
-<<<<<<< HEAD
     nav {
       display: flex;
       gap: 15px;
@@ -161,76 +163,6 @@
       .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
         transform: translateZ(0) scale(1.4);
       }
-=======
-  .dropdown {
-      position: relative;
-      display: inline-block;
-      z-index: 2000;
-    }
-    .dropdown-content {
-      position: absolute;
-      background-color: #fff;
-      min-width: 160px;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      top: 100%;
-      left: 0;
-      z-index: 3000;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    }
-    .dropdown-content a {
-      color: #333;
-      padding: 8px 12px;
-      text-decoration: none;
-      display: block;
-      font-weight: normal;
-      position: relative; 
-      z-index: 1;        
-      overflow: hidden;  
-      transition: color 0.3s ease; 
-    }
-    
-    .dropdown-content a::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: #1a3e8b; 
-      transition: width 0.3s ease;
-      z-index: -1; 
-    }
-
-    .dropdown-content a:hover {
-      color: #fff; 
-    }
-
-    .dropdown-content a:hover::after {
-      width: 100%;
-    }
-    
-    .dropdown:hover > .dropdown-content { 
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    .main-content-area {
-      flex: 1 1 65%; 
-      min-width: 300px;
-      padding-right: 20px; 
-    }
-    @media (max-width: 992px) { 
-      .main-content-area { padding-right: 0; }
-    }
-    .dropdown-toggle .nav-gooey-link__text {
-      font-weight: bold;
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     }
     .search-box {
       position: relative;
@@ -268,6 +200,9 @@
       .search-box {
         align-self: flex-end;
         margin-top: 10px;
+      }
+      nav {
+        width: 100%;
       }
     }
     .slideshow-container {
@@ -373,20 +308,56 @@
       transform: translate3d(0, 150%, 0) scale(1.7);
       transition: transform 0.45s;
     }
-<<<<<<< HEAD
-    .dropdown:hover .dropdown-content {
-  display: block;
+    .dropdown-content {
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  top: 100%;
+  left: 0;
+  z-index: 3000;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
-.dropdown:hover .dropdown-content {
+.dropdown-content a {
+  color: #333;
+  padding: 8px 12px;
+  text-decoration: none;
   display: block;
+  font-weight: normal;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease;
 }
-
-.dropdown-content .dropdown:hover .dropdown-content {
-  display: block;
-  left: 100%;
+.dropdown-content a::after {
+  content: "";
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1a3e8b;
+  transition: width 0.3s ease;
+  z-index: -1;
 }
-        *{
+.dropdown-content a:hover {
+  color: #fff;
+}
+.dropdown-content a:hover::after {
+  width: 100%;
+}
+.dropdown:hover > .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+    *{
             font-family:Arial, Helvetica, sans-serif;
         }
         /* --- Start: Table Styling from user --- */
@@ -487,27 +458,6 @@
     /* --- End: Table Styling from user --- */
     /* Sidebar styling for department side-div-zones */
     .side-div-zones {
-=======
-
-    @supports (filter: url('#goo')) {
-      .nav-gooey-link__blob {
-        transform: translate3d(0, 150%, 0) scale(1.4);
-      }
-    }
-    .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
-    .nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
-    .nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
-    .nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
-    .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
-      transform: translateZ(0) scale(1.7);
-    }
-    @supports (filter: url('#goo')) {
-      .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
-        transform: translateZ(0) scale(1.4);
-      }
-    }
-     .side-div-zones {
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
       flex: 0 0 220px;
       background: #181a1b;
       color: #fff;
@@ -535,20 +485,10 @@
       list-style: none;
       padding-left: 0;
       width: 100%;
-<<<<<<< HEAD
-=======
-      margin: 0;
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     }
     .side-div-zones li {
       margin-bottom: 10px;
       width: 100%;
-<<<<<<< HEAD
-=======
-      border: none;
-      padding: 0;
-      background: none;
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     }
     .side-div-zones a {
       color: #fff;
@@ -559,43 +499,17 @@
       border-radius: 5px;
       transition: background 0.2s, color 0.2s, padding-left 0.2s;
       font-weight: 500;
-<<<<<<< HEAD
-=======
-      border-left: none;
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     }
     .side-div-zones a:hover {
       background: #23272b;
       color: #ffd700;
       padding-left: 18px;
     }
-<<<<<<< HEAD
-=======
-    /* Remove inherited ul/li styles for sidebar only */
-    .side-div-zones ul li {
-      color: inherit;
-      border-left: none;
-      padding-left: 0;
-      background: none;
-      transition: none;
-    }
-    .side-div-zones ul li:hover {
-      background: none;
-      padding-left: 0;
-    }
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
     @media (max-width: 900px) {
       .container { flex-direction: column; }
       .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
     }
-<<<<<<< HEAD
     </style>
-=======
-    </STYLE>
-  <meta charset="UTF-8">
-  <title>About Vizag</title>
-  <link rel="stylesheet" href="style.css">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
 </head>
 <body>
   <div class="header">
@@ -608,11 +522,7 @@
         </div>
       </div>
       <nav>
-<<<<<<< HEAD
-        <a href="#" class="nav-gooey-link active">
-=======
         <a href="web.html" class="nav-gooey-link active">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
           <span class="nav-gooey-link__text">Home</span>
           <span class="nav-gooey-link__inner">
             <span class="nav-gooey-link__blobs">
@@ -621,11 +531,7 @@
           </span>
         </a>
         <div class="dropdown">
-<<<<<<< HEAD
-          <a href="#" class="dropdown-toggle nav-gooey-link">
-=======
           <a href="Index.html" class="dropdown-toggle nav-gooey-link">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <span class="nav-gooey-link__text">About Vizag</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -646,11 +552,7 @@
           </div>
         </div>
         <div class="dropdown">
-<<<<<<< HEAD
-          <a href="#" class="dropdown-toggle nav-gooey-link">
-=======
           <a href="Corporation-Introduction.html" class="dropdown-toggle nav-gooey-link">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <span class="nav-gooey-link__text">Corporation</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -669,11 +571,7 @@
           </div>
         </div>
         <div class="dropdown">
-<<<<<<< HEAD
-          <a href="#" class="dropdown-toggle nav-gooey-link">
-=======
           <a href="Zones.html" class="dropdown-toggle nav-gooey-link">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <span class="nav-gooey-link__text">Zones</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -692,21 +590,14 @@
                 <a href="Zone4.html">Zone-4</a>
                 <a href="Zone5.html">Zone-5</a>
                 <a href="Zone6.html">Zone-6</a>
-<<<<<<< HEAD
-=======
                 <a href="Zone7.html">Zone-7</a>
                 <a href="Zone8.html">Zone-8</a>
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
               </div>
             </div>
           </div>
         </div>
         <div class="dropdown">
-<<<<<<< HEAD
-          <a href="#" class="dropdown-toggle nav-gooey-link">
-=======
           <a href="CSec.html" class="dropdown-toggle nav-gooey-link">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <span class="nav-gooey-link__text">Departments</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -740,26 +631,16 @@
           <div class="dropdown-content">
             <a href="CitizenServices.html">Citizen Services list</a>
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Property Tax</a>
-<<<<<<< HEAD
-            <a href="https://cdma.ap.gov.in/en/wcpayments">Water TAx</a>
-            <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
-            <a href="https://cdma.ap.gov.in/en/lamspayments">Shop Lease & Rentals</a>
-=======
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/wtms/search/waterSearch/">Water TAx</a>
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/ptis/citizen/search/search-searchForm.action#no-back-button">Vacant Land Tax</a>
             <a href="https://visakhapatnam.emunicipal.ap.gov.in/lams-web/app/citizen/search-agreement/citizen-search.html">Shop Lease & Rentals</a>
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <a href="https://cdma.ap.gov.in/en/tlpayments">D & O Trade License</a>
             <a href="https://cdma.ap.gov.in/en/complaintregistration">Complaint Registration</a>
             <a href="https://etenders.gov.in/eprocure/app"> Online Forms & Tenders</a>
           </div>
         </div>
         <div class="dropdown">
-<<<<<<< HEAD
-          <a href="#" class="dropdown-toggle nav-gooey-link">
-=======
           <a href="Information- Population-Details.html" class="dropdown-toggle nav-gooey-link">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <span class="nav-gooey-link__text">Information</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -780,11 +661,7 @@
           </div>
         </div>
         <div class="dropdown">
-<<<<<<< HEAD
-          <a href="#" class="dropdown-toggle nav-gooey-link">
-=======
           <a href="Tenders.html" class="dropdown-toggle nav-gooey-link">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <span class="nav-gooey-link__text">Tenders</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -797,11 +674,7 @@
           </div>
         </div>
         <div class="dropdown">
-<<<<<<< HEAD
-          <a href="#" class="dropdown-toggle nav-gooey-link">
-=======
           <a href="WaterSupply.html" class="dropdown-toggle nav-gooey-link">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
             <span class="nav-gooey-link__text">Contact</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -811,12 +684,7 @@
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
-<<<<<<< HEAD
-            <a href="#Contacts.html">Contacts</a>
-=======
-            
             <a href="Contacts.html">Contacts</a>
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
           </div>
         </div>
       </nav>
@@ -826,286 +694,68 @@
       <span>🔍</span>
     </div>
   </div>
-<<<<<<< HEAD
   <div style="display: flex; flex-direction: row; gap: 32px; align-items: flex-start; margin-top: 0;">
-=======
-  <div class="headers">
-    <h1>History</h1>
-  </div>
-  <div class="container">
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
-    <div class="side-div-zones">
-      <h4>About Vizag</h4>
-      <ul>
-        <li><a href="Index.html" >Introduction</a></li>
-<<<<<<< HEAD
-        <li><a href="History.html" style="background:#23272b; color:#ffd700; padding-left:18px;">History</a></li>
-        <li><a href="Heritage.html">Heritage</a></li>
-        <li><a href="https://mausam.imd.gov.in/visakhapatnam/">Weather</a></li>
-        <li><a href="Industries.html">Industries</a></li>
-        <li><a href="Health.html">Health</a></li>
-        <li><a href="FunctionHalls.html" >Function Halls</a></li>
-        <li><a href="Markets.html">Markets</a></li>
-        <li><a href="Education.html" >Education</a></li>
-    
-      </ul>
+      <div class="side-div-zones">
+        <h4>About Vizag</h4>
+        <ul>
+          <li><a href="Index.html" >Introduction</a></li>
+          <li><a href="History.html" style="background:#23272b; color:#ffd700; padding-left:18px;">History</a></li>
+          <li><a href="Heritage.html">Heritage</a></li>
+          <li><a href="https://mausam.imd.gov.in/visakhapatnam/">Weather</a></li>
+          <li><a href="Industries.html">Industries</a></li>
+          <li><a href="Health.html">Health</a></li>
+          <li><a href="FunctionHalls.html" >Function Halls</a></li>
+          <li><a href="Markets.html">Markets</a></li>
+          <li><a href="Education.html" >Education</a></li>
+        </ul>
+      </div>
+      <div class="main-content-wrapper" style="flex: 1; min-width: 0;">
+        <div class="main-content-inner" style="padding: 0 10px;">
+          <table>
+            <tr>
+              <td><h3 style="color:#5530eC; text-align:center;">Year</h3></td>
+              <td><h3 style="color:#5530eC; text-align:center;">History</h3></td>
+            </tr>
+            <tr><td>260BC</td><td>Ashoka conquered the Kalinga empire (of which Vizag was a part).</td></tr>
+            <tr><td>208BC</td><td>Chandra Sri Satakarni was the king of this region.</td></tr>
+            <tr><td>220AD</td><td>Pallavas come into possession of the region</td></tr>
+            <tr><td>1000 to 1200 AD</td><td>Rule of the Cholas of Tanjore</td></tr>
+            <tr><td>14th Century</td><td>Gangas replaced by Gajapatis</td></tr>
+            <tr><td>1515</td><td>Simhachalam Temple was built.</td></tr>
+            <tr><td>1575 A.D</td><td>Krishna Deva Raya was the ruler of the area comprising Vizag.</td></tr>
+            <tr><td>Mid-17th Century</td><td>Qutub Shahis of Golconda defeats the Gajapatis of Orissa</td></tr>
+            <tr><td>1689</td><td>A factory was founded in "Vizagapatam" by the British East India Company.</td></tr>
+            <tr><td>1735</td><td>This factory was occupied by the forces of Aurangzeb.</td></tr>
+            <tr><td>1765</td><td>The Dutch Colony was established.</td></tr>
+            <tr><td>1800AD</td><td>The territory of the Northern Circars, of which Vizag was a part, ceded to the East India Company on dissolution of the Moghul Empire. Following this, a British colony was established</td></tr>
+            <tr><td>1922-24</td><td>The battles of Bobili and Padmanabham</td></tr>
+            <tr><td>1904</td><td>Revolt and struggle of Alluru Sitharama Raju against British rule</td></tr>
+            <tr><td>1923</td><td>Andhra Medical College was started.</td></tr>
+            <tr><td>1926</td><td>Andhra University was established.</td></tr>
+            <tr><td>1933</td><td>Visakhapatnam Port was established.</td></tr>
+            <tr><td>1942</td><td>Japanese war planes attacked Vizag.</td></tr>
+            <tr><td>1947</td><td>The Eastern Naval Command established its base in Vizag. Prior to 1947, the Royal Navy had a base in HMIS Sircars.</td></tr>
+            <tr><td>1949</td><td>Scindia Shipyard was started, it was later nationalised and is now called the Hindustan Shipyard.</td></tr>
+            <tr><td>1953</td><td>The Boat Repair Shop was expanded into a Base Repair Organisation (BRO) and was shifted to its location at the mouth of the northwest channel.</td></tr>
+            <tr><td>1957</td><td>A petroleum refinery owned by Caltex was opened. This is currently owned by HPCL.</td></tr>
+            <tr><td>1965</td><td>Two survey ships JUMNA and INVESTIGATOR were permanently re-based at Visakhapatnam.</td></tr>
+            <tr><td>1971</td><td>INS Rajput of the Indian Navy destroyed the Pakistani submarine Ghazi in the Indo-Pak War off the coast of Vizag.</td></tr>
+            <tr><td>1981</td><td>Visakhapatnam Steel Plant commenced operations.</td></tr>
+          </table>
+          <div style="margin-top: 2em;">
+            <h3 style="text-align: center; color: green;"><u>Before British</u></h3>
+            <p>Vizag, the Port city is the jewel on the eastern coast of India, 2nd Biggest City Next to Capital Hyderabad. The City is a harmonious blend of the magical past and the bustling present with a breath taking panorama of golden beaches, lush green fields, verdant valleys and splendid monuments from a historically rich and religious heritage</p>
+            <h3 style="text-align: center; color: green;"><u>During British</u></h3>
+            <p>Vizagapatnam the colonial name given to the city have become one of the important and strategic power centre for the British. British built its settlement here in Waltair which housed their Residence.</p>
+            <h3 style="text-align: center; color: green;"><u>After British</u></h3>
+            <p>From a tiny little fishing village in the previous century, Vizag as part of the coastal Andhra region came under French control in the late 18th century; the Dutch had established a colony in the early part of the 18th century. The English on establishing the Raj developed Waltair as a sister town of Vizag in the Madras Presidency. The city was the largest city at the time of Indian Independence and was divided into three manageable districts.</p>
+            <h3 style="text-align: center; color: green;"><u>Vizag in modern Times</u></h3>
+            <p>The transformation of Vizag is unique in its speed, scale, and politics. With just 25 years under the hood it changed from a sleepy town to bustling business town. Vizag's dramatic transformation into a bustling business town without leaving its sheer natural beauty and calmness is true awesomeness that calls for huge applause.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div style="flex: 1; min-width: 0;">
-                <table >
-=======
-        <li><a href="History.html"  style="background:#23272b; color:#ffd700; padding-left:18px;">History</a></li>
-        <li><a href="Heritage.html">Heritage</a></li>
-        <li><a href="https://mausam.imd.gov.in/visakhapatnam/">Weather</a></li>
-        <li><a href="Industries.html">Industries</a></li>
-        <li><a href="Health.html" >Health</a></li>
-        <li><a href="FunctionHalls.html">Function Halls</a></li>
-        <li><a href="Markets.html">Markets</a></li>
-        <li><a href="Education.html">Education</a></li>
-      </ul>
-    </div>
-    <div class="main-content">
-      <div class="breadcrumb">
-      <table >
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
-        <tr>
-        <td><H3 style="color:#5530eC;TEXT-ALIGN:CENTER;">Year</H3></td>
-        <td><h3 style="color:#5530eC;TEXT-ALIGN:CENTER">History</h3></td>
-    </tr>
-    <tr>
-        <td>
-            260BC
-        </td>
-        <TD>
-           Ashoka conquered the Kalinga empire (of which Vizag was a part).
-        </TD>
-    </tr>
-        <tr>
-        <td>
-            208BC
-        </td>
-        <TD>
-           Chandra Sri Satakarni was the king of this region.
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-           220AD
-        </td>
-        <TD>
-           	Pallavas come into possession of the region
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            1000 to 1200 AD
-        </td>
-        <TD>
-          Rule of the Cholas of Tanjore
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            14th Century
-        </td>
-        <TD>
-           Gangas replaced by Gajapatis
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            1515
-        </td>
-        <TD>
-           Simhachalam Temple was built.
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            1575 A.D
-        </td>
-        <TD>
-           	Krishna Deva Raya was the ruler of the area comprising Vizag.
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            Mid-17th Century
-        </td>
-        <TD>
-           Qutub Shahis of Golconda defeats the Gajapatis of Orissa
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            1689
-        </td>
-        <TD>
-           A factory was founded in "Vizagapatam" by the British East India Company.
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            1735
-        </td>
-        <TD>
-           This factory was occupied by the forces of Aurangzeb.
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            1765
-        </td>
-        <TD>
-           The Dutch Colony was established.
-        </TD>
-    </tr>
-    </tr>
-        <tr>
-        <td>
-            1800AD
-        </td>
-        <TD>
-            The territory of the Northern Circars, of which Vizag was a part, ceded to the East India Company on dissolution of the Moghul Empire. Following this, a British colony was established
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1922-24
-        </td>
-        <TD>
-          	The battles of Bobili and Padmanabham
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1904
-        </td>
-        <TD>
-          Revolt and struggle of Alluru Sitharama Raju against British rule
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1923
-        </td>
-        <TD>
-         Andhra Medical College was started.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1926
-        </td>
-        <TD>
-           Andhra University was established.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1933
-        </td>
-        <TD>
-           	Visakhapatnam Port was established.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1942
-        </td>
-        <TD>
-           	Japanese war planes attacked Vizag.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1947
-        </td>
-        <TD>
-          	The Eastern Naval Command established its base in Vizag. Prior to 1947, the Royal Navy had a base in HMIS Sircars.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1949
-        </td>
-        <TD>
-           Scindia Shipyard was started, it was later nationalised and is now called the Hindustan Shipyard.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1953
-        </td>
-        <TD>
-           The Boat Repair Shop was expanded into a Base Repair Organisation (BRO) and was shifted to its location at the mouth of the northwest channel.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1957
-        </td>
-        <TD>
-            A petroleum refinery owned by Caltex was opened. This is currently owned by HPCL.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1965
-        </td>
-        <TD>
-            Two survey ships JUMNA and INVESTIGATOR were permanently re-based at Visakhapatnam.
-        </TD>
-    </tr>
-            <tr>
-        <td>
-            1971
-        </td>
-        <TD>
-            	INS Rajput of the Indian Navy destroyed the Pakistani submarine Ghazi in the Indo-Pak War off the coast of Vizag.
-        </TD>
-    </tr>
-        </tr>
-            <tr>
-        <td>
-            1981
-        </td>
-        <TD>
-            		Visakhapatnam Steel Plant commenced operations..
-        </TD>
-    </tr>
-    </table>
-    <p> <h3 style="text-align: center;color:green;"><u>Before British</u></h3>Vizag, the Port city is the jewel on the eastern coast of India, 2nd Biggest City Next to Capital Hyderabad. The City is a harmonious blend of the magical past and the bustling present with a breath taking panorama of golden beaches, lush green fields, verdant valleys and splendid monuments from a historically rich and religious heritage
-</p>
-    <p> <h3 style="text-align: center;color:green;"><u>During British</u></h3>Vizagapatnam the colonial name given to the city have become one of the important and strategic power centre for the British. British built its settlement here in Waltair which housed their Residence.
-</p>
-    <p > <h3 style="text-align: center;color:green;"><u>After British</u></h3>From a tiny little fishing village in the previous century, Vizag as part of the coastal Andhra region came under French control in the late 18th century; the Dutch had established a colony in the early part of the 18th century. The English on establishing the Raj developed Waltair as a sister town of Vizag in the Madras Presidency. The city was the largest city at the time of Indian Independence and was divided into three manageable districts.
-</p>
-    <p> <h3 style="text-align: center;color:green;"><u>Vizag in modern Times</u></h3>The transformation of Vizag is unique in its speed, scale, and politics. With just 25 years iunder the hood it changed from a sleepy town to bustling busines town. Vizag's dramatic transformation into a bustling business town without leaving its sheer natural beauty and calmness is true awsomeness that calls for huge applause.
-</p>
-    </div>
-  </div>
-<<<<<<< HEAD
-=======
- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
-    <defs>
-      <filter id="goo">
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo"></feColorMatrix>
-        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-      </filter>
-    </defs>
-  </svg>
 </body>
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
 </html>
 
 

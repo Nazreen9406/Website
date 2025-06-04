@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Establishment Section Table</title>
+    <meta charset="UTF-8">
+    <title>HRD Activities - GVMC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         a{
             text-decoration:none;
@@ -12,10 +14,7 @@
         }
          body {
       margin: 0;
-      font-family: 'Open Sans', Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
     }
     .header {
       justify-content: space-between;
@@ -87,102 +86,42 @@
       border: none;
       background-color: transparent;
       display: inline-block;
-    }
-    .nav-gooey-link__text {
-      position: relative;
-      z-index: 2;
       color: #333;
       font-weight: 500;
-      transition: color 0.5s;
     }
-    .nav-gooey-link:not(.active):hover .nav-gooey-link__text {
-      color: #FFFFFF;
-    }
-    .nav-gooey-link:hover {
-      transform: translateY(-2px);
-    }
-    nav a.active, .nav-gooey-link.active {
+    nav a.active {
       background: #e6efff;
-      border-radius: 5px;
-    }
-    nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
       color: #1a3e8b;
       font-weight: bold;
     }
-    .nav-gooey-link.active .nav-gooey-link__inner {
-      display: none;
-    }
-    .nav-gooey-link__inner {
-      z-index: 1;
-      overflow: hidden;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 5px;
-      pointer-events: none;
-    }
-    .nav-gooey-link__blobs {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      filter: url('#goo');
-      z-index: 0;
-    }
-    .nav-gooey-link__blob {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 25%;
-      height: 100%;
-      background: #1a3e8b;
-      border-radius: 50%;
-      transform: translate3d(0, 150%, 0) scale(1.7);
-      transition: transform 0.45s;
-    }
-    @supports (filter: url('#goo')) {
-      .nav-gooey-link__blob {
-        transform: translate3d(0, 150%, 0) scale(1.4);
-      }
-    }
-    .nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
-    .nav-gooey-link__blob:nth-child(2) { left: 25%; transition-delay: 0.08s; }
-    .nav-gooey-link__blob:nth-child(3) { left: 50%; transition-delay: 0.16s; }
-    .nav-gooey-link__blob:nth-child(4) { left: 75%; transition-delay: 0.24s; }
-    .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
-      transform: translateY(0) scale(1.4);
-    }
-    @supports (filter: url('#goo')) {
-      .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
-        transform: translateZ(0) scale(1.4);
-      }
+    nav a:hover {
+      transform: translateY(-2px);
+      background-color: #f0f8ff;
+      color: #1a3e8b;
     }
     .search-box {
-      position: relative;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .search-box:hover,
+    .search-box input:focus-within {
+      border-color: #1a3e8b;
+      box-shadow: 0 0 5px rgba(26, 62, 139, 0.3);
     }
     .search-box input {
-      padding: 10px 40px 10px 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      width: 300px;
-      transition: width 0.4s ease;
-    }
-    .search-box input:focus {
-      width: 400px;
-      border-color: #1a3e8b;
+      border: none;
       outline: none;
+      padding: 5px 10px;
+      width: 120px;
+      font-size: 14px;
     }
     .search-box span {
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-      font-size: 18px;
-      color: #aaa;
+      color: #888;
+      margin-left: 5px;
     }
     @media (max-width: 768px) {
       .header {
@@ -197,6 +136,9 @@
       .search-box {
         align-self: flex-end;
         margin-top: 10px;
+      }
+      nav {
+        width: 100%;
       }
     }
     .slideshow-container {
@@ -255,106 +197,97 @@
   left: 100%;
   top: 0;
 }
-        *{
-            font-family:Arial, Helvetica, sans-serif;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
         }
-        /* --- Start: Table Styling from user --- */
-    table {
-      background: #f5f5f5;
-      border-collapse: separate;
-      box-shadow: inset 0 1px 0 #fff;
-      font-size: 13px;
-      line-height: 24px;
-      margin: 30px auto;
-      text-align: left;
-      width: 800px;
-      font-family: 'Arial', 'Segoe UI', 'Arial', serif;
-    }
-    th {
-      background: #1a3e8b;
-      border-left: 1px solid #555;
-      border-right: 1px solid #777;
-      border-top: 1px solid #555;
-      border-bottom: 1px solid #333;
-      box-shadow: inset 0 1px 0 #999;
-      color: #fff;
-      font-weight: 600;
-      padding: 10px 15px;
-      position: relative;
-      text-shadow: none;
-      font-size: 15px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    th:after {
-      background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
-      content: '';
-      display: block;
-      height: 25%;
-      left: 0;
-      margin: 1px 0 0 0;
-      position: absolute;
-      top: 25%;
-      width: 100%;
-    }
-    th:first-child {
-      border-left: 1px solid #777;
-      box-shadow: inset 1px 1px 0 #999;
-    }
-    th:last-child {
-      box-shadow: inset -1px 1px 0 #999;
-    }
-    td {
-      border-right: 1px solid #fff;
-      border-left: 1px solid #e8e8e8;
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #e8e8e8;
-      padding: 10px 15px;
-      position: relative;
-      transition: all 300ms;
-    }
-    td:first-child {
-      box-shadow: inset 1px 0 0 #fff;
-    }
-    td:last-child {
-      border-right: 1px solid #e8e8e8;
-      box-shadow: inset -1px 0 0 #fff;
-    }
-    tr {
-      background: url(https://jackrugile.com/images/misc/noise-diagonal.png);
-    }
-    tr:nth-child(odd) td {
-      background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
-    }
-    tr:last-of-type td {
-      box-shadow: inset 0 -1px 0 #fff;
-    }
-    tr:last-of-type td:first-child {
-      box-shadow: inset 1px -1px 0 #fff;
-    }
-    tr:last-of-type td:last-child {
-      box-shadow: inset -1px -1px 0 #fff;
-    }
-    tbody:hover td {
-      color: transparent;
-      text-shadow: 0 0 3px #aaa;
-    }
-    tbody:hover tr:hover td {
-      color: #444;
-      text-shadow: 0 1px 0 #fff;
-    }
-    td, th {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    tr:hover td, tr:hover th {
-      font-size: 17px;
-      z-index: 2;
-      position: relative;
-    }
-    table td, table th {
-  transition: font-size 0.3s;
+
+        .headers {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .navbar {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .navbar button {
+            background-color: #ffa07a;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar button:hover {
+            background-color: #ff7f50;
+        }
+
+        .content {
+            max-width: 800px;
+            background: white;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #c71585;
+            font-weight: 700;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        ul li {
+            padding: 8px 0;
+            color: #007BFF;
+            border-left: 4px solid #17a2b8;
+            padding-left: 12px;
+            margin-bottom: 8px;
+            transition: background 0.3s, padding-left 0.3s;
+        }
+        ul li a{
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        ul li:hover {
+            background: #e6f7ff;
+            padding-left: 20px;
+        }
+               .tabs  {
+  display: flex;
+  border-bottom: 3px solid #333;
+  margin-bottom: 20px;
 }
-    /* --- End: Table Styling from user --- */
-    /* Sidebar styling for department side-div-zones */
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.tab.active {
+  background: #5530ec;
+  color: white;
+}
     .side-div-zones {
       flex: 0 0 220px;
       background: #181a1b;
@@ -383,10 +316,14 @@
       list-style: none;
       padding-left: 0;
       width: 100%;
+      margin: 0;
     }
     .side-div-zones li {
       margin-bottom: 10px;
       width: 100%;
+      border: none;
+      padding: 0;
+      background: none;
     }
     .side-div-zones a {
       color: #fff;
@@ -397,85 +334,139 @@
       border-radius: 5px;
       transition: background 0.2s, color 0.2s, padding-left 0.2s;
       font-weight: 500;
+      border-left: none;
     }
     .side-div-zones a:hover {
       background: #23272b;
       color: #ffd700;
       padding-left: 18px;
     }
+    /* Remove inherited ul/li styles for sidebar only */
+    .side-div-zones ul li {
+      color: inherit;
+      border-left: none;
+      padding-left: 0;
+      background: none;
+      transition: none;
+    }
+    .side-div-zones ul li:hover {
+      background: none;
+      padding-left: 0;
+    }
     @media (max-width: 900px) {
       .container { flex-direction: column; }
       .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
     }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      z-index: 2000;
-    }
-    .dropdown-content {
-      position: absolute;
-      background-color: #fff;
-      min-width: 160px;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      top: 100%;
-      left: 0;
-      z-index: 3000;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    }
-    .dropdown-content a {
-      color: #333;
-      padding: 8px 12px;
-      text-decoration: none;
-      display: block;
-      font-weight: normal;
-      position: relative; 
-      z-index: 1;        
-      overflow: hidden;  
-      transition: color 0.3s ease; 
-    }
-    .dropdown-content a::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: #1a3e8b; 
-      transition: width 0.3s ease;
-      z-index: -1; 
-    }
-    .dropdown-content a:hover {
-      color: #fff; 
-    }
-    .dropdown-content a:hover::after {
-      width: 100%;
-    }
-    .dropdown:hover > .dropdown-content { 
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    .main-content-area {
-      flex: 1 1 65%; 
-      min-width: 300px;
-      padding-right: 20px; 
-    }
-    @media (max-width: 992px) { 
-      .main-content-area { padding-right: 0; }
-    }
-    .dropdown-toggle .nav-gooey-link__text {
-      font-weight: bold;
-    }
+    /* Gooey nav effect styles from web.html */
+.nav-gooey-link__text {
+  position: relative;
+  z-index: 2;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.5s;
+}
+.nav-gooey-link:not(.active):hover .nav-gooey-link__text {
+  color: #FFFFFF;
+}
+.nav-gooey-link:hover {
+  transform: translateY(-2px);
+}
+nav a.active, .nav-gooey-link.active {
+  background: #e6efff;
+  border-radius: 5px;
+}
+nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text {
+  color: #1a3e8b;
+  font-weight: bold;
+}
+.nav-gooey-link.active .nav-gooey-link__inner {
+  display: none;
+}
+.nav-gooey-link__inner {
+  z-index: 1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.nav-gooey-link__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url('#goo');
+}
+.nav-gooey-link__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #1a3e8b;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+@supports (filter: url('#goo')) {
+  .nav-gooey-link__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+.nav-gooey-link__blob:nth-child(1) { left: 0%; transition-delay: 0s; }
+.nav-gooey-link__blob:nth-child(2) { left: 30%; transition-delay: 0.08s; }
+.nav-gooey-link__blob:nth-child(3) { left: 60%; transition-delay: 0.16s; }
+.nav-gooey-link__blob:nth-child(4) { left: 90%; transition-delay: 0.24s; }
+.nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+  transform: translateZ(0) scale(1.7);
+}
+@supports (filter: url('#goo')) {
+  .nav-gooey-link:not(.active):hover .nav-gooey-link__blob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
+.engineering-img-container {
+  position: relative;
+  display: inline-block;
+  max-width: 600px;
+  width: 100%;
+}
+.engineering-img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: block;
+}
+.engineering-img-hover-text {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: rgba(26,62,139,0.7);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  text-align: center;
+  padding: 20px;
+}
+.engineering-img-container:hover .engineering-img {
+  opacity: 0.4;
+}
+.engineering-img-container:hover .engineering-img-hover-text {
+  opacity: 1;
+}
     </style>
 </head>
 <body>
-  <div class="header">
+    <div class="header">
     <div class="left-section">
       <div class="logo-title">
         <div class="logo"></div>
@@ -485,7 +476,7 @@
         </div>
       </div>
       <nav>
-          <a href="web.html" class="nav-gooey-link active">
+        <a href="web.html" class="nav-gooey-link active">
           <span class="nav-gooey-link__text">Home</span>
           <span class="nav-gooey-link__inner">
             <span class="nav-gooey-link__blobs">
@@ -510,7 +501,7 @@
             <a href="Industries.html">Industries</a>
             <a href="Health.html">Health</a>
             <a href="FunctionHalls.html">Function Halls</a>
-            <a href="Markets.html">Markets</a> 
+            <a href="Markets.html">Markets</a>
             <a href="Education.html">Education</a>
           </div>
         </div>
@@ -553,13 +544,8 @@
                 <a href="Zone4.html">Zone-4</a>
                 <a href="Zone5.html">Zone-5</a>
                 <a href="Zone6.html">Zone-6</a>
-<<<<<<< HEAD
                 <a href="Zone7.html">Zone-7</a>
                 <a href="Zone8.html">Zone-8</a>
-=======
-                <a href="Zone7.html">Zone-5</a>
-                <a href="Zone8.html">Zone-6</a>
->>>>>>> 71bf0a3c1df7b538481507926dbcf402cbaac0f5
               </div>
             </div>
           </div>
@@ -575,7 +561,7 @@
           </a>
           <div class="dropdown-content">
             <a href="CSec.html">General Administration</a>
-            <a href=" Projects.html">Projects</a>
+            <a href="Projects.html">Projects</a>
             <a href="Engineering.html">Engineering</a>
             <a href="RevDepStru.html">Revenue</a>
             <a href="PublicHealth.html">Public Health</a>
@@ -588,7 +574,7 @@
           </div>
         </div>
         <div class="dropdown">
-           <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
+          <a href="CitizenServices.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Citizen Services</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -658,66 +644,87 @@
       </nav>
     </div>
     <div class="search-box">
-      <input type="text" placeholder="Search..." />
+      <input type="text" placeholder="Search...">
       <span>🔍</span>
     </div>
   </div>
-  <div style="display: flex; flex-direction: row; gap: 32px; align-items: flex-start; margin-top: 0;">
-    <div class="side-div-zones">
-      <h4>Departments</h4>
-      <ul>
-        <li><a href="CSec.html" style="background:#23272b; color:#ffd700; padding-left:18px;">General Administration</a></li>
-        <li><a href="Projects.html">Projects</a></li>
-        <li><a href="Engineering.html">Engineering</a></li>
-        <li><a href="RevDepStru.html">Revenue</a></li>
-        <li><a href="PublicHealth.html">Public Health</a></li>
-        <li><a href="TownPlanning.html">Town Planning</a></li>
-        <li><a href="Horticulture.html">Horticulture</a></li>
-        <li><a href="UCD.html">UCD</a></li>
-        <li><a href="EducationalProjects.html">Education</a></li>
-        <li><a href="Finance.html">Finance</a></li>
-        <li><a href="IT1.html">IT & E-Governance</a></li>
-      </ul>
+    <div style="display: flex; flex-direction: row; gap: 32px; align-items: flex-start; margin-top: 0;">
+      <div class="side-div-zones">
+        <h4>Departments</h4>
+        <ul>
+          <li><a href="CSec.html">General Administration</a></li>
+          <li><a href="Projects.html">Projects</a></li>
+          <li><a href="Engineering.html" >Engineering</a></li>
+          <li><a href="RevDepStru.html">Revenue</a></li>
+          <li><a href="PublicHealth.html">Public Health</a></li>
+          <li><a href="TownPlanning.html" >Town Planning</a></li>
+          <li><a href="Horticulture.html">Horticulture</a></li>
+          <li><a href="UCD.html">UCD</a></li>
+          <li><a href="EducationalProjects.html" >Education</a></li>
+          <li><a href="Finance.html" style="background:#23272b; color:#ffd700; padding-left:18px;">Finance</a></li>
+          <li><a href="IT1.html">IT & E-Governance</a></li>
+        </ul>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 8px; width:100%;">
+        <div class="tabs">
+          <button class="tab ">
+            <a href="Finance.html">A.O(F) Section</a></button>
+          <button class="tab "><a href="A.O(D&A) Section.html">A.O (D & A) Section</a></button>
+          <button class="tab  active "><a href="Budget.html">Budgets</a></button>
+            <button class="tab "><a href="FinancialStatements.html">Financial Statements</a></button>
+            <button class="tab "><a href="Audit.html">Audit</a></button>
+        </div>
+       
+        <body style="font-family: Arial, sans-serif; padding: 20px;">
+
+    <h2 style="color: deeppink;">Budget Documents</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Budget for the year 2012-13</span>
+            <button style="background-color: limegreen; color: white; border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer;"><a href="Budgetfortheyear2012-13.pdf" style="color: white; text-decoration: none;">DOWNLOAD ⬇</a></button>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Budget for the year 2013-14</span>
+            <button style="background-color: limegreen; color: white; border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer;"><a href="Budgetfortheyear2013-14.pdf" style="color: white; text-decoration: none;">DOWNLOAD ⬇</a></button>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Budget for the year 2014-15</span>
+            <button style="background-color: limegreen; color: white; border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer;"><a href="Budgetfortheyear2014-15.pdf" style="color: white; text-decoration: none;">DOWNLOAD ⬇</a></button>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Budget for the year 2015-16</span>
+            <button style="background-color: limegreen; color: white; border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer;"><a href="2015-16WBE.pdf" style="color: white; text-decoration: none;">DOWNLOAD ⬇</a></button>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Budget for the year 2016-17</span>
+            <button style="background-color: limegreen; color: white; border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer;"><a href="2016-2017.pdf" style="color: white; text-decoration: none;">DOWNLOAD ⬇</a></button>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Budget for the year 2017-18</span>
+            <button style="background-color: limegreen; color: white; border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer;"><a href="2017-2018.pdf" style="color: white; text-decoration: none;">DOWNLOAD ⬇</a></button>
+        </div>
     </div>
-    <div style="flex: 1; min-width: 0;">
-      <table>
-        <tr>
-            <th>Section</th>
-            <th>Designation</th>
-            <th>Dealing Subjects</th>
-        </tr>
-        <tr>
-            <td >Establishment<br>Section - I</td>
-            <td>Superintendent - 01</td>
-            <td>Overall monitoring of “C” Section</td>
-        </tr>
-        <tr>
-            <td>C2</td><br><Td>Senior Assistant – 03</td>
-            <td>Establishment matters of Officers / A.O’s / R.O’s and Decentralization of Delegation of Powers, ST / SC / BC / Physically challenged / Backlog Vacancy, Compassionate Appointments, Zonal Administration, Maintenance of Roster Registers, Government Correspondence</td>
-        </tr>
-        <tr>
-            <td>C3</td><br><td> Assistant</td>
-            <td>Establishment matters of Superintendents / Senior Assistants / Junior Assistants / Typist / Record Assistants, M.TS / N.M.R’s / Safaiwalas. Union Demands, A.P.L.A Committee Meeting, Guest House, Contract Workers of Merged Villages and Gajuwaka Municipality</td>
-        </tr>
-        <tr>
-            <td>C4</td><td>Senior Assistant</td>
-            <td>Establishment of Tax Collectors, Election Cell, Grievance Cell, CM Petitions, Prajavani, DRC meetings, Video Conferences, L.A.Q’s, L.C.Q.s, Citizen Chart, Procurement of Stationery items, Monitoring Cell, Turn Duties</td>
-        </tr>
-        <tr>
-            <td>C5</td><td>Junior Assistant</td>
-            <td>Treasury Salary Bills, Section Salary Bills, All Telephone Bills, Wireless Sets, Bus Pass Bills, Maintenance of Xerox Machines</td>
-        </tr>
-        <tr>
-            <td>C6</td><td>Junior Assistant</td>
-            <td>Establishment matters of Office Subordinates, Mazdoors, Consolidation of RTI related files and Legal Cell, Conducting of Republic Day / Independence Day / Retirement Function, Audit Objections</td>
-        </tr>
-        <tr>
-            <td></td><Td>Record Assistants - 03</Td><Td>To Assitance Sri.M.Salivahan <br>Senior Assistant<br>To Assistance Sri .P.V.V.V.Murthy<br>Senior Assistent</Td>
-        </tr>
-      </table>
-    </div>
-  </div>
-   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+
+</body>
+
+
+        <script>
+          document.querySelectorAll('.edu-img-hover').forEach(function(img) {
+            img.addEventListener('mouseenter', function() {
+              img.style.transform = 'scale(1.13) rotate(-2deg)';
+              img.style.boxShadow = '0 8px 32px rgba(26,62,139,0.22)';
+              img.style.filter = 'brightness(1.08) saturate(1.15)';
+            });
+            img.addEventListener('mouseleave', function() {
+              img.style.transform = '';
+              img.style.boxShadow = '';
+              img.style.filter = '';
+            });
+          });
+        </script>
+    <!-- SVG Goo Filter Definition -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
     <defs>
       <filter id="goo">
         <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
@@ -726,5 +733,5 @@
       </filter>
     </defs>
   </svg>
-  </body>
+</body>
 </html>
