@@ -352,22 +352,26 @@
       transform: scale(1.1);
       opacity: 0.8;
     }
-    .footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-    .footer a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: underline;
-      transition: color 0.3s ease, opacity 0.3s ease;
-    }
-    .footer a:hover {
-      color: #add8e6; 
-      opacity: 0.8;
-    }
+   .footer {
+  width: 100%;
+  background-color: #003366; /* dark blue background */
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  position: relative; /* or use 'fixed' for always at bottom */
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.footer a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+.footer a:hover {
+  color: lightblue;
+}
+
     .dropdown {
       position: relative;
       display: inline-block;
@@ -716,18 +720,15 @@
     });
     setInterval(nextSlide, 3000);
   </script> 
-<div class="footer">
+<<div class="footer">
   <p>&copy; <span id="year"></span> Greater Visakhapatnam Municipal Corporation. All Rights Reserved.</p>
   <div>
     <a href="Bottom-Contacts.html">Contacts</a> |
     <a href="#">Privacy Policy</a> |
     <span>Visitors Count: 0</span> |
-    <span><strong><a href="Important links.html">Important Links:</strong> 
-   
-    </span>
+    <a href="Important links.html"><strong>Important Links:</strong></a>
   </div>
 </div>
-
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
