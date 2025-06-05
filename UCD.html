@@ -192,11 +192,33 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .dropdown-content .dropdown:hover .dropdown-content {
   display: block;
   left: 100%;
   top: 0;
+}
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+.tab {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tab a {
+  text-decoration: none;
+  color: #333;
+}
+.tab:hover {
+  background-color: #5530eC; /* Red hover effect */
+  transform: scale(1.05);
+}
+.tab:hover a {
+  color: white;
 }
         body {
             font-family: 'Roboto', sans-serif;
@@ -205,7 +227,6 @@
             padding: 0;
             color: #333;
         }
-
         .headers {
             background: linear-gradient(to right, #ff758c, #ff7eb3);
             padding: 20px;
@@ -214,12 +235,10 @@
             font-size: 24px;
             font-weight: 700;
         }
-
         .navbar {
             margin: 20px;
             text-align: center;
         }
-
         .navbar button {
             background-color: #ffa07a;
             border: none;
@@ -230,11 +249,9 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         .navbar button:hover {
             background-color: #ff7f50;
         }
-
         .content {
             max-width: 800px;
             background: white;
@@ -243,17 +260,14 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
         h2 {
             color: #c71585;
             font-weight: 700;
         }
-
         ul {
             padding-left: 20px;
             list-style: none;
         }
-
         ul li {
             padding: 8px 0;
             color: #007BFF;
@@ -276,7 +290,6 @@
   border-bottom: 3px solid #333;
   margin-bottom: 20px;
 }
-
 .tab {
   padding: 10px 20px;
   border: none;
@@ -286,7 +299,7 @@
   margin-right: 5px;
 }
 .tab.active {
-  background: #7fae18;
+  background: #5530eC;
   color: white;
 }
     .side-div-zones {
@@ -459,37 +472,31 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
   padding: 20px;
 }h1, h2 {
       text-align: center;
-      color: red;
+      color: green;
       /* margin-bottom: 5px; */
     }
-
     ul {
       /* list-style-type: disc; */
       padding-left: 40px;
     }
-
     ul li {
       margin: 5PX 0;
     }
-
     a {
       text-decoration: none;
       color: #007BBD;
       font-weight: bold;
       transition: 0.3s;
     }
-
     a:hover {
       color: #005f99;
       text-decoration: underline;
     }
-
     .tabs {
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
     }
-
     button {
       padding: 10px 20px;
       border: none;
@@ -501,10 +508,9 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
     }
 
     button.hover{
-      background: #779E28;
+      background: #5530eC;
       color: white;
     }
-
 .engineering-img-container:hover .engineering-img {
   opacity: 0.4;
 }
@@ -533,7 +539,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           </span>
         </a>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Index.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">About Vizag</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -554,7 +560,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Corporation-Introduction.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Corporation</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -573,7 +579,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Zones.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Zones</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -599,7 +605,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="CSec.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Departments</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -642,7 +648,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Information- Population-Details.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Information</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -663,7 +669,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Tenders.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Tenders</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -676,7 +682,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="WaterSupply.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Contact</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -686,7 +692,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
-            <a href="Bottom-Contacts.html">Contacts</a>
+            <a href="Contacts.html">Contacts</a>
           </div>
         </div>
       </nav>
@@ -720,7 +726,6 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
         </div>
         <h1>GREATER VISAKHAPATNAM MUNICIPAL CORPORATION</h1>
   <h2>URBAN COMMUNITY DEVELOPMENT ACTIVITIES</h2>
-
   <ul>
     <li><a href="Social.html">SOCIAL SECURITY PENSIONS</a></li>
     <li><a href="SelfHelpGroups.html">SELF HELP GROUPS</a></li>

@@ -357,6 +357,30 @@
       .container { flex-direction: column; }
       .side-div-zones { margin-right: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
     }
+    .tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tab a {
+  text-decoration: none;
+  color: #333;
+}
+.tab:hover {
+  background-color: #5530ec; /* Red hover effect */
+  transform: scale(1.05);
+}
+.tab:hover a {
+  color: white;
+}
     /* Gooey nav effect styles from web.html */
 .nav-gooey-link__text {
   position: relative;

@@ -74,7 +74,6 @@
       text-decoration: none;
       transition: 0.3s;
     }
-
     .links a:hover {
       text-decoration: underline;
       color: #004d80;
@@ -82,12 +81,8 @@
   </style>
 </head>
 <body>
-
-    
-
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,6 +135,30 @@
       background: url("GVMC logo.jpg") no-repeat center center;
       background-size: contain;
     }
+    .tabs {
+  display: flex;
+  gap: 10px;
+}
+.tab {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tab a {
+  text-decoration: none;
+  color: #333;
+}
+.tab:hover {
+  background-color: #5530eC; /* Red hover effect */
+  transform: scale(1.05);
+}
+.tab:hover a {
+  color: white;
+}
+  
     .title {
       display: flex;
       flex-direction: column;
@@ -375,7 +394,7 @@
   margin-right: 5px;
 }
 .tab.active {
-  background: #7fae18;
+  background: #5530eC;
   color: white;
 }
     .side-div-zones {
@@ -549,7 +568,7 @@ nav a.active .nav-gooey-link__text, .nav-gooey-link.active .nav-gooey-link__text
 }
 h1, h2 {
       text-align: center;
-      color: red;
+      color: green;
       /* margin-bottom: 5px; */
     }
 
@@ -591,7 +610,7 @@ h1, h2 {
     }
 
     button.hover{
-      background: #779E28;
+      background: #5530eC;
       color: white;
     }
 
@@ -623,7 +642,7 @@ h1, h2 {
           </span>
         </a>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Index.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">About Vizag</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -644,7 +663,7 @@ h1, h2 {
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Corporation-Introduction.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Corporation</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -663,7 +682,7 @@ h1, h2 {
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Zones.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Zones</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -689,7 +708,7 @@ h1, h2 {
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="CSec.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Departments</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -732,7 +751,7 @@ h1, h2 {
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Information- Population-Details.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Information</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -753,7 +772,7 @@ h1, h2 {
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="Tenders.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Tenders</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -766,7 +785,7 @@ h1, h2 {
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-toggle nav-gooey-link">
+          <a href="WaterSupply.html" class="dropdown-toggle nav-gooey-link">
             <span class="nav-gooey-link__text">Contact</span>
             <span class="nav-gooey-link__inner">
               <span class="nav-gooey-link__blobs">
@@ -776,7 +795,7 @@ h1, h2 {
           </a>
           <div class="dropdown-content">
             <a href="WaterSupply.html">Water Supply & Sewage Officers List</a>
-            <a href="Bottom-Contacts.html">Contacts</a>
+            <a href="Contacts.html">Contacts</a>
           </div>
         </div>
       </nav>
